@@ -21,33 +21,11 @@
         </nav>
     </header>
 
-    .header-outer {
-  background: $(header.background.color) $(header.background.gradient) repeat-x scroll 0 -400px;
-  _background-image: none;
-}
-
-.Header h1 {
-  font: $(header.font);
-  color: $(header.text.color);
-  text-shadow: $(header.shadow.offset.left) $(header.shadow.offset.top) $(header.shadow.spread) rgba(0, 0, 0, .2);
-}
-
-.Header h1 a {
-  color: $(header.text.color);
-}
-
-.Header .description {
-  font-size: $(description.text.size);
-  color: $(description.text.color);
-}
-
-.header-inner .Header .titlewrapper {
-  padding: 22px $(header.padding);
-}
-
-.header-inner .Header .descriptionwrapper {
-  padding: 0 $(header.padding);
-}
+<Group description="Blog Title" selector=".header h1">
+     <Variable name="header.font" description="Font" type="font"
+         default="normal normal 0px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal 48px Permanent Marker"/>
+     <Variable name="header.text.color" description="Title Color" type="color" default="#3399bb" value="#21427a"/>
+</Group>
 
 <html lang="en">
 <head>
