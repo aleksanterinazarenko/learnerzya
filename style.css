@@ -76,7 +76,7 @@ footer {
 
 .table {
     width: 100%;
-    border-collapse: separate; /* Allows spacing between columns */
+    border-collapse: collapse; /* Allows spacing between columns */
     border-spacing: 0; /* Remove default spacing between cells */
     margin: 0; /* Remove default margin around the table */
 }
