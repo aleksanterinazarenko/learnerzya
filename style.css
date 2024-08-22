@@ -21,6 +21,10 @@ nav .nav-list {
     justify-content: center;
 }
 
+.nav-list a.active {
+    text-decoration: underline;
+}
+
 nav .nav-list li {
     margin: 0 15px;
 }
