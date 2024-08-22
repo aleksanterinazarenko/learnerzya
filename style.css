@@ -47,8 +47,8 @@ p {
     font-size: 16px;
     line-height: 1.5;
     margin: 10px 0;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 100px;
+    padding-left: 100px;
     text-align: left;
   }
 
@@ -67,37 +67,34 @@ footer {
 }
 
 .container {
-    width: calc(100% - 80px); /* Container width accounting for total horizontal padding */
-    margin: 0 auto; /* Center the container */
+    width: calc(100% - 200px);
+    margin: 0 auto;
 }
 
 .table {
     width: 100%;
-    border-collapse: collapse; /* Allows spacing between columns */
-    border-spacing: 0; /* Remove default spacing between cells */
-    margin: 0 40px; /* Set left and right margin to 40px */
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 .table td {
-    padding-right: 20px;
-    padding-left: 20px;
-    border: none; /* Remove cell borders if not needed */
-    box-sizing: border-box; /* Include border and padding in the width */
-    vertical-align: top; /* Align text to the top of the cell */
-    position: relative; /* Allow positioning of pseudo-elements */
+    border: none;
+    box-sizing: border-box;
+    vertical-align: top;
+    position: relative;
 }
 
 .table h2 {
     font-size: 20px;
     font-weight: normal;
     text-align: center;
-    margin: 0 0 10px; /* Margin below the header */
+    margin: 0 0 20px;
     font-family: 'Playwrite NO', cursive;
 }
 
 .table p {
-    margin: 0; /* Remove default paragraph margins */
-    line-height: 1.6; /* Line height for readability */
+    margin: 0;
+    line-height: 1.6;
 }
 
 
