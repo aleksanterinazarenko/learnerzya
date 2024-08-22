@@ -123,17 +123,20 @@ function transliterate(text) {
     text = text.replace(/([аоуыэяёюиеъьі])([еёиюя])/g, '$1j$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪЬІ])([еёиюя])/g, '$1j$2');
 
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»])([еёюя])/g, '$1j$2');
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»])([ЕЁЮЯ])/g, '$1J$2');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])([еёюя])/g, '$1j$2');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])([ЕЁЮЯ])/g, '$1J$2');
     text = text.replace(/-([еёюя])/g, '-j$1');
     text = text.replace(/-([ЕЁЮЯ])/g, '-J$1');
 
-    text = text.replace(/([аеёиоуыэюя])э/g, '$1e').replace(/(?:^|\s)э/g, ' e');
-    text = text.replace(/([АЕЁИОУЫЭЮЯ])Э/g, '$1e').replace(/(?:^|\s)Э/g, ' E');
+    text = text.replace(/([аеёиоуыэюя])э/g, '$1e')
+    text = text.replace(/([АЕЁИОУЫЭЮЯ])Э/g, '$1e')
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»])э/g, '$1e');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»])Э/g, '$1E');
     text = text.replace(/(?:^|\s)и/g, ' i');
     text = text.replace(/(?:^|\s)И/g, ' I');
-    text = text.replace(/-([э])/g, '-e');
-    text = text.replace(/-([Э])/g, '-E');
+
+    text = text.replace(/([.,!?;:()\[\]{}"“”«»\-])э/g, '$1e');
+    text = text.replace(/([.,!?;:()\[\]{}"“”«»\-])Э/g, '$1E');
 
     text = text.replace(/([бвгджзйклмнпрстфхцчшщ])я/g, '$1ä');
     text = text.replace(/([БВГДЖЗЙКЛМНПРСТФХЦЧШЩ])я/g, '$1ä');
