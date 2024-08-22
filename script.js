@@ -1,2 +1,3 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log
+  console.log("DOM fully loaded and parsed");
+});
