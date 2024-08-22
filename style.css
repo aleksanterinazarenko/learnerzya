@@ -21,10 +21,6 @@ nav .nav-list {
     justify-content: center;
 }
 
-.nav-list a.active {
-    text-decoration: underline;
-}
-
 nav .nav-list li {
     margin: 0 15px;
 }
@@ -46,6 +42,16 @@ main {
     text-align: center;
 }
 
+p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+    padding-right: 100px;
+    padding-left: 100px;
+    text-align: left;
+  }
+
 h1, h2 {
     font-family: 'Permanent Marker', cursive;
 }
@@ -61,35 +67,44 @@ footer {
 }
 
 .container {
-    width: calc(100% - 40px);
-    overflow: hidden;
-    margin: auto;
-    padding: 0 20px;
+    width: calc(100% - 40px); /* Container width accounting for total horizontal padding */
+    margin: 0 auto; /* Center the container */
+    padding-right: 80px;
+    padding-left: 80px;
     box-sizing: border-box;
 }
 
 .table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    line-height: 1.5;
+    border-collapse: separate; /* Allows spacing between columns */
+    border-spacing: 0; /* Remove default spacing between cells */
+    margin: 0; /* Remove default margin around the table */
 }
 
 .table td {
-    width: 50%;
-    vertical-align: top;
-    padding: 20px;
-    border: none;
-    font-size: 16px;
-    box-sizing: border-box;
+    padding: none; /* No padding inside cells */
+    border: none; /* Remove cell borders if not needed */
+    box-sizing: border-box; /* Include border and padding in the width */
+    vertical-align: top; /* Align text to the top of the cell */
+    position: relative; /* Allow positioning of pseudo-elements */
 }
 
 .table h2 {
-    text-align: center;
     font-size: 20px;
     font-weight: normal;
-    margin: 0;
+    text-align: center;
+    margin: 0 0 10px; /* Margin below the header */
     font-family: 'Playwrite NO', cursive;
+}
+
+.table p {
+    margin: 0; /* Remove default paragraph margins */
+    line-height: 1.6; /* Line height for readability */
+}
+
+
+.nav-list a.active {
+    text-decoration: underline;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
