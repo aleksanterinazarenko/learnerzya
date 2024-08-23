@@ -86,6 +86,7 @@ textarea:focus {
 #searchInput {
     font-family: 'Verdana', sans-serif;
     font-size: 16px;
+    line-height: 20px;
     width: 100%;
     padding: 9px;
     margin-top: 20px;
