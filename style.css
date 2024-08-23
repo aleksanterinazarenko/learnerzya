@@ -38,6 +38,7 @@ nav .nav-list li a:hover {
 h1 {
     font-family: 'Permanent Marker', cursive;
     text-align: center;
+    margin: 0 auto;
 }
 
 h2 {
