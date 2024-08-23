@@ -40,7 +40,6 @@ nav ul li a {
     margin: 0 auto;
     box-sizing: border-box;
 }
-
 textarea {
     font-size: 14px;
     line-height: 20px;
@@ -53,16 +52,14 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
-
 textarea:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
 footer {
     text-align: center;
     padding: 10px;
-    background: #f8f8f8;
+    background: #333;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
