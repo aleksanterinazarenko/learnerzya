@@ -121,7 +121,6 @@ textarea:focus {
 #languageSelector {
     font-family: auto;
     margin-bottom: 20px;
-    padding: 9px;
+    padding: 5px;
     font-size: 16px;
-    box-sizing: border-box;
 }
