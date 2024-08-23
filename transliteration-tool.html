@@ -188,3 +188,9 @@ function transliterate(text) {
     return text.trim().split('').map(char => letters[char] || char).join('');
     
 }</script>
+
+<script>
+    if (window.innerWidth <= 768) {
+        window.location.href = 'transliteration-tool-mobile.html';
+    }
+    </script>
