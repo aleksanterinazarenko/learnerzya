@@ -1,12 +1,12 @@
 body {
-    font-family: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    font-family: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #333;
     color: white;
     padding: 0.5rem;
@@ -45,6 +45,7 @@ h1 {
 }
 
 footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     padding: 1rem;
     background: #333;
@@ -65,6 +66,7 @@ footer {
     box-sizing: border-box;
 }
 textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     line-height: 20px;
     width: 100%;
@@ -85,6 +87,7 @@ textarea:focus {
 ///
 
 #searchInput {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: auto;
     font-size: 16px;
     width: 100%;
@@ -96,6 +99,7 @@ textarea:focus {
 }
 
 #dictionaryList {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -109,17 +113,19 @@ textarea:focus {
 }
 
 .word {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: regular;
     font-size: 16px;
 }
 
 .definition {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     font-size: 16px;
 }
 
 #languageSelector {
-    font-family: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 20px;
     padding: 5px;
     font-size: 16px;
