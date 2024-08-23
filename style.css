@@ -53,10 +53,12 @@ p {
 
 h1 {
     font-family: 'Permanent Marker', cursive;
+    text-align: center;
 }
 
 h2 {
     font-family: 'Playwrite NO', cursive;
+    text-align: center;
 }
 
 footer {
