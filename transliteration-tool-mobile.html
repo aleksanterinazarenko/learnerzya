@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English-Erzya dictionary</title>
+    <title>Learn Erzya - Mobile</title>
     <link rel="stylesheet" href="style-mobile.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
@@ -34,9 +34,6 @@
             </div>
         </div>
     </main>
-
-        
-
 
     <script>
 document.getElementById('inputText').addEventListener('input', function() {
@@ -123,6 +120,18 @@ document.getElementById('inputText').addEventListener('input', function() {
             link.classList.add('active');
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navLinks = document.querySelectorAll('.nav-list a');
+  const currentPath = window.location.pathname.split("/").pop();
+
+  navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (linkPath === currentPath) {
+          link.classList.add('active');
+      }
+  });
 });
 
     }</script>
