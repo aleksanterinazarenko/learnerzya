@@ -42,6 +42,86 @@
         <p style="font-size: 16px; text-align: center;">Source: <a href="https://akusanat.com/verdd/">Veʹrdd</a></p>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const latinJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary2.json';
+  const cyrillicJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary2-cyr.json';
+
+  const dictionaryList = document.getElementById('dictionaryList');
+  const searchInput = document.getElementById('searchInput');
+  const languageSelector = document.getElementById('languageSelector');
+
+  let currentData = [];
+
+  // Function to render the dictionary list
+  function renderList(words) {
+    dictionaryList.innerHTML = '';
+    words.forEach(entry => {
+      const listItem = document.createElement('li');
+      listItem.className = 'entry';
+      listItem.innerHTML = `<span class="word">${entry.Word}</span>: <span class="definition">${entry.Definition}</span>`;
+      dictionaryList.appendChild(listItem);
+    });
+  }
+
+  // Function to calculate similarity based on common prefix length
+  function getSimilarityScore(word, query) {
+    let score = 0;
+    for (let i = 0; i < Math.min(word.length, query.length); i++) {
+      if (word[i] === query[i]) {
+        score++;
+      } else {
+        break;
+      }
+    }
+    return score;
+  }
+
+  // Function to load the dictionary data
+  function loadDictionary(url) {
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        currentData = data;
+        dictionaryList.innerHTML = ''; // Clear the list when data is loaded
+      })
+      .catch(error => console.error('Error loading the dictionary:', error));
+  }
+
+  // Search functionality
+  searchInput.addEventListener('input', (event) => {
+    const query = event.target.value.toLowerCase();
+
+    if (query === "") {
+      dictionaryList.innerHTML = ''; // Clear the list if the search query is empty
+    } else {
+      const filteredWords = currentData
+        .filter(entry => entry.Word.toLowerCase().includes(query))
+        .sort((a, b) => {
+          const scoreA = getSimilarityScore(a.Word.toLowerCase(), query);
+          const scoreB = getSimilarityScore(b.Word.toLowerCase(), query);
+          return scoreB - scoreA; // Sort by similarity score (descending)
+        });
+      renderList(filteredWords); // Render the filtered words
+    }
+  });
+
+  // Handle language change
+  languageSelector.addEventListener('change', (event) => {
+    const selectedLanguage = event.target.value;
+    const url = selectedLanguage === 'cyrillic' ? cyrillicJsonURL : latinJsonURL;
+    loadDictionary(url);
+  });
+
+  // Initial load with the default language (Latin)
+  loadDictionary(latinJsonURL);
+});
+  </script>
+
 </body>
 </html>
