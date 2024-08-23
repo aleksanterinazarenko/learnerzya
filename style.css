@@ -38,11 +38,11 @@ nav .nav-list li a:hover {
 h1 {
     font-family: 'Permanent Marker', cursive;
     text-align: center;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 main {
-    padding: 20px;
+    padding: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
 }

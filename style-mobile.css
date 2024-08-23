@@ -40,7 +40,7 @@ p {
 
 h1 {
     font-family: 'Permanent Marker', cursive;
-    font-size: 24px;
+    font-size: auto;
     text-align: center;
 }
 
@@ -67,8 +67,6 @@ footer {
     background: #333;
     color: white;
 }
-
-///
 
 .nav-list a.active {
     text-decoration: underline;
@@ -99,8 +97,6 @@ textarea:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
-///
 
 #searchInput {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
