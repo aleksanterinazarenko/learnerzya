@@ -140,14 +140,8 @@ function transliterate(text) {
     text = text.replace(/([ДЗЛНРСТЦдзлнрстц])е/g, '$1e');
     text = text.replace(/([ДЗЛНРСТЦдзлнрстц])и/g, '$1i');
 
-    text = text.replace(/дь(?=[дзлнрстц])/g, 'd');
-    text = text.replace(/зь(?=[дзлнрстц])/g, 'z');
-    text = text.replace(/ль(?=[дзлнрстц])/g, 'l');
-    text = text.replace(/нь(?=[дзлнрстц])/g, 'n');
-    text = text.replace(/рь(?=[дзлнрстц])/g, 'r');
-    text = text.replace(/сь(?=[дзлнрстц])/g, 's');
-    text = text.replace(/ть(?=[дзлнрстц])/g, 't');
-    text = text.replace(/ць(?=[дзлнрстц])/g, 'c');
+    text = text.replace(/([дзлнрстц])ь(?=[дзлнрстц])/g, '$1');
+    text = text.replace(/([бвгжкмпфхчшщ])ь/g, '$1');
     text = text.replace(/ъ/g, '');
     text = text.replace(/(\s|^)і/g, '$1j');
     text = text.replace(/і([аеёиоуыэюяАЕЁИОУЫЭЮЯ])/g, 'j$1');
