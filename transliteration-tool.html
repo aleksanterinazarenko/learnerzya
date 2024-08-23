@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English-Erzya dictionary</title>
+    <title>Transliteration tool</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
@@ -30,6 +30,7 @@
             <div class="translator">
                 <textarea id="inputText" class="input-text" placeholder="Enter text here..."></textarea>
                 <textarea id="outputText" class="output-text" readonly placeholder="Transliterated text will appear here..."></textarea>
+                <button id="copyButton">>>>Copy result<<<</button>
             </div>
         </div>
     </main>
@@ -46,6 +47,7 @@
     max-width: 1000px;
     margin: 0 auto;
     box-sizing: border-box;
+    text-align: center;
 }
 
 h1 {
@@ -67,7 +69,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none;
-    min-height: 220px;
+    min-height: 200px;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -85,9 +87,24 @@ textarea:focus {
 .output-text {
     font-family: 'Verdana', sans-serif;
 }
+
+button#copyButton {
+            font-family: 'Verdana', sans-serif;
+            font-size: 16px;
+            padding: 8px 12px;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button#copyButton:hover {
+            text-decoration: underline;
+        }
 </style>
 
-<script>document.getElementById('inputText').addEventListener('input', function() {
+<script>
+document.getElementById('inputText').addEventListener('input', function() {
     updateOutputText();
 });
 
@@ -96,6 +113,14 @@ function updateOutputText() {
     const outputText = transliterate(inputText);
     document.getElementById('outputText').value = outputText;
 }
+
+document.getElementById('copyButton').addEventListener('click', function() {
+    const outputText = document.getElementById('outputText');
+    outputText.select();
+    outputText.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    alert('Text copied to clipboard');
+});
 
 const letters = {
     "А": "A", "Б": "B", "В": "V", "Г": "G", "Д": "D", "Е": "E", "Ё": "O", "Ж": "Ž", "З": "Z", "И": "I", "Й": "J",
