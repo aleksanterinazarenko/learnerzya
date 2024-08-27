@@ -9,7 +9,7 @@ header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #333;
     color: white;
-    padding: 0.5rem;
+    padding: 0.1rem;
 }
 
 nav ul {
@@ -58,7 +58,7 @@ h2 {
 }
 
 .table td {
-    padding: 0.5rem;
+    padding: 0.1rem;
     display: block;
 }
 
