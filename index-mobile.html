@@ -11,12 +11,17 @@
 <body>
     <header>
         <nav>
-            <ul class="nav-list">
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list" id="nav-list">
                 <li><a href="index-mobile.html">Main Page</a></li>
                 <li><a href="english-erzya-dictionary-mobile.html">English-Erzya dictionary</a></li>
                 <li><a href="erzya-english-dictionary-mobile.html">Erzya-English dictionary</a></li>
-                <li><a href="finnish-erzya-dictionary-mobilehtml">Finnish-Erzya dictionary</a></li>
-                <li><a href="transliteration-tool-mobilehtml">Transliteration tool</a></li>
+                <li><a href="finnish-erzya-dictionary-mobile.html">Finnish-Erzya dictionary</a></li>
+                <li><a href="transliteration-tool-mobile.html">Transliteration tool</a></li>
                 <li><a href="about-the-spelling-mobile.html">About the spelling</a></li>
                 <li><a href="sources-mobile.html">Sources</a></li>
             </ul>
@@ -34,7 +39,7 @@
                     </td>
                     <td>
                         <h2>Paročisë sovado!</h2>
-                        <p style="text-align: justify;">Erzäń keľ te suomiń-ugrań semijanť suomiń-ravoń (lijaks: mordvań) taradonteń sovavtovicä uraloń keľ. Erzäń kelenteń vesemede malaviks keleś — mokšoń keľ. Ikele sïnst kavonest loviź vejsëń istä jovtaź ”mordvań keleń” dialektëks.<br><br>2021 ijeń vese Rasejeń lovnomasonť malav 50,000 lomanť tekšstïź erzäń kelenť tirineks, sïndest lamotne eriť Mordovija Respublikaso. Erzäń keleś ašti eslempeleń keleks Mordovijaso, ruzoń dï mokšoń keltneń marto. Eslempeleń śormadoma kojezë ruzoń kondämo, teke škasto naukań literaturaso sejedstë noldtneviť tevs lamo lija, latinëń alfavitënť langs nežedeź sistemat.<br><br>Liśmaprä: <a href="https://myv.wikipedia.org/wiki/">Wikipedia</a></p>
+                        <p style="text-align: justify;">Erzäń keľ te suomiń-ugrań semijanť suomiń-ravoń (lijaks: mordvań) taradonteń sovavtovicä uraloń keľ. Erzäń kelenteń vesemede malaviks keleś — mokšoń keľ. Ikele sïnst kavonest loviź vejsëń istä jovtaź ”mordvań keleń” dialektëks.<br><br>2021 ijeń vese Rasejeń lovnomasonť malav 50,000 lomanť tekšstïź erzäń kelenť tirineks, sïndest lamot eriť Mordovija Respublikaso. Erzäń keleś ašti eslempeleń keleks Mordovijaso, ruzoń dï mokšoń keltneń marto. Eslempeleń śormadoma kojezë ruzoń kondämo, teke škasto naukań literaturaso sejedstë noldtneviť tevs lamo lija, latinëń alfavitënť langs nežedeź sistemat.<br><br>Liśmaprä: <a href="https://myv.wikipedia.org/wiki/">Wikipedia</a></p>
                     </td>
                 </tr>
             </table>
@@ -45,6 +50,62 @@
         <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024 Aleksanteri Nazarenko</a>
     </footer>
 
+    <style>
+    .nav-list {
+        display: none;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-list li {
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: black;
+    }
+    
+    .nav-list.active {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-list {
+        display: flex;
+    }
+
+    .nav-list li {
+        padding: 0 15px;
+    }
+}
+    </style>
+
     <script src="script.js"></script>
+
+    <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        var navList = document.getElementById('nav-list');
+        navList.classList.toggle('active');
+    });
+    </script>
+
 </body>
 </html>
