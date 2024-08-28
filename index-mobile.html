@@ -10,22 +10,15 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="index-mobile.html">Main Page</a></li>
-                <li><a href="english-erzya-dictionary-mobile.html">English-Erzya dictionary</a></li>
-                <li><a href="erzya-english-dictionary-mobile.html">Erzya-English dictionary</a></li>
-                <li><a href="finnish-erzya-dictionary-mobile.html">Finnish-Erzya dictionary</a></li>
-                <li><a href="transliteration-tool-mobile.html">Transliteration tool</a></li>
-                <li><a href="about-the-spelling-mobile.html">About the spelling</a></li>
-                <li><a href="sources-mobile.html">Sources</a></li>
-            </ul>
-        </nav>
+        <select id="nav-select" class="nav-select">
+            <option value="index-mobile.html">Main Page</option>
+            <option value="english-erzya-dictionary-mobile.html">English-Erzya dictionary</option>
+            <option value="erzya-english-dictionary-mobile.html">Erzya-English dictionary</option>
+            <option value="finnish-erzya-dictionary-mobile.html">Finnish-Erzya dictionary</option>
+            <option value="transliteration-tool-mobile.html">Transliteration tool</option>
+            <option value="about-the-spelling-mobile.html">About the spelling</option>
+            <option value="sources-mobile.html">Sources</option>
+        </select>
     </header>
 
     <main>
@@ -51,60 +44,29 @@
     </footer>
 
     <style>
-    .nav-list {
-        display: none;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .nav-list li {
-        padding: 10px;
-        text-align: center;
-    }
-    
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        margin: 10px;
-    }
-    
-    .menu-toggle span {
-        width: 100%;
-        height: 3px;
-        background-color: black;
-    }
-    
-    .nav-list.active {
-        display: block;
-    }
+    .nav-select {
+    width: 100%;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
 
-    @media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
-
-    .nav-list {
-        display: flex;
-    }
-
-    .nav-list li {
-        padding: 0 15px;
-    }
+.nav-select option {
+    padding: 10px;
 }
     </style>
 
     <script src="script.js"></script>
 
     <script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        var navList = document.getElementById('nav-list');
-        navList.classList.toggle('active');
-    });
+    document.getElementById('nav-select').addEventListener('change', function() {
+    var selectedPage = this.value;
+    window.location.href = selectedPage;
+});
     </script>
 
 </body>
