@@ -30,6 +30,26 @@
 </div>
 </main>
 
+<style>
+    .nav-select {
+    width: 100%;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-select option {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+    </style>
+
 <script src="script.js"></script>
 
 <script>
@@ -44,6 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
   });
+    </script>
+
+<script>
+    document.getElementById('nav-select').addEventListener('change', function() {
+    var selectedPage = this.value;
+    window.location.href = selectedPage;
+});
     </script>
 
 </body>

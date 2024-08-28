@@ -9,24 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="menu-icon">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-list">
-                <li><a href="index-mobile.html">Main Page</a></li>
-                <li><a href="english-erzya-dictionary-mobile.html">English-Erzya dictionary</a></li>
-                <li><a href="erzya-english-dictionary-mobile.html">Erzya-English dictionary</a></li>
-                <li><a href="finnish-erzya-dictionary-mobile.html">Finnish-Erzya dictionary</a></li>
-                <li><a href="transliteration-tool-mobile.html">Transliteration tool</a></li>
-                <li><a href="about-the-spelling-mobile.html">About the spelling</a></li>
-                <li><a href="sources-mobile.html">Sources</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <select id="nav-select" class="nav-select">
+        <option value="index-mobile.html">Main Page</option>
+        <option value="english-erzya-dictionary-mobile.html">English-Erzya dictionary</option>
+        <option value="erzya-english-dictionary-mobile.html">Erzya-English dictionary</option>
+        <option value="finnish-erzya-dictionary-mobile.html">Finnish-Erzya dictionary</option>
+        <option value="transliteration-tool-mobile.html">Transliteration tool</option>
+        <option value="about-the-spelling-mobile.html">About the spelling</option>
+        <option value="sources-mobile.html">Sources</option>
+    </select>
+</header>
 
     <main>
       <a href="/learnerzya/index-mobile.html" style="color: #333; text-decoration: none;"><h1>Learn Erzya</h1></a>
@@ -42,6 +35,26 @@
         <p style="font-size: 16px; text-align: center;">Source: <a href="https://akusanat.com/verdd/">Veʹrdd</a></p>
     </main>
 
+    <style>
+      .nav-select {
+      width: 100%;
+      padding: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+  }
+  
+  .nav-select option {
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+  }
+      </style>
+
     <script>
 document.addEventListener('DOMContentLoaded', () => {
   const latinJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary2.json';
@@ -53,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentData = [];
 
-  // Function to render the dictionary list
   function renderList(words) {
     dictionaryList.innerHTML = '';
     words.forEach(entry => {
@@ -64,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Function to calculate similarity based on common prefix length
   function getSimilarityScore(word, query) {
     let score = 0;
     for (let i = 0; i < Math.min(word.length, query.length); i++) {
@@ -77,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return score;
   }
 
-  // Function to load the dictionary data
   function loadDictionary(url) {
     fetch(url)
       .then(response => {
@@ -88,37 +98,34 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(data => {
         currentData = data;
-        dictionaryList.innerHTML = ''; // Clear the list when data is loaded
+        dictionaryList.innerHTML = '';
       })
       .catch(error => console.error('Error loading the dictionary:', error));
   }
 
-  // Search functionality
   searchInput.addEventListener('input', (event) => {
     const query = event.target.value.toLowerCase();
 
     if (query === "") {
-      dictionaryList.innerHTML = ''; // Clear the list if the search query is empty
+      dictionaryList.innerHTML = '';
     } else {
       const filteredWords = currentData
         .filter(entry => entry.Word.toLowerCase().includes(query))
         .sort((a, b) => {
           const scoreA = getSimilarityScore(a.Word.toLowerCase(), query);
           const scoreB = getSimilarityScore(b.Word.toLowerCase(), query);
-          return scoreB - scoreA; // Sort by similarity score (descending)
+          return scoreB - scoreA;
         });
-      renderList(filteredWords); // Render the filtered words
+      renderList(filteredWords);
     }
   });
 
-  // Handle language change
   languageSelector.addEventListener('change', (event) => {
     const selectedLanguage = event.target.value;
     const url = selectedLanguage === 'cyrillic' ? cyrillicJsonURL : latinJsonURL;
     loadDictionary(url);
   });
 
-  // Initial load with the default language (Latin)
   loadDictionary(latinJsonURL);
 });
 
@@ -132,6 +139,13 @@ document.addEventListener('DOMContentLoaded', function () {
           link.classList.add('active');
       }
   });
+});
+  </script>
+
+<script>
+  document.getElementById('nav-select').addEventListener('change', function() {
+  var selectedPage = this.value;
+  window.location.href = selectedPage;
 });
   </script>
 
