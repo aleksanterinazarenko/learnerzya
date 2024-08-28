@@ -66,9 +66,20 @@
     <script src="script.js"></script>
 
     <script>
-    document.getElementById('nav-select').addEventListener('change', function() {
-    var selectedPage = this.value;
-    window.location.href = selectedPage;
+    document.addEventListener('DOMContentLoaded', function() {
+    var navSelect = document.getElementById('nav-select');
+    var currentPage = window.location.pathname.split('/').pop();
+    
+    for (var i = 0; i < navSelect.options.length; i++) {
+        if (navSelect.options[i].value === currentPage) {
+            navSelect.selectedIndex = i;
+            break;
+        }
+    }
+    
+    navSelect.addEventListener('change', function() {
+        window.location.href = this.value;
+    });
 });
     </script>
 
