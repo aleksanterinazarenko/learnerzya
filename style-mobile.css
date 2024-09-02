@@ -81,6 +81,7 @@ footer {
     margin: 0 auto;
     box-sizing: border-box;
 }
+
 textarea {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
@@ -94,6 +95,7 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+
 textarea:focus {
     outline: none;
     border-color: #007bff;
