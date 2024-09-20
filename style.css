@@ -100,5 +100,57 @@ footer {
     text-decoration: underline;
 }
 
+.content-container {
+    width: calc(100% - 200px);
+    margin: 0 auto;
+    display: grid; /* Użycie siatki */
+    grid-template-columns: repeat(2, 1fr); /* Dwie kolumny o równych szerokościach */
+    gap: 50px; /* Odstęp między kolumnami i wierszami */
+}
+
+.blog-post {
+    display: flex; /* Użycie flex dla .blog-post */
+    justify-content: space-between; /* Równomierne rozmieszczenie tytułu i przycisku */
+    align-items: center; /* Wyrównanie w pionie */
+    padding: 20px;
+    border: 1px solid #333; /* Opcjonalna ramka */
+    border-radius: 10px;
+}
+
+.custom-text {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 250px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.read-more-dict {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr; /* Na mniejszych ekranach, jedna kolumna */
+    }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
