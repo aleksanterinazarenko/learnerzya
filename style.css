@@ -2,8 +2,13 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Taustaväri, joka näkyy, jos kuva ei lataudu */
     color: #333;
+    background-image: url('rect46.png'); /* Muuta 'polku/kuva.png' oikeaksi tiedostopoluksi */
+    background-size: cover; /* Kuvan kokoaminen koko näytölle */
+    background-position: center; /* Kuvan keskittymisen asettaminen */
+    background-repeat: no-repeat; /* Kuvan estäminen toistamasta */
+    min-height: 100vh;
 }
 
 header {
@@ -80,13 +85,11 @@ footer {
 
 .table {
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse: separate;
 }
 
 .table td {
-    width: 50%;
-    padding: 10px;
+    padding: 0 30px;
     vertical-align: top;
     position: relative;
 }
@@ -103,17 +106,17 @@ footer {
 .content-container {
     width: calc(100% - 200px);
     margin: 0 auto;
-    display: grid; /* Użycie siatki */
-    grid-template-columns: repeat(2, 1fr); /* Dwie kolumny o równych szerokościach */
-    gap: 50px; /* Odstęp między kolumnami i wierszami */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
 }
 
 .blog-post {
-    display: flex; /* Użycie flex dla .blog-post */
-    justify-content: space-between; /* Równomierne rozmieszczenie tytułu i przycisku */
-    align-items: center; /* Wyrównanie w pionie */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    border: 1px solid #333; /* Opcjonalna ramka */
+    border: 1px solid #333;
     border-radius: 10px;
 }
 
