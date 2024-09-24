@@ -1,9 +1,18 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    background-image: url('rect46.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -41,10 +50,18 @@ h1 {
     margin: 50px;
 }
 
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 20px;
+    font-family: 'Playwrite NO', cursive;
+}
+
 main {
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
+    flex-grow: 1;
 }
 
 p {
@@ -61,35 +78,38 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    margin-top: 30px;
 }
 
 .container {
     width: calc(100% - 200px);
     margin: 0 auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.dictionary {
+    width: calc(100% - 500px);
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .table {
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+    margin-bottom: 30px;
+    border-collapse: separate;
 }
 
 .table td {
-    width: 50%;
-    padding: 10px;
+    padding: 0 30px;
     vertical-align: top;
     position: relative;
-}
-
-.table h2 {
-    font-size: 20px;
-    font-weight: normal;
-    text-align: center;
-    margin: 0 0 20px;
-    font-family: 'Playwrite NO', cursive;
 }
 
 .table p {
@@ -99,6 +119,99 @@ footer {
 
 .nav-list a.active {
     text-decoration: underline;
+}
+
+.content-container {
+    width: calc(100% - 200px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.blog-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.custom-text {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 250px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.read-more-dict {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#searchInput {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#dictionaryList {
+    list-style-type: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+#dictionaryList li {
+    padding: 15px 10px;
+    line-height: 1;
+    border-bottom: none;
+    background-color: transparent;
+}
+
+.word {
+    font-weight: regular;
+    font-size: 16px;
+}
+
+.definition {
+    font-style: italic;
+    font-size: 16px;
+}
+  
+#languageSelector {
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr; /* Na mniejszych ekranach, jedna kolumna */
+    }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
