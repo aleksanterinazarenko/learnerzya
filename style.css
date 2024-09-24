@@ -7,10 +7,12 @@ body {
     color: #333;
     background-image: url('rect46.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 header {
