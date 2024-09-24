@@ -1,5 +1,6 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4; /* Taustaväri, joka näkyy, jos kuva ei lataudu */
@@ -9,6 +10,8 @@ body {
     background-position: center; /* Kuvan keskittymisen asettaminen */
     background-repeat: no-repeat; /* Kuvan estäminen toistamasta */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -55,8 +58,9 @@ h2 {
 
 main {
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
+    flex-grow: 1;
 }
 
 p {
@@ -68,14 +72,13 @@ p {
     text-align: left;
   }
 
-footer {
+  footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    margin-top: 20px;
 }
 
 .container {

@@ -35,20 +35,25 @@
         <a href="/learnerzya/index.html" style="color: #333; text-decoration: none;"><h1>Learn Erzya</h1></a>
 
         <div class="container">
+            <h2>Transliteration tool</h2><br>
             <div class="translator">
                 <textarea id="inputText" class="input-text" placeholder="Enter text here..."></textarea>
                 <textarea id="outputText" class="output-text" readonly placeholder="Transliterated text will appear here..."></textarea>
-                <button id="copyButton">>>>Copy result<<<</button>
+                <button id="copyButton">Copy result</button>
             </div>
         </div>
     </main>
+
+    <footer>
+        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024 Aleksanteri Nazarenko</a>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
 
 <style>
-.container {
+.translator {
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -89,25 +94,27 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: 'Verdana', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .output-text {
-    font-family: 'Verdana', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 button#copyButton {
-            font-family: 'Verdana', sans-serif;
-            font-size: 16px;
-            padding: 8px 12px;
-            color: #333;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: transparent;
+    margin-top: 20px;
         }
         button#copyButton:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
 </style>
 
