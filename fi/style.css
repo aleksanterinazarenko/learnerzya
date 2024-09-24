@@ -6,13 +6,13 @@ body {
     background-color: #f4f4f4;
     color: #333;
     background-image: url('rect46.png');
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 header {
@@ -68,8 +68,8 @@ p {
     color: #333;
     font-size: 16px;
     line-height: 1.5;
-    margin: 10px 0;
-    padding: 0 20px;
+    margin: 0 auto;
+    padding: 10px 50px;
     text-align: left;
   }
 
@@ -79,12 +79,13 @@ footer {
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .container {
     width: calc(100% - 200px);
     margin: 0 auto;
+    padding: 0 30px;
     position: relative;
     top: 0;
     left: 0;
@@ -92,7 +93,7 @@ footer {
 }
 
 .dictionary {
-    width: calc(100% - 500px);
+    width: calc(100% - 400px);
     margin: 0 auto;
     position: relative;
     top: 0;
@@ -208,11 +209,78 @@ footer {
     font-size: 16px;
 }
 
-@media (max-width: 768px) {
-    .content-container {
-        grid-template-columns: 1fr; /* Na mniejszych ekranach, jedna kolumna */
-    }
+.translator {
+    width: calc(100% - 200px);
+    margin: 0 auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: center; 
 }
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+textarea {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    min-height: 250px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-text {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.output-text {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+button#copyButton {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: transparent;
+    cursor: pointer; 
+        }
+        button#copyButton:hover {
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                grid-template-columns: 1fr;
+            }
+        }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
