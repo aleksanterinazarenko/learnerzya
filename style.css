@@ -3,12 +3,13 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Taustaväri, joka näkyy, jos kuva ei lataudu */
+    background-color: #f4f4f4;
     color: #333;
-    background-image: url('rect46.png'); /* Muuta 'polku/kuva.png' oikeaksi tiedostopoluksi */
-    background-size: cover; /* Kuvan kokoaminen koko näytölle */
-    background-position: center; /* Kuvan keskittymisen asettaminen */
-    background-repeat: no-repeat; /* Kuvan estäminen toistamasta */
+    background-image: url('rect46.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -72,19 +73,28 @@ p {
     text-align: left;
   }
 
-  footer {
+footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .container {
     width: calc(100% - 200px);
     margin: 0 auto;
-    position:relative;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.dictionary {
+    width: calc(100% - 500px);
+    margin: 0 auto;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -92,6 +102,7 @@ p {
 
 .table {
     width: 100%;
+    margin-bottom: 30px;
     border-collapse: separate;
 }
 
@@ -202,6 +213,65 @@ p {
         grid-template-columns: 1fr; /* Na mniejszych ekranach, jedna kolumna */
     }
 }
+
+.translator {
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+textarea {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    min-height: 200px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-text {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.output-text {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+button#copyButton {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: transparent;
+        }
+        button#copyButton:hover {
+            text-decoration: none;
+        }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
