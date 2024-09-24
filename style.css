@@ -208,12 +208,6 @@ footer {
     font-size: 16px;
 }
 
-@media (max-width: 768px) {
-    .content-container {
-        grid-template-columns: 1fr; /* Na mniejszych ekranach, jedna kolumna */
-    }
-}
-
 .translator {
     padding: 20px;
     border-radius: 10px;
@@ -271,6 +265,12 @@ button#copyButton {
         }
         button#copyButton:hover {
             text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                grid-template-columns: 1fr;
+            }
         }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
