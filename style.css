@@ -84,6 +84,10 @@ p {
 .container {
     width: calc(100% - 200px);
     margin: 0 auto;
+    position:relative;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .table {
@@ -150,6 +154,47 @@ p {
     border: 1px solid #333;
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+#searchInput {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#dictionaryList {
+    list-style-type: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+#dictionaryList li {
+    padding: 15px 10px;
+    line-height: 1;
+    border-bottom: none;
+    background-color: transparent;
+}
+
+.word {
+    font-weight: regular;
+    font-size: 16px;
+}
+
+.definition {
+    font-style: italic;
+    font-size: 16px;
+}
+  
+#languageSelector {
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 16px;
 }
 
 @media (max-width: 768px) {

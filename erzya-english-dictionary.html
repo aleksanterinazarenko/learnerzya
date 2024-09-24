@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="Erzya language, ersän kieli, эрзянский язык, эрзянь кель, dictionary, sanakirja, словарь, валкс">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erzya-English dictionary</title>
+    <title>English-Erzya dictionary</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-        <ul class="nav-list">
-          <li><a href="index.html">Main Page</a></li>
+    <header>
+        <nav>
+            <ul class="nav-list">
+              <li><a href="index.html">Main Page</a></li>
                 <li><a href="dictionaries.html">Dictionaries</a></li>
                 <li><a href="#">Grammar</a></li>
                 <li><a href="transliteration-tool.html">Transliteration tool</a></li>
@@ -23,31 +23,20 @@
                 <li><a href="sources.html">Sources</a></li>
                 <li><a href="#">External learning materials</a></li>
                 <li><a href="#">Contact</a></li>
-            <li>
-              <a href="/learnerzya/fi/erzya-english-dictionary.html">
-                  <img src="fi.svg" style="width: 20px; height: auto;">
-              </a>
-          </li>
-        </ul>
-    </nav>
-</header>
+                <li>
+                  <a href="/learnerzya/fi/english-erzya-dictionary.html">
+                      <img src="fi.svg" style="width: 20px; height: auto;">
+                  </a>
+              </li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
       <a href="/learnerzya/index.html" style="color: #333; text-decoration: none;"><h1>Learn Erzya</h1></a>
-    </main>
-</body>
-</html>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8"></meta>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
-    <link href="styles.css" rel="stylesheet"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&amp;display=swap" rel="stylesheet"></link>
-    <title>Dictionary</title>
-</head>
-<body>
     <div class="container">
+      <h2>Erzya-English dictionary</h2><br>
         <select id="languageSelector">
             <option value="latin">Latin</option>
             <option value="cyrillic">Cyrillic</option>
@@ -55,74 +44,17 @@
         <input id="searchInput" placeholder="Search for a word ..." type="text" />
         <ul id="dictionaryList"></ul>
     </div>
-    <script src="script.js"></script>
-
+    
     <p style="font-size: 16px; text-align: center;">Source: <a href="https://akusanat.com/verdd/">Veʹrdd</a></p><br><br>
+  </main>
 
+    <footer>
+      <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024 Aleksanteri Nazarenko</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-<style>
-    body {
-    font-family: 'Verdana', sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-h1 {
-    text-align: center;
-}
-
-#searchInput {
-    font-family: 'Verdana', sans-serif;
-    font-size: 16px;
-    width: 100%;
-    padding: 9px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#dictionaryList {
-    list-style-type: none;
-    padding: 0; 
-    margin: 0; 
-}
-
-#dictionaryList li {
-    padding: 15px 10px;
-    line-height: 1;
-    border-bottom: none;
-    background-color: transparent;
-}
-
-.word {
-    font-weight: regular;
-    font-size: 16px;
-}
-
-.definition {
-    font-style: italic;
-    font-size: 16px;
-}
-  
-#languageSelector {
-    font-family: 'Verdana', sans-serif;
-    margin-bottom: 20px;
-    padding: 5px;
-    font-size: 16px;
-}
-</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -135,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentData = [];
 
-  // Function to render the dictionary list
   function renderList(words) {
     dictionaryList.innerHTML = '';
     words.forEach(entry => {
@@ -146,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Function to calculate similarity based on common prefix length
   function getSimilarityScore(word, query) {
     let score = 0;
     for (let i = 0; i < Math.min(word.length, query.length); i++) {
@@ -159,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return score;
   }
 
-  // Function to load the dictionary data
   function loadDictionary(url) {
     fetch(url)
       .then(response => {
@@ -170,37 +99,34 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(data => {
         currentData = data;
-        dictionaryList.innerHTML = ''; // Clear the list when data is loaded
+        dictionaryList.innerHTML = '';
       })
       .catch(error => console.error('Error loading the dictionary:', error));
   }
 
-  // Search functionality
   searchInput.addEventListener('input', (event) => {
     const query = event.target.value.toLowerCase();
 
     if (query === "") {
-      dictionaryList.innerHTML = ''; // Clear the list if the search query is empty
+      dictionaryList.innerHTML = '';
     } else {
       const filteredWords = currentData
         .filter(entry => entry.Word.toLowerCase().includes(query))
         .sort((a, b) => {
           const scoreA = getSimilarityScore(a.Word.toLowerCase(), query);
           const scoreB = getSimilarityScore(b.Word.toLowerCase(), query);
-          return scoreB - scoreA; // Sort by similarity score (descending)
+          return scoreB - scoreA;
         });
-      renderList(filteredWords); // Render the filtered words
+      renderList(filteredWords);
     }
   });
 
-  // Handle language change
   languageSelector.addEventListener('change', (event) => {
     const selectedLanguage = event.target.value;
     const url = selectedLanguage === 'cyrillic' ? cyrillicJsonURL : latinJsonURL;
     loadDictionary(url);
   });
 
-  // Initial load with the default language (Latin)
   loadDictionary(latinJsonURL);
 });
   </script>
