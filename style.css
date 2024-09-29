@@ -49,16 +49,18 @@ nav .nav-list li a:hover {
 }
 
 h1 {
-    font-family: "Inter", sans-serif;
+    font-family: "Permanent Marker", cursive;
+    font-weight: normal;
     text-align: center;
     margin: 50px;
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: normal;
-    margin: 0 0 20px;
     font-family: "Inter", sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 30px;
 }
 
 main {
@@ -70,7 +72,7 @@ main {
 
 p {
     color: #333;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
     padding: 10px 50px;
@@ -113,12 +115,11 @@ footer {
     padding: 10px 50px;
     text-align: left;
     font-family: "Inter", sans-serif;
-    font-weight: bold;
 }
 
 .dictionary p {
     color: #333;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
     padding: 10px 50px;
