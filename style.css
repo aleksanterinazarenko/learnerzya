@@ -41,7 +41,7 @@ nav .nav-list li {
 nav .nav-list li a {
     color: #fff;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 nav .nav-list li a:hover {
@@ -87,6 +87,7 @@ footer {
     padding: 10px 0;
     width: 100%;
     margin-top: 50px;
+    font-size: 16px;
 }
 
 .container {
