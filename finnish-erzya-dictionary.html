@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="Erzya language, ersän kieli, эрзянский язык, эрзянь кель, dictionary, sanakirja, словарь, валкс">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English-Erzya dictionary</title>
+    <title>Finnish-Erzya dictionary</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -35,19 +35,23 @@
     <main>
       <a href="/learnerzya/index.html" style="color: #333; text-decoration: none;"><h1>Learn Erzya</h1></a>
 
-    <div class="container">
-      <h2>Finnish-Erzya dictionary</h2><br>
+      <div class="container">
+        <h2>Finnish-Erzya Dictionary</h2>
     </div>
-      <div class="dictionary">
-        <select id="languageSelector">
-            <option value="latin">Latin</option>
-            <option value="cyrillic">Cyrillic</option>
-        </select>
-        <input id="searchInput" placeholder="Search for a word ..." type="text" />
-        <ul id="dictionaryList"></ul>
-    
-    <p style="font-size: 16px; text-align: left; margin-top: 20px; padding: 0%;">Source: <a href="https://akusanat.com/verdd/"><em>Veʹrdd</em></a></p><br>
-  </div>
+    <div class="dictionary">
+      <select id="languageSelector">
+        <option value="latin">Latin</option>
+        <option value="cyrillic">Cyrillic</option>
+    </select>
+        <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
+        <div id="suggestions" class="suggestions-list" style="display: none;"></div>
+
+        <p style="font-size: 16px; text-align: left; margin-top: 30px; padding: 0;">
+          Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a>
+      </p>
+        
+        <div id="wordDetails" style="margin-top: 20px;"></div>
+    </div>
 </main>
 
     <footer>
@@ -60,84 +64,91 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const latinJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary3.json';
-  const cyrillicJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary3-cyr.json';
+    const latinJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary3.json';
+    const cyrillicJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary3-cyr.json';
 
-  const dictionaryList = document.getElementById('dictionaryList');
-  const searchInput = document.getElementById('searchInput');
-  const languageSelector = document.getElementById('languageSelector');
+    const searchInput = document.getElementById('searchInput');
+    const languageSelector = document.getElementById('languageSelector');
+    const suggestions = document.getElementById('suggestions');
+    const wordDetails = document.getElementById('wordDetails');
 
-  let currentData = [];
+    let currentData = [];
 
-  function renderList(words) {
-    dictionaryList.innerHTML = '';
-    words.forEach(entry => {
-      const listItem = document.createElement('li');
-      listItem.className = 'entry';
-      listItem.innerHTML = `<span class="word">${entry.Word}</span>: <span class="definition">${entry.Definition}</span>`;
-      dictionaryList.appendChild(listItem);
-    });
-  }
-
-  function getSimilarityScore(word, query) {
-    let score = 0;
-    for (let i = 0; i < Math.min(word.length, query.length); i++) {
-      if (word[i] === query[i]) {
-        score++;
-      } else {
-        break;
-      }
+    function showWordDetails(entry) {
+        wordDetails.innerHTML = `<h2>${entry.Word}</h2><p>${entry.Definition}</p>`;
     }
-    return score;
-  }
 
-  function loadDictionary(url) {
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        currentData = data;
-        dictionaryList.innerHTML = '';
-      })
-      .catch(error => console.error('Error loading the dictionary:', error));
-  }
+    function loadDictionary(url) {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                currentData = data;
+                suggestions.innerHTML = '';
+            })
+            .catch(error => console.error('Error loading the dictionary:', error));
+    }
 
-  searchInput.addEventListener('input', (event) => {
+    searchInput.addEventListener('input', (event) => {
     const query = event.target.value.toLowerCase();
+    suggestions.innerHTML = '';
 
     if (query === "") {
-      dictionaryList.innerHTML = '';
+        wordDetails.innerHTML = '';
+        suggestions.style.display = 'none';
     } else {
-      const filteredWords = currentData
-        .filter(entry => entry.Word.toLowerCase().includes(query))
-        .sort((a, b) => {
-          const scoreA = getSimilarityScore(a.Word.toLowerCase(), query);
-          const scoreB = getSimilarityScore(b.Word.toLowerCase(), query);
-          return scoreB - scoreA;
-        });
-      renderList(filteredWords);
+        const filteredWords = currentData
+            .filter(entry => entry.Word.toLowerCase().includes(query))
+            .sort((a, b) => {
+                const aStartsWith = a.Word.toLowerCase().startsWith(query);
+                const bStartsWith = b.Word.toLowerCase().startsWith(query);
+                
+                if (aStartsWith && !bStartsWith) return -1;
+                if (!aStartsWith && bStartsWith) return 1;
+
+                return a.Word.length - b.Word.length;
+            });
+
+        if (filteredWords.length > 0) {
+            filteredWords.forEach(entry => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.className = 'suggestion-item';
+                suggestionItem.textContent = entry.Word;
+                suggestionItem.onclick = () => {
+                    searchInput.value = entry.Word;
+                    showWordDetails(entry);
+                    suggestions.style.display = 'none';
+                };
+                suggestions.appendChild(suggestionItem);
+            });
+            suggestions.style.display = 'block';
+        } else {
+            wordDetails.innerHTML = '<p>No results found.</p>';
+            suggestions.style.display = 'none';
+        }
     }
-  });
-
-  languageSelector.addEventListener('change', (event) => {
-    const selectedLanguage = event.target.value;
-    const url = selectedLanguage === 'cyrillic' ? cyrillicJsonURL : latinJsonURL;
-    loadDictionary(url);
-  });
-
-  loadDictionary(latinJsonURL);
 });
-  </script>
+
+    languageSelector.addEventListener('change', (event) => {
+        const selectedLanguage = event.target.value;
+        const url = selectedLanguage === 'cyrillic' ? cyrillicJsonURL : latinJsonURL;
+        loadDictionary(url);
+    });
+
+    loadDictionary(latinJsonURL);
+});
+
+</script>
 
 </body>
 </html>
 
 <script>
-if (window.innerWidth <= 768) {
-  window.location.href = 'finnish-erzya-dictionary-mobile.html';
-}
-</script>
+  if (window.innerWidth <= 768) {
+    window.location.href = 'english-erzya-dictionary-mobile.html';
+  }
+  </script>

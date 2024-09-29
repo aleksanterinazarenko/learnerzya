@@ -35,22 +35,17 @@
     <main>
       <a href="/learnerzya/index.html" style="color: #333; text-decoration: none;"><h1>Learn Erzya</h1></a>
 
-      <div class="container">
-        <h2>English-Erzya Dictionary</h2>
-    </div>
-    <div class="dictionary">
-      <select id="languageSelector">
-        <option value="latin">Latin</option>
-        <option value="cyrillic">Cyrillic</option>
-    </select>
-        <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
-        <div id="suggestions" class="suggestions-list" style="display: none;"></div>
-
-        <p style="font-size: 16px; text-align: left; margin-top: 30px; padding: 0;">
-          Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a>
-      </p>
-        
-        <div id="wordDetails" style="margin-top: 20px;"></div>
+      <div class="dictionary">
+        <h2>English-Erzya dictionary</h2>
+        <div class="input-container">
+            <select id="languageSelector">
+                <option value="latin">Latin</option>
+                <option value="cyrillic">Cyrillic</option>
+            </select>
+            <input id="searchInput" placeholder="Search for a word ..." type="text" />
+            <ul id="suggestionsList" class="suggestions-list"></ul>
+        </div>
+        <p style="font-size: 16px; text-align: left; margin-top: 20px; padding: 0%;">Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a></p>
     </div>
 </main>
 
@@ -62,20 +57,76 @@
 </body>
 </html>
 
+<style>
+    .dictionary {
+    width: calc(100% - 400px);
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.input-container {
+    display: flex; /* Ustawienie flex dla elementów w jednej linii */
+    align-items: center;
+}
+
+#searchInput {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.suggestions-list {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: calc(100% - 22px); /* Dopasowanie szerokości do input */
+    margin-top: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 16px;
+    display: none; /* Domyślnie ukryte */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const latinJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary2.json';
     const cyrillicJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/dictionary.json/main/dictionary2-cyr.json';
 
+    const suggestionsList = document.getElementById('suggestionsList');
     const searchInput = document.getElementById('searchInput');
-    const languageSelector = document.getElementById('languageSelector');
-    const suggestions = document.getElementById('suggestions');
-    const wordDetails = document.getElementById('wordDetails');
-
     let currentData = [];
 
-    function showWordDetails(entry) {
-        wordDetails.innerHTML = `<h2>${entry.Word}</h2><p>${entry.Definition}</p>`;
+    function renderSuggestions(words) {
+        suggestionsList.innerHTML = ''; // Wyczyść poprzednie sugestie
+        words.forEach(entry => {
+            const suggestionItem = document.createElement('li');
+            suggestionItem.className = 'suggestion-item';
+            suggestionItem.textContent = entry.Word;
+            suggestionItem.onclick = () => {
+                searchInput.value = entry.Word; // Ustaw słowo w input po kliknięciu
+                suggestionsList.style.display = 'none'; // Ukryj listę sugestii
+            };
+            suggestionsList.appendChild(suggestionItem);
+        });
+        suggestionsList.style.display = words.length > 0 ? 'block' : 'none'; // Pokaż lub ukryj listę
     }
 
     function loadDictionary(url) {
@@ -88,58 +139,25 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 currentData = data;
-                suggestions.innerHTML = '';
             })
             .catch(error => console.error('Error loading the dictionary:', error));
     }
 
     searchInput.addEventListener('input', (event) => {
-    const query = event.target.value.toLowerCase();
-    suggestions.innerHTML = '';
+        const query = event.target.value.toLowerCase();
 
-    if (query === "") {
-        wordDetails.innerHTML = '';
-        suggestions.style.display = 'none';
-    } else {
-        const filteredWords = currentData
-            .filter(entry => entry.Word.toLowerCase().includes(query))
-            .sort((a, b) => {
-                const aStartsWith = a.Word.toLowerCase().startsWith(query);
-                const bStartsWith = b.Word.toLowerCase().startsWith(query);
-                
-                if (aStartsWith && !bStartsWith) return -1;
-                if (!aStartsWith && bStartsWith) return 1;
-
-                return a.Word.length - b.Word.length;
-            });
-
-        if (filteredWords.length > 0) {
-            filteredWords.forEach(entry => {
-                const suggestionItem = document.createElement('div');
-                suggestionItem.className = 'suggestion-item';
-                suggestionItem.textContent = entry.Word;
-                suggestionItem.onclick = () => {
-                    searchInput.value = entry.Word;
-                    showWordDetails(entry);
-                    suggestions.style.display = 'none';
-                };
-                suggestions.appendChild(suggestionItem);
-            });
-            suggestions.style.display = 'block';
+        if (query === "") {
+            suggestionsList.innerHTML = '';
+            suggestionsList.style.display = 'none'; // Ukryj listę, gdy nic nie wpisano
         } else {
-            wordDetails.innerHTML = '<p>No results found.</p>';
-            suggestions.style.display = 'none';
+            const filteredWords = currentData
+                .filter(entry => entry.Word.toLowerCase().includes(query))
+                .slice(0, 5); // Wyświetl tylko 5 najlepszych dopasowań
+            renderSuggestions(filteredWords);
         }
-    }
-});
-
-    languageSelector.addEventListener('change', (event) => {
-        const selectedLanguage = event.target.value;
-        const url = selectedLanguage === 'cyrillic' ? cyrillicJsonURL : latinJsonURL;
-        loadDictionary(url);
     });
 
-    loadDictionary(latinJsonURL);
+    loadDictionary(latinJsonURL); // Załaduj domyślny słownik
 });
 
 </script>

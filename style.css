@@ -1,11 +1,15 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Noto Sans', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #cccccc1c;
     color: #333;
-    background-image: url('rect46.png');
+    background-image: url('#');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -94,11 +98,31 @@ footer {
 
 .dictionary {
     width: calc(100% - 400px);
-    margin: 0 auto;
+    margin: 50px auto 0;
     position: relative;
     top: 0;
     left: 0;
     right: 0;
+}
+
+.dictionary h2 {
+    color: #333;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 30px auto 0;
+    padding: 10px 50px;
+    text-align: left;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+
+.dictionary p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 10px 50px;
+    text-align: left;
 }
 
 .table {
@@ -174,9 +198,33 @@ footer {
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.suggestions-list {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
 }
 
 #dictionaryList {
