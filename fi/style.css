@@ -1,11 +1,15 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Inter", sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #cccccc1c;
     color: #333;
-    background-image: url('rect46.png');
+    background-image: url('#');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -45,21 +49,24 @@ nav .nav-list li a:hover {
 }
 
 h1 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: "Permanent Marker", cursive;
+    font-weight: normal;
     text-align: center;
     margin: 50px;
 }
 
 h2 {
-    font-size: 20px;
+    font-family: "Inter", sans-serif;
     font-weight: normal;
-    margin: 0 0 20px;
-    font-family: 'Playwrite NO', cursive;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 30px 0;
 }
 
 main {
     padding: 0;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 20px;
     flex-grow: 1;
 }
@@ -77,9 +84,11 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
+    align-items: center;
     padding: 10px 0;
     width: 100%;
     margin-top: 50px;
+    font-size: 16px;
 }
 
 .container {
@@ -94,11 +103,31 @@ footer {
 
 .dictionary {
     width: calc(100% - 400px);
-    margin: 0 auto;
+    margin: 50px auto 0;
     position: relative;
     top: 0;
     left: 0;
     right: 0;
+}
+
+.dictionary h2 {
+    color: #333;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 30px auto 0;
+    padding: 10px 50px;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    text-transform: none;
+}
+
+.dictionary p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 10px 50px;
+    text-align: left;
 }
 
 .table {
@@ -141,7 +170,7 @@ footer {
 
 .custom-text {
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
     text-align: left;
 }
@@ -152,7 +181,7 @@ footer {
     margin-left: 250px;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     border: 1px solid #333;
     padding: 5px 10px;
     border-radius: 5px;
@@ -162,21 +191,45 @@ footer {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     border: 1px solid #333;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
 #searchInput {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.suggestions-list {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 0;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
 }
 
 #dictionaryList {
@@ -194,19 +247,19 @@ footer {
 
 .word {
     font-weight: regular;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .definition {
     font-style: italic;
-    font-size: 16px;
+    font-size: 17px;
 }
   
 #languageSelector {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Inter", sans-serif;
     margin-bottom: 20px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .translator {
@@ -226,7 +279,7 @@ label {
 }
 
 textarea {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 24px;
     width: 100%;
     padding: 20px;
@@ -245,11 +298,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .output-text {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .button-container {
@@ -263,12 +316,12 @@ button#copyButton {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     border: 1px solid #333;
     padding: 5px 10px;
     margin-top: 30px;
     border-radius: 5px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: transparent;
     cursor: pointer; 
         }
