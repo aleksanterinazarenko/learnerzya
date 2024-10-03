@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -26,16 +26,17 @@ header {
     text-align: center;
 }
 
-nav .nav-list {
-    list-style: none;
+.nav-list {
+    list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 30px;
     justify-content: center;
 }
 
-nav .nav-list li {
-    margin: 0 15px;
+.nav-list li {
+    position: relative;
 }
 
 nav .nav-list li a {
@@ -44,7 +45,7 @@ nav .nav-list li a {
     font-size: 16px;
 }
 
-nav .nav-list li a:hover {
+.nav-list a:hover {
     text-decoration: underline;
 }
 
@@ -56,27 +57,27 @@ h1 {
 }
 
 h2 {
-    font-family: "Inter", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
-    text-transform: uppercase;
-    font-size: 20px;
+    font-style: italic;
+    font-size: 19px;
     text-align: center;
     margin: 0 0 30px 0;
 }
 
 main {
     padding: 0;
-    font-family: "Inter", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
     flex-grow: 1;
 }
 
 p {
     color: #333;
-    font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
     padding: 10px 50px;
+    font-size: 16px;
     text-align: left;
   }
 
@@ -112,18 +113,22 @@ footer {
 
 .dictionary h2 {
     color: #333;
-    font-size: 20px;
     line-height: 1.5;
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: "Inter", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
     text-transform: none;
 }
 
 .dictionary p {
     color: #333;
-    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-style: italic;
     line-height: 1.5;
     margin: 0 auto;
     padding: 10px 50px;
@@ -170,7 +175,7 @@ footer {
 
 .custom-text {
     color: #333;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.5;
     text-align: left;
 }
@@ -191,15 +196,15 @@ footer {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 17px;
+    font-size: 16px;
     border: 1px solid #333;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
 #searchInput {
-    font-family: "Inter", sans-serif;
-    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
     width: 100%;
     padding: 10px;
     margin-top: 20px;
@@ -219,7 +224,7 @@ footer {
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    font-size: 17px;
+    font-size: 16px;
     padding: 0;
 }
 
@@ -229,6 +234,10 @@ footer {
 }
 
 .suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.highlight {
     background-color: #f0f0f0;
 }
 
@@ -256,10 +265,10 @@ footer {
 }
   
 #languageSelector {
-    font-family: "Inter", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 20px;
     padding: 5px;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .translator {
@@ -279,7 +288,7 @@ label {
 }
 
 textarea {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 24px;
     width: 100%;
     padding: 20px;
@@ -298,11 +307,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: "Inter", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .output-text {
-    font-family: "Inter", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .button-container {
@@ -321,7 +330,7 @@ button#copyButton {
     padding: 5px 10px;
     margin-top: 30px;
     border-radius: 5px;
-    font-family: "Inter", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
     cursor: pointer; 
         }
