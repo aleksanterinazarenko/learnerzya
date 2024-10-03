@@ -74,10 +74,10 @@ main {
 
 p {
     color: #333;
-    font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
     padding: 10px 50px;
+    font-size: 16px;
     text-align: left;
   }
 
@@ -113,19 +113,21 @@ footer {
 
 .dictionary h2 {
     color: #333;
-    font-size: 16px;
     line-height: 1.5;
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
     font-weight: bold;
+    font-style: normal;
     text-transform: none;
 }
 
 .dictionary p {
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
+    font-style: italic;
     line-height: 1.5;
     margin: 0 auto;
     padding: 10px 50px;

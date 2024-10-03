@@ -46,11 +46,11 @@
         <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
         <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
-        <p style="text-align: left; margin-top: 30px; padding: 0;">
+        <p style="text-align: left; font-size: 16px; font-style: normal; margin-top: 30px; padding: 0;">
           Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a>
       </p>
         
-        <div id="wordDetails" style="margin-top: 20px;"></div>
+        <div id="wordDetails" style="margin-top:50px;"></div>
     </div>
 </main>
 
@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentData = [];
     let selectedSuggestionIndex = -1;
     let filteredWords = [];
+    let isMouseOverSuggestion = false;
 
     function showWordDetails(entry) {
         wordDetails.innerHTML = `<h2>${entry.Word}</h2><p>${entry.Definition}</p>`;
@@ -98,11 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function highlightSuggestion(index) {
         const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
         suggestionItems.forEach((item, idx) => {
-            if (idx === index) {
-                item.classList.add('highlight');
-            } else {
-                item.classList.remove('highlight');
-            }
+            item.classList.toggle('highlight', idx === index);
         });
     }
 
@@ -132,11 +129,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     const suggestionItem = document.createElement('div');
                     suggestionItem.className = 'suggestion-item';
                     suggestionItem.textContent = entry.Word;
+
                     suggestionItem.onclick = () => {
+                        selectedSuggestionIndex = index;
+                        highlightSuggestion(selectedSuggestionIndex);
                         searchInput.value = entry.Word;
                         showWordDetails(entry);
                         suggestions.style.display = 'none';
                     };
+
+                    suggestionItem.onmouseover = () => {
+                        isMouseOverSuggestion = true;
+                        selectedSuggestionIndex = index; 
+                        highlightSuggestion(selectedSuggestionIndex);
+                    };
+
+                    suggestionItem.onmouseout = () => {
+                        isMouseOverSuggestion = false;
+                    };
+
                     suggestions.appendChild(suggestionItem);
                 });
                 suggestions.style.display = 'block';
@@ -150,24 +161,26 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('keydown', (event) => {
         const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
 
-        if (event.key === 'ArrowDown') {
-            if (selectedSuggestionIndex < suggestionItems.length - 1) {
-                selectedSuggestionIndex++;
-                highlightSuggestion(selectedSuggestionIndex);
-                suggestionItems[selectedSuggestionIndex].scrollIntoView(false);
-            }
-        } else if (event.key === 'ArrowUp') {
-            if (selectedSuggestionIndex > 0) {
-                selectedSuggestionIndex--;
-                highlightSuggestion(selectedSuggestionIndex);
-                suggestionItems[selectedSuggestionIndex].scrollIntoView(false);
-            }
-        } else if (event.key === 'Enter') {
-            if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < suggestionItems.length) {
-                const selectedWord = filteredWords[selectedSuggestionIndex];
-                searchInput.value = selectedWord.Word;
-                showWordDetails(selectedWord);
-                suggestions.style.display = 'none';
+        if (!isMouseOverSuggestion) {
+            if (event.key === 'ArrowDown') {
+                if (selectedSuggestionIndex < suggestionItems.length - 1) {
+                    selectedSuggestionIndex++;
+                    highlightSuggestion(selectedSuggestionIndex);
+                    suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (event.key === 'ArrowUp') {
+                if (selectedSuggestionIndex > 0) {
+                    selectedSuggestionIndex--;
+                    highlightSuggestion(selectedSuggestionIndex);
+                    suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (event.key === 'Enter') {
+                if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < suggestionItems.length) {
+                    const selectedWord = filteredWords[selectedSuggestionIndex];
+                    searchInput.value = selectedWord.Word;
+                    showWordDetails(selectedWord);
+                    suggestions.style.display = 'none';
+                }
             }
         }
     });
