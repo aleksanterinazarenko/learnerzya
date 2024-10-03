@@ -47,11 +47,11 @@
         <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
         <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
-        <p style="text-align: left; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-style: normal; margin-top: 30px; margin-bottom: 30px; padding: 0;">
+        <p style="text-align: left; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-style: normal; margin-top: 30px; padding: 0;">
             Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a>
         </p>
           
-        <div id="wordDetails" style="margin-top:50px;"></div>
+        <div id="wordDetails" style="margin-top: 30px;"></div>
     </div>
 </main>
 
@@ -153,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 suggestions.style.display = 'block';
             } else {
-                wordDetails.innerHTML = '<p>No results found.</p>';
                 suggestions.style.display = 'none';
             }
         }
