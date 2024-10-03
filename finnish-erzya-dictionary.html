@@ -73,6 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordDetails = document.getElementById('wordDetails');
 
     let currentData = [];
+    let selectedSuggestionIndex = -1;
+    let filteredWords = [];
+    let isMouseOverSuggestion = false;
 
     function showWordDetails(entry) {
         wordDetails.innerHTML = `<h2>${entry.Word}</h2><p>${entry.Definition}</p>`;
@@ -93,45 +96,94 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error loading the dictionary:', error));
     }
 
-    searchInput.addEventListener('input', (event) => {
-    const query = event.target.value.toLowerCase();
-    suggestions.innerHTML = '';
-
-    if (query === "") {
-        wordDetails.innerHTML = '';
-        suggestions.style.display = 'none';
-    } else {
-        const filteredWords = currentData
-            .filter(entry => entry.Word.toLowerCase().includes(query))
-            .sort((a, b) => {
-                const aStartsWith = a.Word.toLowerCase().startsWith(query);
-                const bStartsWith = b.Word.toLowerCase().startsWith(query);
-                
-                if (aStartsWith && !bStartsWith) return -1;
-                if (!aStartsWith && bStartsWith) return 1;
-
-                return a.Word.length - b.Word.length;
-            });
-
-        if (filteredWords.length > 0) {
-            filteredWords.forEach(entry => {
-                const suggestionItem = document.createElement('div');
-                suggestionItem.className = 'suggestion-item';
-                suggestionItem.textContent = entry.Word;
-                suggestionItem.onclick = () => {
-                    searchInput.value = entry.Word;
-                    showWordDetails(entry);
-                    suggestions.style.display = 'none';
-                };
-                suggestions.appendChild(suggestionItem);
-            });
-            suggestions.style.display = 'block';
-        } else {
-            wordDetails.innerHTML = '<p>No results found.</p>';
-            suggestions.style.display = 'none';
-        }
+    function highlightSuggestion(index) {
+        const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
+        suggestionItems.forEach((item, idx) => {
+            item.classList.toggle('highlight', idx === index);
+        });
     }
-});
+
+    searchInput.addEventListener('input', (event) => {
+        const query = event.target.value.toLowerCase();
+        suggestions.innerHTML = '';
+        selectedSuggestionIndex = -1;
+
+        if (query === "") {
+            wordDetails.innerHTML = '';
+            suggestions.style.display = 'none';
+        } else {
+            filteredWords = currentData
+                .filter(entry => entry.Word.toLowerCase().includes(query))
+                .sort((a, b) => {
+                    const aStartsWith = a.Word.toLowerCase().startsWith(query);
+                    const bStartsWith = b.Word.toLowerCase().startsWith(query);
+                    
+                    if (aStartsWith && !bStartsWith) return -1;
+                    if (!aStartsWith && bStartsWith) return 1;
+
+                    return a.Word.length - b.Word.length;
+                });
+
+            if (filteredWords.length > 0) {
+                filteredWords.forEach((entry, index) => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.className = 'suggestion-item';
+                    suggestionItem.textContent = entry.Word;
+
+                    suggestionItem.onclick = () => {
+                        selectedSuggestionIndex = index;
+                        highlightSuggestion(selectedSuggestionIndex);
+                        searchInput.value = entry.Word;
+                        showWordDetails(entry);
+                        suggestions.style.display = 'none';
+                    };
+
+                    suggestionItem.onmouseover = () => {
+                        isMouseOverSuggestion = true;
+                        selectedSuggestionIndex = index; 
+                        highlightSuggestion(selectedSuggestionIndex);
+                    };
+
+                    suggestionItem.onmouseout = () => {
+                        isMouseOverSuggestion = false;
+                    };
+
+                    suggestions.appendChild(suggestionItem);
+                });
+                suggestions.style.display = 'block';
+            } else {
+                wordDetails.innerHTML = '<p>No results found.</p>';
+                suggestions.style.display = 'none';
+            }
+        }
+    });
+
+    searchInput.addEventListener('keydown', (event) => {
+        const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
+
+        if (!isMouseOverSuggestion) {
+            if (event.key === 'ArrowDown') {
+                if (selectedSuggestionIndex < suggestionItems.length - 1) {
+                    selectedSuggestionIndex++;
+                    highlightSuggestion(selectedSuggestionIndex);
+                    suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (event.key === 'ArrowUp') {
+                if (selectedSuggestionIndex > 0) {
+                    selectedSuggestionIndex--;
+                    highlightSuggestion(selectedSuggestionIndex);
+                    suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (event.key === 'Enter') {
+                if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < suggestionItems.length) {
+                    const selectedWord = filteredWords[selectedSuggestionIndex];
+                    searchInput.value = selectedWord.Word;
+                    showWordDetails(selectedWord);
+                    suggestions.style.display = 'none';
+                }
+            }
+        }
+    });
 
     languageSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
