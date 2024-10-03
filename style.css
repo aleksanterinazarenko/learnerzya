@@ -117,17 +117,17 @@ footer {
     margin: 50px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: bold;
     font-style: normal;
     text-transform: none;
 }
 
 .dictionary p {
     color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
     font-style: italic;
     line-height: 1.5;
     margin: 0 auto;
@@ -288,7 +288,7 @@ label {
 }
 
 textarea {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 24px;
     width: 100%;
     padding: 20px;
@@ -307,11 +307,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .output-text {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .button-container {
