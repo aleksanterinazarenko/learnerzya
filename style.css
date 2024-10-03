@@ -42,7 +42,7 @@ header {
 nav .nav-list li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .nav-list a:hover {
@@ -60,7 +60,7 @@ h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
     font-style: italic;
-    font-size: 19px;
+    font-size: 20px;
     text-align: center;
     margin: 0 0 30px 0;
 }
@@ -89,7 +89,7 @@ footer {
     padding: 10px 0;
     width: 100%;
     margin-top: 50px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .container {
@@ -104,7 +104,7 @@ footer {
 
 .dictionary {
     width: calc(100% - 400px);
-    margin: 50px auto 0;
+    margin: 75px auto 0;
     position: relative;
     top: 0;
     left: 0;
@@ -112,22 +112,22 @@ footer {
 }
 
 .dictionary h2 {
-    color: #333;
+    color: #B22222;
     line-height: 1.5;
-    margin: 30px auto 0;
+    margin: 50px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
     font-style: normal;
     text-transform: none;
 }
 
 .dictionary p {
     color: #333;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
     font-style: italic;
     line-height: 1.5;
     margin: 0 auto;
@@ -175,7 +175,7 @@ footer {
 
 .custom-text {
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
     text-align: left;
 }
@@ -196,7 +196,7 @@ footer {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     border: 1px solid #333;
     padding: 5px 10px;
     border-radius: 5px;
@@ -204,7 +204,7 @@ footer {
 
 #searchInput {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     width: 100%;
     padding: 10px;
     margin-top: 20px;
@@ -224,7 +224,7 @@ footer {
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 17px;
     padding: 0;
 }
 
@@ -268,7 +268,7 @@ footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 20px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .translator {
@@ -288,7 +288,7 @@ label {
 }
 
 textarea {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 24px;
     width: 100%;
     padding: 20px;
