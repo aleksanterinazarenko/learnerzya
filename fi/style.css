@@ -53,7 +53,7 @@ h1 {
     font-family: "Permanent Marker", cursive;
     font-weight: normal;
     text-align: center;
-    color: #162d50ff;
+    color: #21427a;
     margin: 50px;
 }
 
@@ -236,7 +236,7 @@ tr:last-child td {
 }
 
 #searchInput {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 17px;
     width: 100%;
     padding: 10px;
