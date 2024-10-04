@@ -1838,11 +1838,12 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
 
 <script>
-    if (window.innerWidth <= 768) {
-        window.location.href = 'grammar-mobile.html';
-    }
-</script>
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            window.location.href = "grammar-mobile.html";
+        }
+    </script>
