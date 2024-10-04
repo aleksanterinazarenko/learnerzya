@@ -65,8 +65,11 @@ h2 {
 
 .table td {
     padding: 0.1rem;
-    vertical-align: top;
     position: relative;
+}
+
+td {
+    vertical-align: top;
 }
 
 footer {
