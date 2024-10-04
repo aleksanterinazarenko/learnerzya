@@ -149,7 +149,7 @@ textarea:focus {
 }
 
 #dictionaryList li {
-    padding: 5px 10px;
+    padding: 10px 10px;
     line-height: 1.5;
     border-bottom: none;
     background-color: transparent;
