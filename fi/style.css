@@ -42,7 +42,7 @@ header {
 nav .nav-list li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .nav-list a:hover {
@@ -60,7 +60,7 @@ h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
     font-style: italic;
-    font-size: 19px;
+    font-size: 20px;
     text-align: center;
     margin: 0 0 30px 0;
 }
@@ -76,7 +76,7 @@ p {
     color: #333;
     line-height: 1.5;
     margin: 0 auto;
-    padding: 10px 50px;
+    padding: 0 50px;
     font-size: 16px;
     text-align: left;
   }
@@ -89,7 +89,7 @@ footer {
     padding: 10px 0;
     width: 100%;
     margin-top: 50px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .container {
@@ -111,14 +111,25 @@ footer {
     right: 0;
 }
 
+#wordDetails {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+#wordDetails:empty {
+    display: none;
+}
+
 .dictionary h2 {
-    color: #333;
+    color: #B22222;
     line-height: 1.5;
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
     font-weight: bold;
     font-style: normal;
     text-transform: none;
@@ -126,11 +137,11 @@ footer {
 
 .dictionary p {
     color: #333;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
     font-style: italic;
     line-height: 1.5;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     padding: 10px 50px;
     text-align: left;
 }
@@ -170,7 +181,7 @@ footer {
     align-items: center;
     padding: 20px;
     border: 1px solid #333;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .custom-text {
@@ -186,7 +197,7 @@ footer {
     margin-left: 250px;
     text-decoration: none;
     color: #333;
-    font-size: 17px;
+    font-size: 16px;
     border: 1px solid #333;
     padding: 5px 10px;
     border-radius: 5px;
@@ -204,7 +215,7 @@ footer {
 
 #searchInput {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     width: 100%;
     padding: 10px;
     margin-top: 20px;
@@ -224,7 +235,7 @@ footer {
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 17px;
     padding: 0;
 }
 
@@ -288,7 +299,7 @@ label {
 }
 
 textarea {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     width: 100%;
     padding: 20px;
@@ -307,11 +318,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .output-text {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .button-container {
@@ -325,7 +336,7 @@ button#copyButton {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 17px;
+    font-size: 16px;
     border: 1px solid #333;
     padding: 5px 10px;
     margin-top: 30px;
