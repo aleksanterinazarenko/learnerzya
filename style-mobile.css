@@ -150,7 +150,7 @@ textarea:focus {
 
 #dictionaryList li {
     padding: 10px 10px;
-    line-height: 1;
+    line-height: 1.5;
     border-bottom: none;
     background-color: transparent;
 }
