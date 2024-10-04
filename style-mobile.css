@@ -72,6 +72,23 @@ td {
     vertical-align: top;
 }
 
+tr {
+    vertical-align: top;
+}
+
+td {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
 footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
