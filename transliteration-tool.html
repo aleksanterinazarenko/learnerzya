@@ -130,6 +130,8 @@ function transliterate(text) {
         return p1.toLowerCase() + p2;
     });
 
+    text = text.replace(/«/g, '”').replace(/»/g, '”');
+
     for (const [key, value] of Object.entries(palatals)) {
         const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
         text = text.replace(regexVowel, value + '-$1');
