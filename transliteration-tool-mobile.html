@@ -30,6 +30,9 @@
                 <textarea id="outputText" class="output-text" readonly placeholder="Transliterated text will appear here..."></textarea>
             </div>
         </div>
+        <div class="button-container">
+            <button id="copyButton">Copy result</button>
+        </div>
     </main>
 
     <style>
@@ -62,6 +65,14 @@ document.getElementById('inputText').addEventListener('input', function() {
         const outputText = transliterate(inputText);
         document.getElementById('outputText').value = outputText;
     }
+
+    document.getElementById('copyButton').addEventListener('click', function() {
+    const outputText = document.getElementById('outputText');
+    outputText.select();
+    outputText.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    alert('Text copied to clipboard');
+});
     
     const letters = {
         "А": "A", "Б": "B", "В": "V", "Г": "G", "Д": "D", "Е": "E", "Ё": "O", "Ж": "Ž", "З": "Z", "И": "I", "Й": "J",
