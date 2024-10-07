@@ -3,16 +3,17 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Calibri', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f91c;
+    background-color: white;
     color: #333;
-    background-image: url('#');
+    background-image: url('rect38.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: auto;
+    background-position: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -58,7 +59,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-weight: normal;
     font-style: italic;
     font-size: 20px;
@@ -68,7 +69,7 @@ h2 {
 
 main {
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-size: 20px;
     flex-grow: 1;
 }
@@ -117,7 +118,7 @@ footer {
 }
 
 #wordDetails {
-    background-color: white;
+    background-color: transparent;
     border: 1px solid #ccc;
     border-radius: 5px;
     position: relative;
@@ -133,8 +134,8 @@ footer {
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 17px;
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
     font-weight: bold;
     font-style: normal;
     text-transform: none;
@@ -142,9 +143,9 @@ footer {
 
 .dictionary p {
     color: #333;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 17px;
-    font-style: italic;
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    font-style: normal;
     line-height: 1.5;
     margin: 0 auto 30px;
     padding: 10px 50px;
@@ -236,15 +237,21 @@ tr:last-child td {
 }
 
 #searchInput {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-size: 16px;
     width: 100%;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .suggestions-list {
@@ -298,10 +305,11 @@ tr:last-child td {
 }
   
 #languageSelector {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 20px;
+    font-family: 'Calibri', sans-serif;
     padding: 5px;
+    margin-bottom: 10px;
     font-size: 16px;
+    border: 1px solid #333;
 }
 
 .translator {
@@ -321,7 +329,7 @@ label {
 }
 
 textarea {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 24px;
     width: 100%;
     padding: 20px;
@@ -340,11 +348,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Calibri', sans-serif;
 }
 
 .output-text {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Calibri', sans-serif;
 }
 
 .button-container {
@@ -363,7 +371,7 @@ button#copyButton {
     padding: 5px 10px;
     margin-top: 30px;
     border-radius: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Calibri', sans-serif;
     background-color: transparent;
     cursor: pointer; 
         }
