@@ -135,7 +135,7 @@ footer {
     padding: 10px 50px;
     text-align: left;
     font-family: 'Calibri', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     font-style: normal;
     text-transform: none;
@@ -144,7 +144,7 @@ footer {
 .dictionary p {
     color: #333;
     font-family: 'Calibri', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-style: normal;
     line-height: 1.5;
     margin: 0 auto 30px;
@@ -329,7 +329,7 @@ label {
 }
 
 textarea {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 24px;
     width: 100%;
     padding: 20px;
