@@ -94,6 +94,16 @@ const nondentals = "БВГЖКПМШбвгжкпмш";
 function transliterate(text) {
     text = " " + text + " ";
 
+    text = text.replace(/([\u0301])/g, '');
+
+    for (const [key, value] of Object.entries(palatals)) {
+        const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
+        text = text.replace(regexVowel, value + '-$1');
+
+        const regexNoVowel = new RegExp(key + 'ь', 'g');
+        text = text.replace(regexNoVowel, value);
+    }
+
     text = text.replace(/([е])([и])([я])([і])/g, '$1j$2j$3');
     text = text.replace(/([аоуыэяёюиеъьіӕ])([еёиюяі])/g, '$1j$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪЬІӔ])([еёиюяі])/g, '$1j$2');
@@ -126,19 +136,9 @@ function transliterate(text) {
     text = text.replace(/Е/g, 'E');
     text = text.replace(/([ИЕЁЮЯ])([^А-Я])/g, function(match, p1, p2) {
         return p1.toLowerCase() + p2;
-    });
 
     text = text.replace(/«/g, '”').replace(/»/g, '”');
-
-    for (const [key, value] of Object.entries(palatals)) {
-        const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
-        text = text.replace(regexVowel, value + '-$1');
-
-        const regexNoVowel = new RegExp(key + 'ь', 'g');
-        text = text.replace(regexNoVowel, value);
-
-        text = text.replace(new RegExp(key + `([${front}])`, 'g'), value + '$1');
-    }
+    });
 
     return text.trim().split('').map(char => letters[char] || char).join('');
     
