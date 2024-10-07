@@ -7,12 +7,13 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f91c;
+    background-color: white;
     color: #333;
-    background-image: url('#');
+    background-image: url('rect38.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: auto;
+    background-position: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -117,7 +118,7 @@ footer {
 }
 
 #wordDetails {
-    background-color: white;
+    background-color: transparent;
     border: 1px solid #ccc;
     border-radius: 5px;
     position: relative;
@@ -135,7 +136,7 @@ footer {
     text-align: left;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     text-transform: none;
 }
@@ -247,6 +248,12 @@ tr:last-child td {
     box-sizing: border-box;
 }
 
+#searchInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .suggestions-list {
     border: 1px solid #ccc;
     max-height: 200px;
@@ -300,7 +307,9 @@ tr:last-child td {
 #languageSelector {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 5px;
+    margin-bottom: 10px;
     font-size: 16px;
+    border: 1px solid #333;
 }
 
 .translator {
