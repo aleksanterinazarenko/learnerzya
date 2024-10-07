@@ -140,7 +140,7 @@ function transliterate(text) {
     text = text.replace(/([ИЕЁЮЯ])([^А-Я])/g, function(match, p1, p2) {
         return p1.toLowerCase() + p2;
 
-        text = text.replace(/«/g, '”').replace(/»/g, '”');
+        text = text.replace(/«/g, '„').replace(/»/g, '“');
     });
 
     return text.trim().split('').map(char => letters[char] || char).join('');
