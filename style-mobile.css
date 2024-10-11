@@ -170,7 +170,7 @@ textarea:focus {
 }
 
 #languageSelector {
-    font-family: Cambria, Georgia, serif;
+    font-family: 'Roboto';
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
@@ -191,5 +191,4 @@ button#copyButton {
     font-size: 16px;
     padding: 5px 10px;
     margin-top: 30px;
-    font-family: Cambria, Georgia, serif;
-        }
+    font-family: 'Roboto';
