@@ -1,12 +1,12 @@
 body {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     background: #333;
     color: white;
     padding: 0.1rem;
@@ -50,7 +50,7 @@ p {
 }
 
 h2 {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     font-size: 20px;
     font-weight: normal;
     font-style: italic;
@@ -90,7 +90,7 @@ tr:last-child td {
 }
 
 footer {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     text-align: center;
     padding: 1rem;
     background: #333;
@@ -112,7 +112,7 @@ footer {
 }
 
 textarea {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     font-size: 16px;
     line-height: 20px;
     width: calc(100% - 40px);
@@ -132,7 +132,7 @@ textarea:focus {
 }
 
 #searchInput {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     font-family: auto;
     font-size: 16px;
     width: calc(100% - 40px);
@@ -156,21 +156,21 @@ textarea:focus {
 }
 
 .word {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     font-weight: regular;
     font-size: 16px;
     color: #333;
 }
 
 .definition {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     font-style: italic;
     font-size: 16px;
     color: #333;
 }
 
 #languageSelector {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
@@ -191,5 +191,5 @@ button#copyButton {
     font-size: 16px;
     padding: 5px 10px;
     margin-top: 30px;
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Georgia, serif;
         }
