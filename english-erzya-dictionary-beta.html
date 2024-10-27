@@ -80,17 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
         wordDetails.innerHTML = `<h2>${entry.Word}</h2><p>${entry.Definition}</p>`;
 
         if (entry["ExampleW#1"] && entry["ExampleD#1"]) {
-        wordDetails.innerHTML += "<div><strong>Examples:</strong><ul>";
+            wordDetails.innerHTML += "<ul>";
 
         for (let i = 0; i < entry["ExampleW#1"].length; i++) {
-            const englishExample = entry["ExampleW#1"][i];
-            const erzyaExample = entry["ExampleD#1"][i];
-            wordDetails.innerHTML += `<li><em>${englishExample}</em> - ${erzyaExample}</li>`;
+            const ExampleW = entry["ExampleW#1"][i];
+            const ExampleD = entry["ExampleD#1"][i];
+            wordDetails.innerHTML += `<li><em>${ExampleW}</em> - ${ExampleD}</li>`;
         }
 
         wordDetails.innerHTML += "</ul></div>";
     }
-}
 
     function loadDictionary(url) {
         fetch(url)
