@@ -61,6 +61,25 @@
 </body>
 </html>
 
+<style>
+    #wordDetails ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#wordDetails li {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+#wordDetails li em {
+    font-weight: bold;
+    color: #333;
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const latinJsonURL = 'https://raw.githubusercontent.com/aleksanterinazarenko/databases/refs/heads/main/enmyv-lat.json';
@@ -81,24 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (entry["ExampleW#1"] && entry["ExampleD#1"]) {
             wordDetails.innerHTML += "<ul>";
-
-        for (let i = 0; i < entry["ExampleW#1"].length; i++) {
-            const ExampleW = entry["ExampleW#1"][i];
-            const ExampleD = entry["ExampleD#1"][i];
-            wordDetails.innerHTML += `<li><em>${ExampleW}</em> - ${ExampleD}</li>`;
+            for (let i = 0; i < entry["ExampleW#1"].length; i++) {
+                const ExampleW = entry["ExampleW#1"][i];
+                const ExampleD = entry["ExampleD#1"][i];
+                wordDetails.innerHTML += `<li><em>${ExampleW}</em> - ${ExampleD}</li>`;
+            }
+            wordDetails.innerHTML += "</ul>";
         }
-
-        wordDetails.innerHTML += "</ul></div>";
     }
 
     function loadDictionary(url) {
         fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
                 currentData = data;
                 suggestions.innerHTML = '';
@@ -120,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (query === "") {
             wordDetails.innerHTML = '';
-            suggestions.style.display = 'none';
+            suggestions.classList.add('hidden');
         } else {
             filteredWords = currentData
                 .filter(entry => entry.Word.toLowerCase().includes(query))
@@ -145,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         highlightSuggestion(selectedSuggestionIndex);
                         searchInput.value = entry.Word;
                         showWordDetails(entry);
-                        suggestions.style.display = 'none';
+                        suggestions.classList.add('hidden');
                     };
 
                     suggestionItem.onmouseover = () => {
@@ -160,9 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     suggestions.appendChild(suggestionItem);
                 });
-                suggestions.style.display = 'block';
+                suggestions.classList.remove('hidden');
             } else {
-                suggestions.style.display = 'none';
+                suggestions.classList.add('hidden');
             }
         }
     });
@@ -188,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const selectedWord = filteredWords[selectedSuggestionIndex];
                     searchInput.value = selectedWord.Word;
                     showWordDetails(selectedWord);
-                    suggestions.style.display = 'none';
+                    suggestions.classList.add('hidden');
                 }
             }
         }
@@ -202,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadDictionary(latinJsonURL);
 });
-
 </script>
 
 </body>
