@@ -91,6 +91,13 @@
 .example em, .quote em {
     color: #B22222;
 }
+
+.source {
+    text-align: right; 
+    font-style: italic; 
+    color: grey
+}
+
 </style>
 
 <script>
@@ -143,7 +150,7 @@
                 <div class='quote'>
                     <em>${QuoteW}</em>${QuoteD}
                     <div class='source'>
-                    ${QuoteS ? `<span style="font-style: normal;">(</span>${QuoteS}<span style="font-style: normal;">)</span>` : ''}
+                    ${QuoteS ? `<span style="font-style: normal">(</span>${QuoteS}<span style="font-style: normal">)</span>` : ''}
                     </div>
                 </div>`;
         }
