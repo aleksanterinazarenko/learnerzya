@@ -91,10 +91,6 @@
 .example em, .quote em {
     color: #B22222;
 }
-
-.source {
-    text-align: right;
-}
 </style>
 
 <script>
@@ -145,8 +141,10 @@
         if (QuoteW && QuoteD) {
             quotesHtml += `
                 <div class='quote'>
-                    <em>${QuoteW}</em>&ensp;${QuoteD}
-                    <div class='source'>${QuoteS ? `(${QuoteS})` : ''}</div>
+                    <em>${QuoteW}</em>${QuoteD}
+                    <div class='source'>
+                    ${QuoteS ? `<span style="font-style: normal;">(</span>${QuoteS}<span style="font-style: normal;">)</span>` : ''}
+                    </div>
                 </div>`;
         }
     }
