@@ -146,6 +146,7 @@ textarea:focus {
     list-style-type: none;
     padding: 0 20px;
     margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #dictionaryList li {
