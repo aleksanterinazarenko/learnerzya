@@ -159,11 +159,9 @@
                 const aStartsWith = a.Word.toLowerCase().startsWith(query);
                 const bStartsWith = b.Word.toLowerCase().startsWith(query);
                 
-                // Sort by whether the word starts with the query first
                 if (aStartsWith && !bStartsWith) return -1;
                 if (!aStartsWith && bStartsWith) return 1;
 
-                // If both start with or neither starts with the query, sort by length
                 return a.Word.length - b.Word.length;
             });
 
@@ -237,5 +235,8 @@
     });
 </script>
 
-</body>
-</html>
+<script>
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+    window.location.href = 'wikipedia-mobile.html';
+    }
+    </script>

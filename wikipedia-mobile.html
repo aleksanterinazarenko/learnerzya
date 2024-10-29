@@ -31,10 +31,10 @@
         </select>
         <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
         <div id="suggestions" class="suggestions-list" style="display: none;"></div>
-        <div id="wordDetails" class="word-details"></div>
-    </div>
 
-    <p class="source-info">Source: <a href="https://wikipedia.org/" class="source-link">Wikipedia</a></p>
+    <div id="wordDetails" class="word-details"></div>
+</div>
+
 </main>
     </main>
 
@@ -61,6 +61,7 @@
           border: 1px solid #ccc;
           border-top: none;
           max-height: 200px;
+          padding: 0 20px;
           overflow-y: auto;
           background-color: #fff;
       }
@@ -75,20 +76,9 @@
       }
 
       .word-details {
-          padding: 15px;
+          padding: 10px;
           text-align: left;
           font-size: 16px;
-      }
-
-      .source-info {
-          font-size: 16px;
-          text-align: center;
-          margin-top: 20px;
-      }
-
-      .source-link {
-          color: #333;
-          text-decoration: none;
       }
 
       .entry {
@@ -119,7 +109,7 @@
             let isMouseOverSuggestion = false;
 
             function showWordDetails(entry) {
-                wordDetails.innerHTML = `<h2>${entry.Word}</h2><p>${entry.Definition}</p>`;
+                wordDetails.innerHTML = `<h2 style="color: #B22222;">${entry.Word}</h2><p>${entry.Definition}</p>`;
             }
 
             function loadDictionary(url) {
