@@ -146,7 +146,6 @@ textarea:focus {
     list-style-type: none;
     padding: 0 20px;
     margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #dictionaryList li {
@@ -157,14 +156,14 @@ textarea:focus {
 }
 
 .word {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: regular;
     font-size: 16px;
     color: #333;
 }
 
 .definition {
-    font-family: 'Calibri', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
     font-size: 16px;
     color: #333;
