@@ -163,7 +163,7 @@ textarea:focus {
 }
 
 .definition {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Calibri', sans-serif;
     font-style: italic;
     font-size: 16px;
     color: #333;
