@@ -110,7 +110,7 @@
 
     function showWordDetails(entry) {
     const categoryDisplay = entry.Category ? `<span style="font-weight: normal;">${entry.Category}</span>` : ''; 
-    wordDetails.innerHTML = `<p style="margin-bottom: 20px;">${categoryDisplay}</p><p>${entry.Definition}</p>`;
+    wordDetails.innerHTML = `<p style="margin-bottom: 20px; color: #B22222;">${categoryDisplay}</p><p>${entry.Definition}</p>`;
         
         wordDetails.style.display = 'block';
         suggestions.style.display = 'none';
