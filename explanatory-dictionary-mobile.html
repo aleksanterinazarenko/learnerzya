@@ -109,7 +109,8 @@
     let isMouseOverSuggestion = false;
 
     function showWordDetails(entry) {
-        wordDetails.innerHTML = `<p>${entry.Category}</p><p>${entry.Definition}</p>`;
+    const categoryDisplay = entry.Category ? `<span style="font-weight: normal;">${entry.Category}</span>` : ''; 
+    wordDetails.innerHTML = `<p>${categoryDisplay}</p><p>${entry.Definition}</p>`;
         
         wordDetails.style.display = 'block';
         suggestions.style.display = 'none';
