@@ -109,35 +109,51 @@
     let isMouseOverSuggestion = false;
 
     function showWordDetails(entry) {
-        wordDetails.innerHTML = `<p>${entry.Definition}</p>`;
+        wordDetails.innerHTML = `<p>${entry.Category}</p><p>${entry.Definition}</p>`;
         
         wordDetails.style.display = 'block';
         suggestions.style.display = 'none';
     }
 
     function loadDictionary(url) {
-        fetch(url)
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => {
-                currentData = [];
-                let lastEntry = null;
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            currentData = [];
+            let lastEntry = null;
 
-                data.forEach(entry => {
-                    if (entry.Word) {
-                        if (lastEntry && lastEntry.Definition) currentData.push(lastEntry);
-                        lastEntry = { Word: entry.Word, Definition: entry.Definition };
-                    } else if (lastEntry && entry.Definition) {
+            data.forEach(entry => {
+                if (entry.Word) {
+
+                    if (lastEntry && lastEntry.Definition) {
+                        currentData.push(lastEntry);
+                    }
+
+                    lastEntry = {
+                        Word: entry.Word,
+                        Definition: entry.Definition,
+                        Category: entry.Category
+                    };
+                } else if (lastEntry) {
+                    if (entry.Definition) {
                         lastEntry.Definition += `<div class="entry">${entry.Definition}</div>`;
                     }
-                });
-                if (lastEntry) currentData.push(lastEntry);
-                suggestions.innerHTML = '';
-            })
-            .catch(error => console.error('Error loading the dictionary:', error));
-    }
+                }
+            });
+
+            if (lastEntry) {
+                currentData.push(lastEntry);
+            }
+
+            suggestions.innerHTML = '';
+        })
+        .catch(error => console.error('Error loading the dictionary:', error));
+}
 
     function highlightSuggestion(index) {
         const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
