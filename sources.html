@@ -52,7 +52,7 @@
 </html>
 
 <script>
-    if (window.innerWidth <= 768) {
-        window.location.href = 'sources-mobile.html';
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+    window.location.href = 'sources-mobile.html';
     }
     </script>

@@ -191,14 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadDictionary(latinJsonURL);
 });
-
 </script>
 
 </body>
 </html>
 
 <script>
-  if (window.innerWidth <= 768) {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
     window.location.href = 'english-erzya-dictionary-mobile.html';
   }
   </script>

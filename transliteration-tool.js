@@ -1,59 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transliteration tool</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">Main Page</a></li>
-                <li><a href="dictionaries.html">Dictionaries</a></li>
-                <li><a href="grammar.html">Grammar</a></li>
-                <li><a href="transliteration-tool.html">Transliteration tool</a></li>
-                <li><a href="about-the-spelling.html">About the spelling</a></li>
-                <li><a href="sources.html">Sources</a></li>
-                <li><a href="https://www.linkedin.com/in/aleksanterinaz/">Contact</a></li>
-                <li><a href="https://aleksanterinazarenko.github.io/interactivemap-europe/">Interactive maps</a></li>
-                <li>
-                    <a href="/learnerzya/fi/transliteration-tool.html">
-                        <img src="fi.svg" style="width: 20px; height: auto;">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <a href="/learnerzya/index.html" style="color: #333; text-decoration: none;"><h1>Learn Erzya</h1></a>
-
-        <div class="container">
-            <h2>Transliteration tool</h2>
-            <div class="translator">
-                <textarea id="inputText" class="input-text" placeholder="Enter Cyrillic text here..."></textarea>
-                <textarea id="outputText" class="output-text" readonly placeholder="Transliterated text will appear here..."></textarea>
-            </div>
-            <div class="button-container">
-            <button id="copyButton">Copy result</button>
-        </div>
-        </div>
-    </main>
-
-    <footer>
-        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024 Aleksanteri Nazarenko</a>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-<script>
 document.getElementById('inputText').addEventListener('input', function() {
     updateOutputText();
 });
@@ -63,6 +7,8 @@ function updateOutputText() {
     const outputText = transliterate(inputText);
     document.getElementById('outputText').value = outputText;
 }
+
+export { transliterateToLatin };
 
 document.getElementById('copyButton').addEventListener('click', function() {
     const outputText = document.getElementById('outputText');
@@ -150,11 +96,4 @@ for (const [key, value] of Object.entries(palatals)) {
 }
 
     return text.trim().split('').map(char => letters[char] || char).join('');
-    
-}</script>
-
-<script>
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-    window.location.href = 'transliteration-tool-mobile.html';
-    }
-    </script>
+}
