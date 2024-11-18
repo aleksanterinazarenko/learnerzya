@@ -62,7 +62,7 @@ nav ul li a {
 
 p {
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
     margin: 10px 0;
     padding-right: 20px;
@@ -141,7 +141,7 @@ footer {
 
 textarea {
     font-family: 'Calibri', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 20px;
     width: calc(100% - 40px);
     padding: 10px;
@@ -153,6 +153,7 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+
 textarea:focus {
     outline: none;
     border-color: #007bff;
@@ -162,7 +163,7 @@ textarea:focus {
 #searchInput {
     font-family: 'Calibri', sans-serif;
     font-family: auto;
-    font-size: 16px;
+    font-size: 17px;
     width: calc(100% - 40px);
     padding: 10px;
     margin: 10px 20px 20px 20px;
@@ -184,16 +185,16 @@ textarea:focus {
 }
 
 .word {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Calibri', sans-serif;
     font-weight: regular;
-    font-size: 16px;
+    font-size: 17px;
     color: #333;
 }
 
 .definition {
     font-family: 'Calibri', sans-serif;
     font-style: italic;
-    font-size: 16px;
+    font-size: 17px;
     color: #333;
 }
 
@@ -202,7 +203,7 @@ textarea:focus {
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .button-container {
@@ -216,7 +217,7 @@ button#copyButton {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 17px;
     padding: 5px 10px;
     margin-top: 30px;
     font-family: 'Calibri', sans-serif;
