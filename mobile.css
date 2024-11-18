@@ -35,7 +35,7 @@ nav ul li a {
 
 @font-face {
     font-family: 'Calibri';
-    src: url('/calibri-regular.ttf') format('regular'),
+    src: url('calibri-regular.ttf') format('regular'),
 }
 
 .container {
