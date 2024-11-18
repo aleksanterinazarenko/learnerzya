@@ -1,5 +1,5 @@
 body {
-    font-family: 'Calibri', sans-serif;
+    font-family: 'Calibri', sans-serif !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -34,7 +34,7 @@ nav ul li a {
 }
 
 @font-face {
-    font-family: 'Calibri';
+    font-family: 'Calibri', sans-serif;
     src: url('calibri-regular.ttf') format('truetype'),
 }
 
@@ -70,7 +70,7 @@ footer {
 }
 
 body {
-    font-family: 'Calibri', sans-serif;
+    font-family: 'Calibri', sans-serif !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -108,7 +108,7 @@ textarea:focus {
 
 main {
 padding: 20px;
-font-family: 'Calibri', sans-serif;
+font-family: 'Calibri', sans-serif !important;
 font-size: 20px;
 text-align: center;
 }
@@ -143,7 +143,7 @@ font-size: 20px;
 font-weight: normal;
 text-align: center;
 margin: 0 0 20px;
-font-family: 'Playwrite NO', cursive;
+font-family: 'Calibri', sans-serif !important;
 }
 
 .table p {
