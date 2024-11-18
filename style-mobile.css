@@ -32,6 +32,24 @@ nav ul li a {
     text-decoration: underline;
 }
 
+.nav-select {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Calibri';
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-select option {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
 @font-face {
     font-family: 'Calibri';
     src: url('fonts/calibri-regular.ttf') format('truetype');
@@ -162,7 +180,6 @@ textarea:focus {
 
 #searchInput {
     font-family: 'Calibri', sans-serif;
-    font-family: auto;
     font-size: 17px;
     width: calc(100% - 40px);
     padding: 10px;
