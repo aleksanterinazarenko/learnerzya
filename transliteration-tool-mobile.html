@@ -77,13 +77,11 @@ const nondentals = "БВГЖКПМШбвгжкпмш";
 function transliterate(text) {
     text = " " + text + " ";
 
-    text = text.replace(/([\u0301])/g, '');
-
-    text = text.replace(/([дзлнрстц])ь(?=[дзнрстхц]+[еёияіь])/g, '$1');
+    text = text.replace(/([дзлнрстц])ь(?=[дзлнрстхц]+[еёияіь])/g, '$1');
     text = text.replace(/([дзлнрстц])ь(?=[дзнрстхц]+[эы])/g, '$1');
     text = text.replace(/([дзлнрстц])ь(?=[еёияіь])/g, '$1j');
-    text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(?=[бвгджзклмнпрстфхцчшщъ])/g, '$1ų');
-    text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])/g, '$1ų$2');
+
+    text = text.replace(/([\u0301])/g, '');
 
     text = text.replace(/([е])([и])([я])([і])/g, '$1j$2j$3');
     text = text.replace(/([аоуыэяёюиеъьіӕ])([еёюя])/g, '$1j$2');
