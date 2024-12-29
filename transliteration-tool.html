@@ -19,7 +19,7 @@
                 <li><a href="transliteration-tool.html">Transliteration tool</a></li>
                 <li><a href="about-the-spelling.html">About the spelling</a></li>
                 <li><a href="sources.html">Sources</a></li>
-                <li><a href="https://www.linkedin.com/in/aleksanterinaz/">Contact</a></li>
+                <li><a href="mailto:aleksanterinazarenko@outlook.com">Contact</a></li>
                 <li><a href="https://aleksanterinazarenko.github.io/interactivemap-europe/">Interactive maps</a></li>
                 <li>
                     <a href="/learnerzya/fi/transliteration-tool.html">
@@ -31,7 +31,7 @@
     </header>
 
     <main>
-        <a href="/learnerzya/index.html" style="color: #333; text-decoration: none;"><h1>Learn Erzya</h1></a>
+        <h1><a href="/learnerzya/index.html">Learn Erzya</a></h1>
 
         <div class="container">
             <h2>Transliteration tool</h2>
@@ -102,32 +102,31 @@ function transliterate(text) {
     text = text.replace(/([\u0301])/g, '');
 
     text = text.replace(/([е])([и])([я])([і])/g, '$1j$2j$3');
-    text = text.replace(/([аоуыэяёюиеъьіӕ])([еёюя])/g, '$1j$2');
-    text = text.replace(/([АОУЫЭЯЁЮИЕЪЬІӔ])([еёюя])/g, '$1j$2');
-    text = text.replace(/([аоуыэяёюиеъіӕ])([иі])/g, '$1j$2');
-    text = text.replace(/([АОУЫЭЯЁЮИЕЪІӔ])([иі])/g, '$1j$2');
+    text = text.replace(/([аоуыэяёюиеъьіӕАОУЫЭЯЁЮИЕЪЬІӔ])([еёюя])/g, '$1j$2');
+    text = text.replace(/([аоуыэяёюиеъіӕАОУЫЭЯЁЮИЕЪІӔ])([иі])/g, '$1j$2');
 
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])([ёюя])/g, '$1j$2');
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])([ЁЮЯ])/g, '$1J$2');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"„“”«»\-])([і])([аоуыэяёюиеъьіӕ])/g, '$1j$3');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"„“”«»\-])([І])([аоуыэяёюиеъьіӕ])/g, '$1J$3');
+
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])([ёюя])/g, '$1j$2');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])([ЁЮЯ])/g, '$1J$2');
     text = text.replace(/-([ёюя])/g, '-j$1');
     text = text.replace(/-([ЁЮЯ])/g, '-J$1');
 
     text = text.replace(/([аеёиоуыэюя])э/g, '$1e')
     text = text.replace(/([АЕЁИОУЫЭЮЯ])Э/g, '$1e')
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])э/g, '$1e');
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])Э/g, '$1E');
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])і/g, '$1i');
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»\-])І/g, '$1I');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])э/g, '$1e');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])Э/g, '$1E');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])і/g, '$1i');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])І/g, '$1I');
 
-    text = text.replace(/([бвгджзйклмнпрстфхцчшщ])я/g, '$1ä');
-    text = text.replace(/([БВГДЖЗЙКЛМНПРСТФХЦЧШЩ])я/g, '$1ä');
-    text = text.replace(/([ДЗЛНРСТЦдзлнрстц])е/g, '$1e');
-    text = text.replace(/([ДЗЛНРСТЦдзлнрстц])и/g, '$1i');
+    text = text.replace(/([бвгджзйклмнпрстфхцчшщБВГДЖЗЙКЛМНПРСТФХЦЧШЩ])я/g, '$1ä');
+    text = text.replace(/([дзлнрстцДЗЛНРСТЦ])е/g, '$1e');
+    text = text.replace(/([дзлнрстцДЗЛНРСТЦ])и/g, '$1i');
 
     text = text.replace(/([бвгжкмпфхчшщ])ь/g, '$1');
     text = text.replace(/ъ/g, '');
     text = text.replace(/(\s|^)і/g, '$1j');
-    text = text.replace(/і([аеёиоуыэюяАЕЁИОУЫЭЮЯ])/g, 'j$1');
     text = text.replace(/й([аеёиоуыэюяАЕЁИОУЫЭЮЯ])/g, 'j-$1');
     text = text.replace(/([БВГЖКПМШбвгжкпмш])ь/g, '$1');
     
@@ -147,6 +146,14 @@ for (const [key, value] of Object.entries(palatals)) {
     text = text.replace(regexNoVowel, value);
 
     text = text.replace(new RegExp(key + `([${front}])`, 'g'), value + '$1');
+}
+
+for (const [key, value] of Object.entries(palatals)) {
+const regexVowel = new RegExp(key + 'і([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
+    text = text.replace(regexVowel, value + '$1');
+
+    const regexNoVowel = new RegExp(key + 'і', 'g');
+    text = text.replace(regexNoVowel, value);
 }
 
     return text.trim().split('').map(char => letters[char] || char).join('');
