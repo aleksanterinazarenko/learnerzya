@@ -149,11 +149,8 @@ for (const [key, value] of Object.entries(palatals)) {
 }
 
 for (const [key, value] of Object.entries(palatals)) {
-const regexVowel = new RegExp(key + 'і([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
+    const regexVowel = new RegExp(key + 'і([аиоуыэАИОУЫЭ])', 'g');
     text = text.replace(regexVowel, value + '$1');
-
-    const regexNoVowel = new RegExp(key + 'і', 'g');
-    text = text.replace(regexNoVowel, value);
 }
 
     return text.trim().split('').map(char => letters[char] || char).join('');
