@@ -88,10 +88,20 @@ p {
     text-align: left;
   }
 
+  p a {
+    color: #21427a;
+    text-decoration: none;
+}
+
   h1 {
     font-family: 'Permanent Marker', cursive;
     font-size: auto;
     text-align: center;
+    color: #21427a;
+}
+
+h1 a {
+    text-decoration: none;
     color: #21427a;
 }
 
