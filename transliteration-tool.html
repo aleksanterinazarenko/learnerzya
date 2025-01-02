@@ -121,15 +121,14 @@ function transliterate(text) {
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])і/g, '$1i');
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])І/g, '$1I');
 
-    text = text.replace(/([бвгджзйклмнпрстфхцчшщБВГДЖЗЙКЛМНПРСТФХЦЧШЩ])я/g, '$1ä');
+    text = text.replace(/([бвгжйкмпфхчшщБВГЖЙКМПФХЧШЩ])я/g, '$1ä');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])е/g, '$1e');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])и/g, '$1i');
 
-    text = text.replace(/([бвгжкмпфхчшщ])ь/g, '$1');
+    text = text.replace(/([БВГЖКМПФХЧШЩбвгжкмпфхчшщ])ь/g, '$1');
     text = text.replace(/ъ/g, '');
     text = text.replace(/(\s|^)і/g, '$1j');
     text = text.replace(/й([аеёиоуыэюяАЕЁИОУЫЭЮЯ])/g, 'j-$1');
-    text = text.replace(/([БВГЖКПМШбвгжкпмш])ь/g, '$1');
     
     text = text.replace(/И/g, 'I');
     text = text.replace(/Е/g, 'E');
