@@ -100,7 +100,7 @@ function transliterate(text) {
 
     text = text.replace(/([аеёиоуыэюя])э/g, '$1e')
     text = text.replace(/([АЕЁИОУЫЭЮЯ])Э/g, '$1e')
-    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])э/g, '$1e');
+    text = text.replace(/\bэ/g, '$1e');
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])Э/g, '$1E');
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])і/g, '$1i');
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])І/g, '$1I');
