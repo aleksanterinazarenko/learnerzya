@@ -79,8 +79,8 @@ function transliterate(text) {
     text = " " + text + " ";
 
     text = text.replace(/([дзнрстцДЗНРСТЦ])ь(?=[дзлнрстхц]+[еёияіьѣ])/g, '$1');
-    text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзнрстхц]+[эы])/g, '$1');
-    text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[еёиюяіь])/g, '$1j');
+    text = text.replace(/([дзнрстцДЗНРСТЦ])ь(?=[дзнрстхц]+[эы])/g, '$1');
+    text = text.replace(/([дзнрстцДЗНРСТЦ])ь(?=[еёиюяіь])/g, '$1j');
 
     text = text.replace(/([\u0301])/g, '');
     text = text.replace(/(ю[\u0302])/g, 'ё');
