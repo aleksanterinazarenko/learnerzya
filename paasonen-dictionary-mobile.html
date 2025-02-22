@@ -61,7 +61,7 @@
       .suggestions-list {
           border-top: none;
           padding: 0 20px;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
           overflow-y: auto;
           background-color: #fff;
       }
@@ -79,7 +79,7 @@
           font-size: 17px;
           padding: 0 10px;
           margin-top: -15px;
-          margin-bottom: -5px;
+          margin-bottom: 30px;
           word-wrap: break-word;
       }
 
@@ -270,6 +270,21 @@ for (var i = 0; i < navSelect.options.length; i++) {
 navSelect.addEventListener('change', function() {
     window.location.href = this.value;
 });
+});
+
+///
+
+const searchInput = document.getElementById('searchInput');
+const suggestions = document.getElementById('suggestions');
+const wordDetails = document.getElementById('wordDetails');
+const sourceParagraph = document.querySelector('p');
+
+searchInput.addEventListener('input', () => {
+    if (suggestions.children.length > 0 || wordDetails.innerHTML !== '') {
+        sourceParagraph.style.display = 'none';
+    } else {
+        sourceParagraph.style.display = 'block';
+    }
 });
 </script>
 
