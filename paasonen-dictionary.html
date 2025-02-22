@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filteredWords = currentData
         .filter(entry => {
-            const normalizedWord = entry.Word.toLowerCase().replace(/^[\*\[\d¹²³⁴]+/, '');
+            const normalizedWord = entry.Word.toLowerCase().replace(/^[\*\[\·\d¹²³⁴]+/, '');
             const normalizedWordWithoutDiacritics = normalizedWord.charAt(0) + normalizedWord.slice(1).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
             return normalizedWordWithoutDiacritics.startsWith(normalizedQuery);
         })
