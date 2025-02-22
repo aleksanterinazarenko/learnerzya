@@ -226,3 +226,9 @@ document.querySelectorAll('.diacritic-btn').forEach(button => {
 
 </body>
 </html>
+
+<script>
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+    window.location.href = 'paasonen-dictionary-mobile.html';
+  }
+  </script>
