@@ -32,23 +32,6 @@
         </select>
         <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
         <div id="suggestions" class="suggestions-list" style="display: none;"></div>
-            <div id="diacriticButtons">
-              <button type="button" class="diacritic-btn">ć</button>
-              <button type="button" class="diacritic-btn">č</button>
-              <button type="button" class="diacritic-btn">ĺ</button>
-              <button type="button" class="diacritic-btn">ń</button>
-              <button type="button" class="diacritic-btn">ŕ</button>
-              <button type="button" class="diacritic-btn">ś</button>
-              <button type="button" class="diacritic-btn">š</button>
-              <button type="button" class="diacritic-btn">ź</button>
-              <button type="button" class="diacritic-btn">ž</button>
-              <button type="button" class="diacritic-btn">ə</button>
-              <button type="button" class="diacritic-btn">ʟ</button>
-              <button type="button" class="diacritic-btn">ŋ</button>
-              <button type="button" class="diacritic-btn">ᵪ</button>
-              <button type="button" class="diacritic-btn">ʿ</button>
-              <button type="button" class="diacritic-btn">·</button>
-          </div>
             <ul id="dictionaryList"></ul>
         </div>
         <p style="font-size: 17px; text-align: center;">Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a></p>
@@ -300,19 +283,6 @@ for (var i = 0; i < navSelect.options.length; i++) {
 navSelect.addEventListener('change', function() {
     window.location.href = this.value;
 });
-});
-
-document.querySelectorAll('.diacritic-btn').forEach(button => {
-    button.addEventListener('click', function () {
-        const searchInput = document.getElementById('searchInput');
-        
-        searchInput.value += this.textContent; 
-        
-        const event = new Event('input');
-        searchInput.dispatchEvent(event);
-
-        searchInput.focus();
-    });
 });
 </script>
 
