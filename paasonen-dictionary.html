@@ -73,8 +73,6 @@
             <button type="button" class="diacritic-btn">ᵪ</button>
             <button type="button" class="diacritic-btn">ʿ</button>
             <button type="button" class="diacritic-btn">·</button>
-            <button type="button" class="diacritic-btn">́</button>
-            <button type="button" class="diacritic-btn">̀</button>
         </div>
         <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
@@ -155,85 +153,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     searchInput.addEventListener('input', (event) => {
-        const query = event.target.value.toLowerCase();
-        suggestions.innerHTML = '';
-        selectedSuggestionIndex = -1;
+    let query = event.target.value.toLowerCase();
+    suggestions.innerHTML = '';
+    selectedSuggestionIndex = -1;
 
-        if (query === "") {
-            wordDetails.innerHTML = '';
-            suggestions.style.display = 'none';
-        } else {
-            filteredWords = currentData
-                .filter(entry => entry.Word.toLowerCase().includes(query))
-                .sort((a, b) => {
-                    const aStartsWith = a.Word.toLowerCase().startsWith(query);
-                    const bStartsWith = b.Word.toLowerCase().startsWith(query);
-                    
-                    if (aStartsWith && !bStartsWith) return -1;
-                    if (!aStartsWith && bStartsWith) return 1;
+    if (query === "") {
+        wordDetails.innerHTML = '';
+        suggestions.style.display = 'none';
+        return;
+    }
 
-                    return a.Word.length - b.Word.length;
-                });
+    const normalizedQuery = query.charAt(0) + query.slice(1).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-            if (filteredWords.length > 0) {
-                filteredWords.forEach((entry, index) => {
-                    const suggestionItem = document.createElement('div');
-                    suggestionItem.className = 'suggestion-item';
-                    suggestionItem.textContent = entry.Word;
+    filteredWords = currentData
+        .filter(entry => {
+            const normalizedWord = entry.Word.toLowerCase();
+            const normalizedWordWithoutDiacritics = normalizedWord.charAt(0) + normalizedWord.slice(1).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            return normalizedWordWithoutDiacritics.startsWith(normalizedQuery);
+        })
+        .sort((a, b) => {
+            const aStartsWith = a.Word.toLowerCase().startsWith(query);
+            const bStartsWith = b.Word.toLowerCase().startsWith(query);
 
-                    suggestionItem.onclick = () => {
-                        selectedSuggestionIndex = index;
-                        highlightSuggestion(selectedSuggestionIndex);
-                        searchInput.value = entry.Word;
-                        showWordDetails(entry);
-                        suggestions.style.display = 'none';
-                    };
+            if (aStartsWith && !bStartsWith) return -1;
+            if (!aStartsWith && bStartsWith) return 1;
 
-                    suggestionItem.onmouseover = () => {
-                        isMouseOverSuggestion = true;
-                        selectedSuggestionIndex = index; 
-                        highlightSuggestion(selectedSuggestionIndex);
-                    };
+            return a.Word.length - b.Word.length;
+        });
 
-                    suggestionItem.onmouseout = () => {
-                        isMouseOverSuggestion = false;
-                    };
+    if (filteredWords.length > 0) {
+        filteredWords.forEach((entry, index) => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.className = 'suggestion-item';
+            suggestionItem.textContent = entry.Word;
 
-                    suggestions.appendChild(suggestionItem);
-                });
-                suggestions.style.display = 'block';
-            } else {
+            suggestionItem.onclick = () => {
+                selectedSuggestionIndex = index;
+                highlightSuggestion(selectedSuggestionIndex);
+                searchInput.value = entry.Word;
+                showWordDetails(entry);
                 suggestions.style.display = 'none';
-            }
-        }
-    });
+            };
 
-    searchInput.addEventListener('keydown', (event) => {
-        const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
+            suggestionItem.onmouseover = () => {
+                isMouseOverSuggestion = true;
+                selectedSuggestionIndex = index;
+                highlightSuggestion(selectedSuggestionIndex);
+            };
 
-        if (!isMouseOverSuggestion) {
-            if (event.key === 'ArrowDown') {
-                if (selectedSuggestionIndex < suggestionItems.length - 1) {
-                    selectedSuggestionIndex++;
-                    highlightSuggestion(selectedSuggestionIndex);
-                    suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
-                }
-            } else if (event.key === 'ArrowUp') {
-                if (selectedSuggestionIndex > 0) {
-                    selectedSuggestionIndex--;
-                    highlightSuggestion(selectedSuggestionIndex);
-                    suggestionItems[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
-                }
-            } else if (event.key === 'Enter') {
-                if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < suggestionItems.length) {
-                    const selectedWord = filteredWords[selectedSuggestionIndex];
-                    searchInput.value = selectedWord.Word;
-                    showWordDetails(selectedWord);
-                    suggestions.style.display = 'none';
-                }
-            }
-        }
-    });
+            suggestionItem.onmouseout = () => {
+                isMouseOverSuggestion = false;
+            };
+
+            suggestions.appendChild(suggestionItem);
+        });
+        suggestions.style.display = 'block';
+    } else {
+        suggestions.style.display = 'none';
+    }
+});
+
 
     languageSelector.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
