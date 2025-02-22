@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="Erzya language, ersän kieli, эрзянский язык, эрзянь кель, dictionary, sanakirja, словарь, валкс">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English-Erzya dictionary</title>
+    <title>The Dialect Dictionary of the Mordvin Languages Based on the Heikki Paasonen Materials</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -36,7 +36,7 @@
         <h1><a href="/learnerzya/index.html">Learn Erzya</a></h1>
 
       <div class="container">
-        <h2>English-Erzya Dictionary</h2>
+        <h2>The Dialect Dictionary of the Mordvin Languages Based on the Heikki Paasonen Materials</h2>
     </div>
     <div class="dictionary">
       <select id="languageSelector">
@@ -47,6 +47,7 @@
         <div id="diacriticButtons">
             <button type="button" class="diacritic-btn">b́</button>
             <button type="button" class="diacritic-btn">ć</button>
+            <button type="button" class="diacritic-btn">č</button>
             <button type="button" class="diacritic-btn">d́</button>
             <button type="button" class="diacritic-btn">e͔</button>
             <button type="button" class="diacritic-btn">f́</button>
@@ -59,17 +60,26 @@
             <button type="button" class="diacritic-btn">ṕ</button>
             <button type="button" class="diacritic-btn">ŕ</button>
             <button type="button" class="diacritic-btn">ś</button>
+            <button type="button" class="diacritic-btn">š</button>
             <button type="button" class="diacritic-btn">t́</button>
+            <button type="button" class="diacritic-btn">v́</button>
             <button type="button" class="diacritic-btn">ź</button>
+            <button type="button" class="diacritic-btn">ž</button>
             <button type="button" class="diacritic-btn">ə</button>
             <button type="button" class="diacritic-btn">ə̑</button>
+            <button type="button" class="diacritic-btn">ʟ</button>
             <button type="button" class="diacritic-btn">ŋ</button>
             <button type="button" class="diacritic-btn">ŋ́</button>
+            <button type="button" class="diacritic-btn">ᵪ</button>
+            <button type="button" class="diacritic-btn">ʿ</button>
+            <button type="button" class="diacritic-btn">·</button>
+            <button type="button" class="diacritic-btn">́</button>
+            <button type="button" class="diacritic-btn">̀</button>
         </div>
         <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
         <p style="font-size: 16px; font-style: normal; margin-top: 30px; padding: 0;">
-            Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a>
+            Source: <a href="https://www.mv.helsinki.fi/home/rueter/PaasonenMW.shtml" style="text-decoration: none;">Jack Rueter</a>
         </p>
           
         <div id="wordDetails"></div>
@@ -88,14 +98,14 @@
     padding: 5px 10px;
     margin: 2px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    background-color: white;
     cursor: pointer;
     border-radius: 4px;
     font-family: "Calibri";
     font-size: 16px;
 }
 .diacritic-btn:hover {
-    background-color: #e0e0e0;
+    background-color: #f9f9f9;
 }
   </style>
 
