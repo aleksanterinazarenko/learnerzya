@@ -10,6 +10,7 @@
 <body>
   <header>
     <select id="nav-select" class="nav-select">
+        <option value="" disabled selected>The Dialect Dictionary of the Mordvin Languages</option>
         <option value="index-mobile.html">Main Page</option>
         <option value="english-erzya-dictionary-mobile.html">English-Erzya dictionary</option>
         <option value="erzya-english-dictionary-mobile.html">Erzya-English dictionary</option>
@@ -171,7 +172,10 @@ searchInput.addEventListener('input', (event) => {
   } else {
       filteredWords = currentData
       .filter(entry => {
-    const normalizedWord = entry.Word.toLowerCase().replace(/^[\*\[\d¹²³⁴]+/, '').replace(/[ᵪʿ·]/g, '');
+    const normalizedWord = entry.Word.toLowerCase()
+        .replace(/^[\*\[\d¹²³⁴]+/, '')
+        .replace(/[ᵪʿ·]/g, '')
+        .normalize('NFD').replace(/([\u0300-\u036f]+)/g, '');
     return normalizedWord.includes(query);
 })
           .sort((a, b) => {
