@@ -106,7 +106,7 @@ h1 a {
 }
 
 h2 {
-    font-family: sans-serif;
+    font-family: 'Cambria';
     font-size: 20px;
     font-weight: normal;
     font-style: italic;
@@ -133,7 +133,7 @@ tr {
 }
 
 footer {
-    font-family: sans-serif;
+    font-family: 'Cambria';
     text-align: center;
     padding: 1rem;
     background: #333;
@@ -155,7 +155,7 @@ footer {
 }
 
 textarea {
-    font-family: sans-serif;
+    font-family: 'Cambria';
     font-size: 16px;
     line-height: 20px;
     width: calc(100% - 40px);
@@ -176,7 +176,7 @@ textarea:focus {
 }
 
 #searchInput {
-    font-family: sans-serif;
+    font-family: 'Cambria';
     font-size: 16px;
     width: calc(100% - 40px);
     padding: 10px;
@@ -199,21 +199,21 @@ textarea:focus {
 }
 
 .word {
-    font-family: sans-serif;
+    font-family: 'Cambria';
     font-weight: regular;
     font-size: 16px;
     color: #333;
 }
 
 .definition {
-    font-family: sans-serif;
+    font-family: 'Cambria';
     font-style: italic;
     font-size: 16px;
     color: #333;
 }
 
 #languageSelector {
-    font-family: sans-serif;
+    font-family: 'Cambria';
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
