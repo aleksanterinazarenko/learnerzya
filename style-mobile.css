@@ -1,12 +1,12 @@
 body {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     background: #333;
     color: white;
     padding: 0.1rem;
@@ -16,7 +16,7 @@ nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
-    font-family: 'Cambria';
+    font-family: 'Calibri';
 }
 
 nav ul li {
@@ -36,7 +36,7 @@ nav ul li a {
 .nav-select {
     width: 100%;
     padding: 10px;
-    font-family: sans-serif;
+    font-family: 'Calibri';
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -52,28 +52,28 @@ nav ul li a {
 }
 
 @font-face {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     src: url('fonts/calibri-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     src: url('fonts/calibri-italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     src: url('fonts/calibri-bold-italic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     src: url('fonts/calibri-bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
@@ -107,7 +107,7 @@ h1 a {
 }
 
 h2 {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     font-size: 20px;
     font-weight: normal;
     font-style: italic;
@@ -134,7 +134,7 @@ tr {
 }
 
 footer {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     text-align: center;
     padding: 1rem;
     background: #333;
@@ -156,7 +156,7 @@ footer {
 }
 
 textarea {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     font-size: 16px;
     line-height: 20px;
     width: calc(100% - 40px);
@@ -177,7 +177,7 @@ textarea:focus {
 }
 
 #searchInput {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     font-size: 16px;
     width: calc(100% - 40px);
     padding: 10px;
@@ -200,21 +200,21 @@ textarea:focus {
 }
 
 .word {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     font-weight: regular;
     font-size: 16px;
     color: #333;
 }
 
 .definition {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     font-style: italic;
     font-size: 16px;
     color: #333;
 }
 
 #languageSelector {
-    font-family: 'Cambria';
+    font-family: 'Calibri';
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
@@ -235,5 +235,5 @@ button#copyButton {
     font-size: 16px;
     padding: 5px 10px;
     margin-top: 30px;
-    font-family: sans-serif;
+    font-family: 'Calibri';
         }
