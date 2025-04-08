@@ -106,7 +106,6 @@ function transliterate(text) {
 
     text = text.replace(/([е])([и])([я])([і])/g, '$1j$2j$3');
     text = text.replace(/([аоуыэяёюиеъьіӕѣАОУЫЭЯЁЮИЕЪЬІӔѢ])([еёюя])/g, '$1j$2');
-    text = text.replace(/([аоуыэяёюиеъіӕѣАОУЫЭЯЁЮИЕЪІӔѢ])([иі])/g, '$1j$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪЬІӔѢ])([ЕЁЮЯ])/g, '$1J$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪІӔѢ])([ИІ])/g, '$1J$2');
 
@@ -118,7 +117,7 @@ function transliterate(text) {
     text = text.replace(/-([ёюя])/g, '-j$1');
     text = text.replace(/-([ЁЮЯ])/g, '-J$1');
 
-    text = text.replace(/([аеёиоуыэюяАЕЁИОУЫЭЮЯ])э/g, '$1e')
+    text = text.replace(/([аеёийоуыэюяАЕЁИЙОУЫЭЮЯ])э/g, '$1e')
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])э/g, '$1e');
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])Э/g, '$1E');
     text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])і/g, '$1i');
@@ -141,7 +140,7 @@ function transliterate(text) {
         return p1.toLowerCase() + p2;
     });
 
-    text = text.replace(/«/g, '„').replace(/»/g, '“');
+    text = text.replace(/«/g, '“').replace(/»/g, '”');
 
 for (const [key, value] of Object.entries(palatals)) {
     const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
