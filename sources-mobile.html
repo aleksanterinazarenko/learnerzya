@@ -66,5 +66,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
     </script>
 
+<script>
+    function pushFooterToBottom() {
+      const footer = document.querySelector("footer");
+      const bodyHeight = document.body.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const footerHeight = footer.offsetHeight;
+      const gap = windowHeight - bodyHeight;
+  
+      if (gap > 0) {
+        footer.style.marginTop = `${gap}px`;
+      } else {
+        footer.style.marginTop = "30px";
+      }
+    }
+  
+    window.addEventListener("load", pushFooterToBottom);
+    window.addEventListener("resize", pushFooterToBottom);
+  </script>
+
 </body>
 </html>
