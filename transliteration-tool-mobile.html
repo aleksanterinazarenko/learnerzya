@@ -36,6 +36,10 @@
         </div>
     </main>
 
+    <footer>
+        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024 Aleksanteri Nazarenko</a>
+    </footer>
+
     <script>
 document.getElementById('inputText').addEventListener('input', function() {
     updateOutputText();
@@ -83,6 +87,7 @@ function transliterate(text) {
     text = text.replace(regexVowel, value + '-$1');
 
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[еёияіьѣ])/g, '$1');
+    text = text.replace(/([аоуыэяёюиеъіӕѣАОУЫЭЯЁЮИЕЪІӔѢ])([иі])/g, '$1j$2');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[эы])/g, '$1');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[еёиюяіь])/g, '$1j');
 

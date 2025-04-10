@@ -36,6 +36,10 @@
         </div>
     </main>
 
+    <footer>
+        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024 Aleksanteri Nazarenko</a>
+    </footer>
+
     <script>
 document.getElementById('inputText').addEventListener('input', function() {
     updateOutputText();
@@ -82,8 +86,8 @@ function transliterate(text) {
     const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
     text = text.replace(regexVowel, value + '-$1');
 
-    text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(?=[бгджзклмнпрстфхцчшщъ])/g, '$1ũ');
-    text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])/g, '$1ũ$2');
+    text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(?=[бгджзклмнпрстфхцчшщъ])/g, '$1v');
+    text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])/g, '$1v$2');
 
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[еёияіьѣ])/g, '$1');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[эы])/g, '$1');
@@ -94,6 +98,7 @@ function transliterate(text) {
 
     text = text.replace(/([е])([и])([я])([і])/g, '$1j$2j$3');
     text = text.replace(/([аоуыэяёюиеъьіӕѣАОУЫЭЯЁЮИЕЪЬІӔѢ])([еёюя])/g, '$1j$2');
+    text = text.replace(/([аоуыэяёюиеъіӕѣАОУЫЭЯЁЮИЕЪІӔѢ])([иі])/g, '$1j$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪЬІӔѢ])([ЕЁЮЯ])/g, '$1J$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪІӔѢ])([ИІ])/g, '$1J$2');
     text = text.replace(/([И])([иі])/g, 'J$2');
@@ -116,7 +121,7 @@ function transliterate(text) {
     text = text.replace(/([бвгжкмпфхчшБВГЖКМПФХЧШ])ё/g, '$1ö');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])е/g, '$1e');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])и/g, '$1i');
-    text = text.replace(/([нН])([гГкК])/g, 'ñ$2');
+    text = text.replace(/([нН])([гГкК])/g, 'n$2');
 
     text = text.replace(/([чшЧШ])ы/g, '$1i');
 
