@@ -37,53 +37,25 @@
 <script src="script.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const navLinks = document.querySelectorAll('.nav-list a');
-    const currentPath = window.location.pathname.split("/").pop();
-  
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-        }
-    });
-  });
-
     document.addEventListener('DOMContentLoaded', function() {
-    var navSelect = document.getElementById('nav-select');
-    var currentPage = window.location.pathname.split('/').pop();
+        function adjustFooterPosition() {
+            var footer = document.querySelector('footer');
+            var windowHeight = window.innerHeight;
+            var bodyHeight = document.body.offsetHeight;
     
-    for (var i = 0; i < navSelect.options.length; i++) {
-        if (navSelect.options[i].value === currentPage) {
-            navSelect.selectedIndex = i;
-            break;
+            if (bodyHeight < windowHeight) {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+                footer.style.width = '100%';
+            } else {
+                footer.style.position = 'relative';
+            }
         }
-    }
     
-    navSelect.addEventListener('change', function() {
-        window.location.href = this.value;
+        adjustFooterPosition();
+        window.addEventListener('resize', adjustFooterPosition);
     });
-});
     </script>
-
-<script>
-    function pushFooterToBottom() {
-      const footer = document.querySelector("footer");
-      const bodyHeight = document.body.offsetHeight;
-      const windowHeight = window.innerHeight;
-      const footerHeight = footer.offsetHeight;
-      const gap = windowHeight - bodyHeight;
-  
-      if (gap > 0) {
-        footer.style.marginTop = `${gap}px`;
-      } else {
-        footer.style.marginTop = "30px";
-      }
-    }
-  
-    window.addEventListener("load", pushFooterToBottom);
-    window.addEventListener("resize", pushFooterToBottom);
-  </script>
-
+    
 </body>
 </html>
