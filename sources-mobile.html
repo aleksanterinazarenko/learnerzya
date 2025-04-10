@@ -35,27 +35,6 @@
 </footer>
 
 <script src="script.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        function adjustFooterPosition() {
-            var footer = document.querySelector('footer');
-            var windowHeight = window.innerHeight;
-            var bodyHeight = document.body.offsetHeight;
-    
-            if (bodyHeight < windowHeight) {
-                footer.style.position = 'fixed';
-                footer.style.bottom = '0';
-                footer.style.width = '100%';
-            } else {
-                footer.style.position = 'relative';
-            }
-        }
-    
-        adjustFooterPosition();
-        window.addEventListener('resize', adjustFooterPosition);
-    });
-    </script>
     
 </body>
 </html>
