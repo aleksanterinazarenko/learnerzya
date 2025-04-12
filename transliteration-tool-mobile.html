@@ -90,6 +90,7 @@ function transliterate(text) {
     text = text.replace(/([аоуыэяёюиеъіӕѣАОУЫЭЯЁЮИЕЪІӔѢ])([иі])/g, '$1j$2');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[эы])/g, '$1');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[еёиюяіь])/g, '$1j');
+    text = text.replace(/([лЛ])ь(?=[т])/g, '$1');
 
     text = text.replace(/([\u0301])/g, '');
     text = text.replace(/(ю[\u0302])/g, 'ё');
