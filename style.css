@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -51,7 +51,7 @@ nav .nav-list li a {
 }
 
 h1 {
-    font-family: "Permanent Marker", cursive;
+    font-family: 'Permanent Marker', cursive;
     font-weight: normal;
     text-align: center;
     color: #21427a;
@@ -65,17 +65,17 @@ h1 a {
 }
 
 h2 {
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     font-weight: normal;
     font-style: italic;
-    font-size: 20px;
+    font-size: 19px;
     text-align: center;
     margin: 0 0 50px 0;
 }
 
 main {
     padding: 0;
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     font-size: 20px;
     flex-grow: 1;
 }
@@ -145,7 +145,7 @@ footer {
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     font-size: 16px;
     font-weight: bold;
     font-style: normal;
@@ -154,7 +154,7 @@ footer {
 
 .dictionary p {
     color: #333;
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     font-size: 16px;
     font-style: normal;
     line-height: 1.5;
@@ -248,7 +248,7 @@ tr {
 }
 
 #searchInput {
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     font-size: 16px;
     width: 100%;
     padding: 10px;
@@ -317,7 +317,7 @@ tr {
 }
   
 #languageSelector {
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     padding: 5px;
     margin-bottom: 10px;
     font-size: 16px;
@@ -360,11 +360,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
 }
 
 .output-text {
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
 }
 
 .button-container {
@@ -383,7 +383,7 @@ button#copyButton {
     padding: 5px 10px;
     margin-top: 30px;
     border-radius: 5px;
-    font-family: Cambria, serif;
+    font-family: 'Liberation Serif', serif;
     background-color: transparent;
     cursor: pointer; 
         }
