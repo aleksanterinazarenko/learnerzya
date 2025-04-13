@@ -106,7 +106,7 @@ h1 a {
 }
 
 h2 {
-    font-family: 'Liberation Serif', serif !important;
+    font-family: 'Liberation Serif', serif;
     font-size: 18px;
     font-weight: normal;
     font-style: italic;
@@ -148,6 +148,7 @@ footer {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+    font-family: 'Liberation Serif', serif !important;
 }
 
 .container h2 {
