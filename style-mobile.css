@@ -150,6 +150,10 @@ footer {
     box-sizing: border-box;
 }
 
+.container h2 {
+    font-family: 'Liberation Serif', serif !important;
+}
+
 .container-grammar h2 {
     font-size: 18px;
     padding-left: 10px;
