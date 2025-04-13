@@ -106,7 +106,7 @@ h1 a {
 }
 
 h2 {
-    font-family: 'Liberation Serif', serif;
+    font-family: 'Liberation Serif', serif !important;
     font-size: 18px;
     font-weight: normal;
     font-style: italic;
