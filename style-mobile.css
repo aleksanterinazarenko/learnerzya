@@ -59,7 +59,7 @@ nav ul li a {
 
 @font-face {
     font-family: 'Liberation Serif';
-    src: url('LiberationSerif-Italic.ttf') format('truetype');
+    src: url('fonts/LiberationSerif-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
