@@ -36,7 +36,7 @@ nav ul li a {
     width: 100%;
     padding: 10px;
     font-family: 'Liberation Serif', serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
     background-color: #333;
@@ -148,21 +148,17 @@ footer {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-    font-family: 'Liberation Serif', serif !important;
-}
-
-.container h2 {
-    font-family: 'Liberation Serif', serif !important;
+    font-family: 'Liberation Serif', serif;
 }
 
 .container-grammar h2 {
-    font-size: 18px;
+    font-size: 1.2rem;
     padding-left: 10px;
 }
 
 textarea {
     font-family: 'Liberation Serif', serif;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     width: calc(100% - 40px);
     padding: 10px;
@@ -183,7 +179,7 @@ textarea:focus {
 
 #searchInput {
     font-family: 'Liberation Serif', serif;
-    font-size: 16px;
+    font-size: 1rem;
     width: calc(100% - 40px);
     padding: 10px;
     margin: 10px 20px 20px 20px;
@@ -207,14 +203,14 @@ textarea:focus {
 .word {
     font-family: 'Liberation Serif', serif;
     font-weight: regular;
-    font-size: 16px;
+    font-size: 1rem;
     color: #333;
 }
 
 .definition {
     font-family: 'Liberation Serif', serif;
     font-style: italic;
-    font-size: 16px;
+    font-size: 1rem;
     color: #333;
 }
 
@@ -223,7 +219,7 @@ textarea:focus {
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .button-container {
@@ -237,7 +233,7 @@ button#copyButton {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 1rem;
     padding: 5px 10px;
     margin-top: 30px;
     font-family: 'Liberation Serif', serif;
