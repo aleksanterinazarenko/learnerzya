@@ -43,7 +43,7 @@ header {
 nav .nav-list li a {
     color: white;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 0.8em;
 }
 
 .nav-list a:hover {
