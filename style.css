@@ -133,7 +133,7 @@ footer {
 }
 
 .container {
-    width: calc(100% - 300px);
+    width: calc(100% - 400px);
     margin: 0 auto;
     padding: 0 30px;
     position: relative;
