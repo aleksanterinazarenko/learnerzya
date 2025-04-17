@@ -10,6 +10,7 @@
 <body>
     <header>
         <select id="nav-select" class="nav-select">
+            <option value="" selected disabled hidden>Menu</option>
             <option value="index-mobile.html">Main Page</option>
             <option value="dictionaries-mobile.html">Dictionaries</option>
             <option value="grammar-mobile.html">Grammar</option>
@@ -2243,14 +2244,6 @@ tr:last-child td {
     <script>
     document.addEventListener('DOMContentLoaded', function() {
     var navSelect = document.getElementById('nav-select');
-    var currentPage = window.location.pathname.split('/').pop();
-    
-    for (var i = 0; i < navSelect.options.length; i++) {
-        if (navSelect.options[i].value === currentPage) {
-            navSelect.selectedIndex = i;
-            break;
-        }
-    }
     
     navSelect.addEventListener('change', function() {
         window.location.href = this.value;

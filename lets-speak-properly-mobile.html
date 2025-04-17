@@ -10,7 +10,7 @@
 <body>
     <header>
         <select id="nav-select" class="nav-select">
-            <option value="" disabled selected>Let's speak properly</option>
+            <option value="" selected disabled hidden>Menu</option>
             <option value="index-mobile.html">Main Page</option>
             <option value="dictionaries-mobile.html">Dictionaries</option>
             <option value="grammar-mobile.html">Grammar</option>
@@ -83,7 +83,7 @@
                     <tr>
                         <td>Gruppa valoś kuroks seks a karmi, seks što erźatne velesë valonť stuvtomo karmasť.</td>
                         <td>➞</td>
-                        <td>Veleń erźatne karmasť stuvtomo kuro-valont, seks gruppa-valoś kuroks a karmi. / Gruppa-valoś kuroks seks a karmi, meks veleń erźatne karmasť stuvtomo kuro-valonť.</td>
+                        <td>Veleń erźatne karmasť stuvtomo kuro-valont, seks gruppa-valoś kuroks a karmi.</td>
                     </tr>
                     <tr>
                         <td>Jalateke, śormaľan lija erźatneń marto, meze-buti tejan erźaks.</td>
@@ -168,7 +168,7 @@
                     <tr>
                         <td>Peľkstamotneń veťamsto langs livtezeľ, što erźatneń dï mokšotneń lamočist, sïnst eŕamo tarkast sjezdënteń a sodavikst.</td>
                         <td>➞</td>
-                        <td>Peľkstamotneń veťamsto langs livtezeľ: erźatneń, mokšotneń lamočist, sïnst eŕamo tarkast kongresssënteń a sodavikst.</td>
+                        <td>Peľkstamotneń veťamsto langs livtezeľ: erźatneń, mokšotneń lamočist, sïnst eŕamo tarkast kongresssënteń a sodazť.</td>
                     </tr>
                     <tr>
                         <td>Pitneś a pokš valtnëń, buti kortïćanť pŕaś kavalalo kekšeź.</td>
@@ -261,14 +261,6 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
     var navSelect = document.getElementById('nav-select');
-    var currentPage = window.location.pathname.split('/').pop();
-    
-    for (var i = 0; i < navSelect.options.length; i++) {
-        if (navSelect.options[i].value === currentPage) {
-            navSelect.selectedIndex = i;
-            break;
-        }
-    }
     
     navSelect.addEventListener('change', function() {
         window.location.href = this.value;

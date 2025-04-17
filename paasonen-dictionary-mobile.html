@@ -10,7 +10,7 @@
 <body>
   <header>
     <select id="nav-select" class="nav-select">
-        <option value="" disabled selected>The Dialect Dictionary of the Mordvin Languages</option>
+        <option value="" selected disabled hidden>Menu</option>
         <option value="index-mobile.html">Main Page</option>
         <option value="dictionaries-mobile.html">Dictionaries</option>
         <option value="grammar-mobile.html">Grammar</option>
@@ -24,6 +24,7 @@
 
     <main>
       <h1><a href="/learnerzya/index.html">Learn Erzya</a></h1>
+      <h2 style="margin: 0 0 30px 0;">Paasonen's Dictionary</h2>
 
       <div class="container">
         <select id="languageSelector">
@@ -257,14 +258,6 @@ loadDictionary(latinJsonURL);
 
 document.addEventListener('DOMContentLoaded', function() {
 var navSelect = document.getElementById('nav-select');
-var currentPage = window.location.pathname.split('/').pop();
-
-for (var i = 0; i < navSelect.options.length; i++) {
-    if (navSelect.options[i].value === currentPage) {
-        navSelect.selectedIndex = i;
-        break;
-    }
-}
 
 navSelect.addEventListener('change', function() {
     window.location.href = this.value;
