@@ -97,17 +97,22 @@ const nondentals = "БВГЖКПМШбвгжкпмш";
 function transliterate(text) {
     text = " " + text + " ";
 
+    text = text.replace(/([н])([д][е][р][ия])/g, 'ń-$2');
+    text = text.replace(/([Н])([Д][Е][Р][ИЯ])/g, 'Ń-$2');
+    text = text.replace(/([дзлнрстц]+[еикоыь])([д][е][р][ия])/g, '$1-$2');
+    text = text.replace(/([ДЗЛНРСТЦ]+[ЕИКОЫЬ])([Д][Е][Р][ИЯ])/g, '$1-$2');
+
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[еёияіьѣ])/g, '$1');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[эы])/g, '$1');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[еёиюяіь])/g, '$1j');
     text = text.replace(/([лЛ])ь(?=[тТ])/g, '$1');
     text = text.replace(/([нН])ь(?=[жЖчЧшШ])/g, '$1');
 
-    text = text.replace(/([н])([д][е][р][ия])/g, 'ń-$2');
-    text = text.replace(/([Н])([Д][Е][Р][ИЯ])/g, 'Ń-$2');
-
     text = text.replace(/([\u0301])/g, '');
     text = text.replace(/(ю[\u0302])/g, 'ё');
+
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])([ИІ])([и])/g, '$1J$3');
+    text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])([иі])([и])/g, '$1j$3');
 
     text = text.replace(/([е])([и])([я])([і])/g, '$1j$2j$3');
     text = text.replace(/([аоуыэяёюиеъьіӕѣАОУЫЭЯЁЮИЕЪЬІӔѢ])([еёюя])/g, '$1j$2');
@@ -148,9 +153,9 @@ function transliterate(text) {
 
     text = text.replace(/«/g, '“').replace(/»/g, '”');
 
-for (const [key, value] of Object.entries(palatals)) {
+    for (const [key, value] of Object.entries(palatals)) {
     const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
-    text = text.replace(regexVowel, value + '$1');
+    text = text.replace(regexVowel, value + '-$1');
 
     const regexNoVowel = new RegExp(key + '[Ьь]', 'g');
 text = text.replace(regexNoVowel, value);
