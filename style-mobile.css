@@ -1,12 +1,12 @@
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     background: #333;
     color: white;
     padding: 0.1rem;
@@ -35,7 +35,7 @@ nav ul li a {
 .nav-select {
     width: 100%;
     padding: 10px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -51,29 +51,29 @@ nav ul li a {
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans.ttf') format('truetype');
+    font-family: 'PT Serif';
+    src: url('fonts/PTSerif-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans Italic.ttf') format('truetype');
+    font-family: 'PT Serif';
+    src: url('fonts/PTSerif-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans Bold.ttf') format('truetype');
+    font-family: 'PT Serif';
+    src: url('fonts/PTSerif-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans Bold Italic.ttf') format('truetype');
+    font-family: 'PT Serif';
+    src: url('fonts/PTSerif-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -106,7 +106,7 @@ h1 a {
 }
 
 h2 {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     font-size: 1.2rem;
     font-weight: normal;
     font-style: italic;
@@ -133,7 +133,7 @@ tr {
 }
 
 footer {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     text-align: center;
     padding: 1rem;
     background: #333;
@@ -148,7 +148,7 @@ footer {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
 }
 
 .container-grammar h2 {
@@ -157,12 +157,12 @@ footer {
 }
 
 textarea {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     font-size: 1rem;
     line-height: 20px;
     width: calc(100% - 40px);
     padding: 10px;
-    margin: 20px;
+    margin: 0 0 20px 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none;
@@ -178,7 +178,7 @@ textarea:focus {
 }
 
 #searchInput {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     font-size: 1rem;
     width: calc(100% - 40px);
     padding: 10px;
@@ -201,21 +201,21 @@ textarea:focus {
 }
 
 .word {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     font-weight: regular;
     font-size: 1rem;
     color: #333;
 }
 
 .definition {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     font-style: italic;
     font-size: 1rem;
     color: #333;
 }
 
 #languageSelector {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
@@ -235,6 +235,6 @@ button#copyButton {
     color: #333;
     font-size: 1rem;
     padding: 5px 10px;
-    margin-top: 30px;
-    font-family: 'PT Sans', sans-serif;
+    margin-top: 20px;
+    font-family: 'PT Serif', serif;
         }
