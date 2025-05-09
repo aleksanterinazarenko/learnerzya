@@ -1,12 +1,12 @@
 body {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     background: #333;
     color: white;
     padding: 0.1rem;
@@ -161,7 +161,7 @@ tr {
 }
 
 footer {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     text-align: center;
     padding: 1rem;
     background: #333;
@@ -176,7 +176,7 @@ footer {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
 }
 
 .container-grammar h2 {
@@ -185,7 +185,7 @@ footer {
 }
 
 textarea {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-size: 1rem;
     line-height: 20px;
     width: calc(100% - 40px);
@@ -206,7 +206,7 @@ textarea:focus {
 }
 
 #searchInput {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-size: 1rem;
     width: calc(100% - 40px);
     padding: 10px;
@@ -229,21 +229,21 @@ textarea:focus {
 }
 
 .word {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-weight: regular;
     font-size: 1rem;
     color: #333;
 }
 
 .definition {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-style: italic;
     font-size: 1rem;
     color: #333;
 }
 
 #languageSelector {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
@@ -264,5 +264,5 @@ button#copyButton {
     font-size: 1rem;
     padding: 5px 10px;
     margin-top: 20px;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
         }

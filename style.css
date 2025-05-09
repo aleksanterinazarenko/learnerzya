@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -48,6 +48,34 @@ nav .nav-list li a {
 
 .nav-list a:hover {
     text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PT Sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PT Sans Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PT Sans Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PT Sans Bold Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
@@ -103,7 +131,7 @@ h2 {
 
 main {
     padding: 0;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-size: 20px;
     flex-grow: 1;
 }
@@ -173,7 +201,7 @@ footer {
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-size: 1rem;
     font-weight: bold;
     font-style: normal;
@@ -182,7 +210,7 @@ footer {
 
 .dictionary p {
     color: #333;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-size: 1rem;
     font-style: normal;
     line-height: 1.5;
@@ -276,7 +304,7 @@ tr {
 }
 
 #searchInput {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     font-size: 1rem;
     width: 100%;
     padding: 10px;
@@ -345,7 +373,7 @@ tr {
 }
   
 #languageSelector {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     padding: 5px;
     margin-bottom: 10px;
     font-size: 1rem;
@@ -388,11 +416,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
 }
 
 .output-text {
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
 }
 
 .button-container {
@@ -411,7 +439,7 @@ button#copyButton {
     padding: 5px 10px;
     margin-top: 30px;
     border-radius: 5px;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Sans', serif;
     background-color: transparent;
     cursor: pointer; 
         }
