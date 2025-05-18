@@ -137,7 +137,7 @@ function transliterate(text) {
 
     for (const [key, value] of Object.entries(palatals)) {
     const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
-    text = text.replace(regexVowel, value + '-$1');
+    text = text.replace(regexVowel, value + '$1');
 
     const regexNoVowel = new RegExp(key + '[Ьь]', 'g');
 text = text.replace(regexNoVowel, value);
