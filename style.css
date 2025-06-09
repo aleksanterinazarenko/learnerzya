@@ -134,6 +134,8 @@ nav .nav-list li a {
     font-style: italic;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 h1 {
     font-family: 'Permanent Marker', cursive;
     font-weight: normal;
