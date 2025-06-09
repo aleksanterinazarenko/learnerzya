@@ -9,7 +9,7 @@ header {
     font-family: 'Helvetica', 'Arial';
     background: #333;
     color: white;
-    padding: 0.1rem;
+    padding: 0.16px;
 }
 
 nav ul {
@@ -20,7 +20,7 @@ nav ul {
 
 nav ul li {
     display: block;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.16px;
 }
 
 nav ul li a {
@@ -36,7 +36,7 @@ nav ul li a {
     width: 100%;
     padding: 10px;
     font-family: 'Helvetica', 'Arial';
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     background-color: #333;
@@ -136,7 +136,7 @@ nav ul li a {
 
 p {
     color: #333;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     margin: 10px 0;
     padding-right: 20px;
@@ -163,7 +163,7 @@ h1 a {
 
 h2 {
     font-family: 'Helvetica', 'Arial';
-    font-size: 1.1rem;
+    font-size: 18px;
     font-weight: normal;
     font-style: italic;
     text-align: center;
@@ -176,7 +176,7 @@ h2 {
 }
 
 .table td {
-    padding: 0.1rem;
+    padding: 0.16px;
     position: relative;
 }
 
@@ -191,7 +191,7 @@ tr {
 footer {
     font-family: 'Helvetica', 'Arial';
     text-align: center;
-    padding: 1rem;
+    padding: 16px;
     background: #333;
     color: white;
     margin-top: 30px;
@@ -208,13 +208,13 @@ footer {
 }
 
 .container-grammar h2 {
-    font-size: 1.1rem;
+    font-size: 18px;
     padding-left: 10px;
 }
 
 textarea {
     font-family: 'Helvetica', 'Arial';
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 20px;
     width: calc(100% - 40px);
     padding: 10px;
@@ -235,7 +235,7 @@ textarea:focus {
 
 #searchInput {
     font-family: 'Helvetica', 'Arial';
-    font-size: 1rem;
+    font-size: 16px;
     width: calc(100% - 40px);
     padding: 10px;
     margin: 10px 10px 20px 20px;
@@ -259,14 +259,14 @@ textarea:focus {
 .word {
     font-family: 'Helvetica', 'Arial';
     font-weight: regular;
-    font-size: 1rem;
+    font-size: 16px;
     color: #333;
 }
 
 .definition {
     font-family: 'Helvetica', 'Arial';
     font-style: italic;
-    font-size: 1rem;
+    font-size: 16px;
     color: #333;
 }
 
@@ -275,7 +275,7 @@ textarea:focus {
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .button-container {
@@ -289,7 +289,7 @@ button#copyButton {
     display: inline-block;
     text-decoration: none;
     color: #333;
-    font-size: 1rem;
+    font-size: 16px;
     padding: 5px 10px;
     margin-top: 20px;
     font-family: 'Helvetica', 'Arial';
