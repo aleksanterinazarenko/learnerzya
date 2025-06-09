@@ -1,12 +1,12 @@
 body {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     background: #333;
     color: white;
     padding: 0.1rem;
@@ -35,7 +35,7 @@ nav ul li a {
 .nav-select {
     width: 100%;
     padding: 10px;
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -106,6 +106,34 @@ nav ul li a {
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_oblique.otf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_boldoblique.otf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 p {
     color: #333;
     font-size: 1rem;
@@ -134,7 +162,7 @@ h1 a {
 }
 
 h2 {
-    font-family: 'PT Serif', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 1.1rem;
     font-weight: normal;
     font-style: italic;
@@ -161,7 +189,7 @@ tr {
 }
 
 footer {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     text-align: center;
     padding: 1rem;
     background: #333;
@@ -176,7 +204,7 @@ footer {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
 }
 
 .container-grammar h2 {
@@ -185,7 +213,7 @@ footer {
 }
 
 textarea {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 1rem;
     line-height: 20px;
     width: calc(100% - 40px);
@@ -206,7 +234,7 @@ textarea:focus {
 }
 
 #searchInput {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 1rem;
     width: calc(100% - 40px);
     padding: 10px;
@@ -229,21 +257,21 @@ textarea:focus {
 }
 
 .word {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-weight: regular;
     font-size: 1rem;
     color: #333;
 }
 
 .definition {
-    font-family: 'PT Serif', serif;
+    font-family: 'Helvetica', 'Arial';
     font-style: italic;
     font-size: 1rem;
     color: #333;
 }
 
 #languageSelector {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     margin-bottom: 20px;
     margin-left: 20px;
     padding: 5px;
@@ -264,5 +292,5 @@ button#copyButton {
     font-size: 1rem;
     padding: 5px 10px;
     margin-top: 20px;
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
         }

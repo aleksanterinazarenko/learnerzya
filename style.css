@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     height: 100%;
     margin: 0;
     padding: 0;
@@ -106,6 +106,34 @@ nav .nav-list li a {
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_oblique.otf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica_boldoblique.otf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 h1 {
     font-family: 'Permanent Marker', cursive;
     font-weight: normal;
@@ -121,7 +149,7 @@ h1 a {
 }
 
 h2 {
-    font-family: 'PT Serif', serif;
+    font-family: 'Helvetica', 'Arial';
     font-weight: normal;
     font-style: italic;
     font-size: 1.1rem;
@@ -131,7 +159,7 @@ h2 {
 
 main {
     padding: 0;
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 20px;
     flex-grow: 1;
 }
@@ -201,7 +229,7 @@ footer {
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 1rem;
     font-weight: bold;
     font-style: normal;
@@ -210,7 +238,7 @@ footer {
 
 .dictionary p {
     color: #333;
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 1rem;
     font-style: normal;
     line-height: 1.5;
@@ -304,7 +332,7 @@ tr {
 }
 
 #searchInput {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     font-size: 1rem;
     width: 100%;
     padding: 10px;
@@ -373,7 +401,7 @@ tr {
 }
   
 #languageSelector {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     padding: 5px;
     margin-bottom: 10px;
     font-size: 1rem;
@@ -416,11 +444,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
 }
 
 .output-text {
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
 }
 
 .button-container {
@@ -439,7 +467,7 @@ button#copyButton {
     padding: 5px 10px;
     margin-top: 30px;
     border-radius: 5px;
-    font-family: 'PT Sans', serif;
+    font-family: 'Helvetica', 'Arial';
     background-color: transparent;
     cursor: pointer; 
         }

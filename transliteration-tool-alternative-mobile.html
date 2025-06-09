@@ -64,11 +64,11 @@ const letters = {
     "А": "A", "Б": "B", "В": "V", "Г": "G", "Д": "D", "Е": "E", "Ё": "O", "Ж": "Ž", "З": "Z", "И": "I", "Й": "J",
     "К": "K", "Л": "L", "М": "M", "Н": "N", "О": "O", "П": "P", "Р": "R", "С": "S", "Т": "T", "У": "U", "Ф": "F",
     "Х": "H", "Ц": "C", "Ч": "Č", "Ш": "Š", "Щ": "Šč", "Ъ": "", "Ы": "Ï", "Ь": "", "Э": "Ë", "Ю": "U", "Я": "A",
-    "Ԙ": "Ä", "Ѣ": "E", "Ҥ": "N", "І": "I", "Ѳ": "F",
+    "Ԙ": "Ê", "Ӕ": "Ê", "Ӓ": "Ê", "Ѣ": "Ê", "Ҥ": "N", "І": "I", "Ѳ": "F",
     "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "o", "ж": "ž", "з": "z", "и": "i", "й": "j",
     "к": "k", "л": "l", "м": "m", "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u", "ф": "f",
     "х": "h", "ц": "c", "ч": "č", "ш": "š", "щ": "šč", "ь": "", "ъ": "", "ы": "ï", "э": "ë", "ю": "u", "я": "a",
-    "ԙ": "ä", "ѣ": "e", "ҥ": "n", "і": "i", "ѳ": "f"
+    "ԙ": "ê", "ӕ": "ê", "ӓ": "ê", "ѣ": "ê", "ҥ": "n", "і": "i", "ѳ": "f"
 };
 
 const palatals = {
@@ -85,7 +85,7 @@ function transliterate(text) {
 
     for (const [key, value] of Object.entries(palatals)) {
     const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
-    text = text.replace(regexVowel, value + '-$1');
+    text = text.replace(regexVowel, value + '$1');
 
     text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(?=[бгджзклмнпрстфхцчшщъ])/g, '$1v');
     text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])/g, '$1v$2');
@@ -98,8 +98,8 @@ function transliterate(text) {
     text = text.replace(/(ю[\u0302])/g, 'ё');
 
     text = text.replace(/([е])([и])([я])([і])/g, '$1j$2j$3');
-    text = text.replace(/([аоуыэяёюиеъьіӕѣАОУЫЭЯЁЮИЕЪЬІӔѢ])([еёюя])/g, '$1j$2');
-    text = text.replace(/([аоуыэяёюиеъіӕѣАОУЫЭЯЁЮИЕЪІӔѢ])([иі])/g, '$1j$2');
+    text = text.replace(/([аоуыэяёюиеъьіӕԙӓѣАОУЫЭЯЁЮИЕЪЬІӔԘӒѢ])([еёюя])/g, '$1j$2');
+    text = text.replace(/([аоуыэяёюиеъіӕԙӓѣАОУЫЭЯЁЮИЕЪІӔԘӒѢ])([иі])/g, '$1j$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪЬІӔѢ])([ЕЁЮЯ])/g, '$1J$2');
     text = text.replace(/([АОУЫЭЯЁЮИЕЪІӔѢ])([ИІ])/g, '$1J$2');
     text = text.replace(/([И])([иі])/g, 'J$2');
@@ -198,9 +198,6 @@ document.addEventListener('DOMContentLoaded', function () {
             footer.style.textAlign = '';
             footer.style.margin = '0';
         }
-    
-        setFooterPosition();
-        window.addEventListener('resize', setFooterPosition);
     });
     </script>
 
