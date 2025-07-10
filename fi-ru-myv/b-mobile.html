@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finnish-Russian-Erzya dictionary</title>
+    <link rel="stylesheet" href="/style-mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <select id="nav-select" class="nav-select">
+            <option value="" selected disabled hidden>Menu</option>
+            <option value="/index-mobile.html">Main Page</option>
+            <option value="/dictionaries-mobile.html">Dictionaries</option>
+            <option value="/grammar-mobile.html">Grammar</option>
+            <option value="/transliteration-tool-mobile.html">Transliteration tool</option>
+            <option value="/about-the-spelling-mobile.html">About the spelling</option>
+            <option value="/sources-mobile.html">Sources</option>
+            <option value="/other-mobile.html">Other</option>
+            <option value="mailto:aleksanterinazarenko@outlook.com">Contact</option>
+        </select>
+    </header>
+
+    <main>
+        <h1><a href="/learnerzya/index.html">Learn Erzya</a></h1>
+
+        <style>
+            table tr, table td {
+              line-height: 1.5;
+              padding: 10px;
+            }
+
+            #letterSelector {
+    font-family: 'Charis SIL', sans-serif;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 5px;
+    font-size: 16px;
+}
+          </style>
+
+<div class="container">
+    <h2 style="margin: 0 0 30px 0;">Finnish-Russian-Erzya dictionary</h2>
+
+<select id="letterSelector">
+  <option value="a-mobile.html">A</option>
+  <option value="b-mobile.html">B</option>
+  <option value="d-mobile.html">D</option>
+  <option value="e-mobile.html">E</option>
+  <option value="f-mobile.html">F</option>
+  <option value="g-mobile.html">G</option>
+  <option value="h-mobile.html">H</option>
+  <option value="i-mobile.html">I</option>
+  <option value="j-mobile.html">J</option>
+  <option value="k-mobile.html">K</option>
+  <option value="l-mobile.html">L</option>
+  <option value="m-mobile.html">M</option>
+  <option value="n-mobile.html">N</option>
+  <option value="o-mobile.html">O</option>
+  <option value="p-mobile.html">P</option>
+  <option value="r-mobile.html">R</option>
+  <option value="s-mobile.html">S</option>
+  <option value="t-mobile.html">T</option>
+  <option value="u-mobile.html">U</option>
+  <option value="v-mobile.html">V</option>
+  <option value="y-mobile.html">Y</option>
+  <option value="ä-mobile.html">Ä</option>
+  <option value="ö-mobile.html">Ö</option>
+</select>
+
+                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+    <tr>
+        <td>baari</td>
+        <td>бар, кафетерия</td>
+        <td>бар, симикудо, винакудо, каванямо кудо</td>
+        <td>bar, simikudo, vinakudo, kavańamo kudo</td>
+    </tr>
+    <tr>
+        <td>baptisti</td>
+        <td>баптист</td>
+        <td>баптист</td>
+        <td>baptist</td>
+    </tr>
+    <tr>
+        <td>bensiini</td>
+        <td>бензин</td>
+        <td>бензин</td>
+        <td>benzin</td>
+    </tr>
+    <tr>
+        <td>betoni</td>
+        <td>бетон</td>
+        <td>бетон</td>
+        <td>beton</td>
+    </tr>
+    <tr>
+        <td>bulevardi</td>
+        <td>бульвар</td>
+        <td>бульвар</td>
+        <td>buľvar</td>
+    </tr>
+</table>
+            </div>
+
+                <p style="text-align: center; margin-top: 10px;">Source: <a href="http://koti.japo.fi/~opoysti/svps.htm" style="text-decoration: none;">Osmo Pöysti</a></p>
+</div>
+</main>
+
+    <footer>
+        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024 Aleksanteri Nazarenko</a>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var navSelect = document.getElementById('nav-select');
+    
+    navSelect.addEventListener('change', function() {
+        window.location.href = this.value;
+    });
+});
+
+const selector = document.getElementById("letterSelector");
+
+  const currentPath = window.location.pathname;
+  for (let option of selector.options) {
+    if (
+      option.value === currentPath ||
+      option.value.endsWith(currentPath.split("/").pop())
+    ) {
+      selector.value = option.value;
+      break;
+    }
+  }
+
+  selector.addEventListener("change", function () {
+    const selectedUrl = this.value;
+    if (selectedUrl) {
+      window.location.href = selectedUrl;
+    }
+  });
+    </script>
+
+</body>
+</html>

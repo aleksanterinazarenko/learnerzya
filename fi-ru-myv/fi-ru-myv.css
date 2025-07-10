@@ -1,0 +1,52 @@
+        table tr, table td {
+          line-height: 1.5;
+          padding: 10px;
+        }
+
+                table.fixed-columns {
+    width: 90%;
+    margin: auto;
+    font-size: 17px;
+    table-layout: fixed;
+  }
+
+  .fixed-columns td:nth-child(1),
+  .fixed-columns th:nth-child(1) {
+    width: 20%;
+  }
+
+  .fixed-columns td:nth-child(2),
+  .fixed-columns th:nth-child(2) {
+    width: 20%;
+  }
+
+  .fixed-columns td:nth-child(3),
+  .fixed-columns th:nth-child(3) {
+    width: 30%;
+  }
+
+  .fixed-columns td:nth-child(4),
+  .fixed-columns th:nth-child(4) {
+    width: 30%;
+  }
+
+.nav-bar {
+  margin: 0 0 50px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-letter {
+  display: inline-block;
+  margin: 0 14px;
+}
+
+.nav-letter a {
+  text-decoration: none;
+}
+
+.nav-letter a:hover,
+.nav-letter a.active {
+  text-decoration: underline;
+}
