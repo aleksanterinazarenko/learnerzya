@@ -116,7 +116,19 @@ function loadDictionary(url) {
         })
         .then(data => {
             currentData = [];
+            setTimeout(loadWordFromHash, 0);
             let lastEntry = null;
+
+            function loadWordFromHash() {
+    const wordFromHash = decodeURIComponent(location.hash.substring(1));
+    if (wordFromHash) {
+        const entry = currentData.find(e => e.Word.toLowerCase() === wordFromHash.toLowerCase());
+        if (entry) {
+            showWordDetails(entry);
+            searchInput.value = entry.Word;
+        }
+    }
+}
 
             data.forEach(entry => {
                 if (entry.Word) {
@@ -142,6 +154,8 @@ function loadDictionary(url) {
             }
 
             suggestions.innerHTML = '';
+
+            loadWordFromHash();
         })
         .catch(error => console.error('Error loading the dictionary:', error));
 }

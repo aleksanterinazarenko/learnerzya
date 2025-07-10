@@ -63,7 +63,7 @@
         </div>
         <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
-        <p style="font-size: 16px; font-style: normal; margin-top: 30px; padding: 0;">
+        <p style="font-size: 17px; font-style: normal; margin-top: 30px; padding: 0;">
             Source: <a href="https://www.mv.helsinki.fi/home/rueter/PaasonenMW.shtml" style="text-decoration: none;">Jack Rueter</a>
         </p>
           
@@ -86,7 +86,7 @@
     background-color: white;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 17px;
 }
 .diacritic-btn:hover {
     background-color: #f9f9f9;
@@ -127,9 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 currentData = data;
                 suggestions.innerHTML = '';
+                showWordFromHash();
             })
             .catch(error => console.error('Error loading the dictionary:', error));
     }
+
+    function showWordFromHash() {
+    const hash = decodeURIComponent(window.location.hash.substring(1));
+    if (!hash) {
+        wordDetails.innerHTML = '';
+        return;
+    }
+    const entry = currentData.find(e => e.Word.toLowerCase() === hash.toLowerCase());
+    if (entry) {
+        searchInput.value = entry.Word;
+        showWordDetails(entry);
+        suggestions.style.display = 'none';
+    }
+}
 
     function highlightSuggestion(index) {
         const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
@@ -179,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 searchInput.value = entry.Word;
                 showWordDetails(entry);
                 suggestions.style.display = 'none';
+                window.location.hash = encodeURIComponent(entry.Word);
             };
 
             suggestionItem.onmouseover = () => {

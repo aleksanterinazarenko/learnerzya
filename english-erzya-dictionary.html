@@ -90,9 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                currentData = data;
-                suggestions.innerHTML = '';
-            })
+    currentData = data;
+    suggestions.innerHTML = '';
+
+    function loadWordFromHash() {
+    const wordFromHash = decodeURIComponent(location.hash.substring(1));
+    if (wordFromHash) {
+        const entry = currentData.find(e => e.Word.toLowerCase() === wordFromHash.toLowerCase());
+        if (entry) {
+            showWordDetails(entry);
+            searchInput.value = entry.Word;
+        }
+    }
+}
+
+    loadWordFromHash();
+})
+
             .catch(error => console.error('Error loading the dictionary:', error));
     }
 
@@ -131,12 +145,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     suggestionItem.textContent = entry.Word;
 
                     suggestionItem.onclick = () => {
-                        selectedSuggestionIndex = index;
-                        highlightSuggestion(selectedSuggestionIndex);
-                        searchInput.value = entry.Word;
-                        showWordDetails(entry);
-                        suggestions.style.display = 'none';
-                    };
+    selectedSuggestionIndex = index;
+    highlightSuggestion(selectedSuggestionIndex);
+    searchInput.value = entry.Word;
+    showWordDetails(entry);
+    suggestions.style.display = 'none';
+
+    location.hash = encodeURIComponent(entry.Word);
+};
+
+function loadWordFromHash() {
+    const wordFromHash = decodeURIComponent(location.hash.substring(1));
+    if (wordFromHash) {
+        const entry = currentData.find(e => e.Word.toLowerCase() === wordFromHash.toLowerCase());
+        if (entry) {
+            showWordDetails(entry);
+            searchInput.value = entry.Word;
+        }
+    }
+}
 
                     suggestionItem.onmouseover = () => {
                         isMouseOverSuggestion = true;
