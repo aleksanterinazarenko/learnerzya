@@ -106,7 +106,7 @@
             var footer = document.querySelector('footer');
             var windowHeight = window.innerHeight;
             var bodyHeight = document.body.offsetHeight;
-    
+   
             footer.style.position = 'fixed';
             footer.style.bottom = '0';
             footer.style.left = '0';
@@ -114,6 +114,9 @@
             footer.style.textAlign = '';
             footer.style.margin = '0';
         }
+   
+        setFooterPosition();
+        window.addEventListener('resize', setFooterPosition);
     });
     </script>
 

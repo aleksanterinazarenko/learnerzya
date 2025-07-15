@@ -13,3 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.body.innerHTML = document.body.innerHTML.replace(/\u2002/g, '\u00A0'); 
+});
