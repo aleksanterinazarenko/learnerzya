@@ -62,7 +62,9 @@ document.getElementById('inputText').addEventListener('input', function() {
 
 function updateOutputText() {
     const inputText = document.getElementById('inputText').value;
+    console.log('Input Text: ', inputText);
     const outputText = transliterate(inputText);
+    console.log('Output Text: ', outputText);
     document.getElementById('outputText').value = outputText;
 }
 
