@@ -98,6 +98,7 @@ function transliterate(text) {
     text = " " + text + " ";
 
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[еёияіьѣ])/g, '$1');
+    text = text.replace(/([аоуыэяёюиеъіӕѣАОУЫЭЯЁЮИЕЪІӔѢ])([иі])/g, '$1j$2');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[эы])/g, '$1');
     text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[еёиюяіь])/g, '$1j');
     text = text.replace(/([лЛ])ь(?=[тТ])/g, '$1');
@@ -146,7 +147,7 @@ function transliterate(text) {
         return p1.toLowerCase() + p2;
     });
 
-    text = text.replace(/«/g, '“').replace(/»/g, '”');
+    text = text.replace(/«/g, '„').replace(/»/g, '“');
 
     for (const [key, value] of Object.entries(palatals)) {
     const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
@@ -164,7 +165,38 @@ for (const [key, value] of Object.entries(palatals)) {
 }
 
     return text.trim().split('').map(char => letters[char] || char).join('');
-}
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+    }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navLinks = document.querySelectorAll('.nav-list a');
+  const currentPath = window.location.pathname.split("/").pop();
+
+  navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (linkPath === currentPath) {
+          link.classList.add('active');
+      }
+  });
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var navSelect = document.getElementById('nav-select');
+    
+    navSelect.addEventListener('change', function() {
+        window.location.href = this.value;
+    });
+});
 </script>
 
 <script>
