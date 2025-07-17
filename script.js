@@ -13,3 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  function replaceInTextNodes(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      node.nodeValue = node.nodeValue.replace(/\u2002/g, '\u00A0');
+    } else {
+      node.childNodes.forEach(replaceInTextNodes);
+    }
+  }
+  replaceInTextNodes(document.body);
+});
