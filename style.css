@@ -1,12 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+@font-face {
+    font-family: 'CMU Sans Serif';
+    src: url('fonts/CMU Sans Serif.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CMU Sans Serif';
+    src: url('fonts/CMU Sans Serif Oblique.otf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CMU Sans Serif';
+    src: url('fonts/CMU Sans Serif Bold Extended.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -53,90 +73,6 @@ nav .nav-list li a {
     text-decoration: underline;
 }
 
-@font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    src: url('fonts/PT Sans Bold Italic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'PT Serif';
-    src: url('fonts/PTSerif-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'PT Serif';
-    src: url('fonts/PTSerif-Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'PT Serif';
-    src: url('fonts/PTSerif-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'PT Serif';
-    src: url('fonts/PTSerif-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url('fonts/helvetica_regular.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url('fonts/helvetica_oblique.otf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url('fonts/helvetica_bold.otf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url('fonts/helvetica_boldoblique.otf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
 h1 {
     font-family: 'Permanent Marker', cursive;
     font-weight: normal;
@@ -152,7 +88,7 @@ h1 a {
 }
 
 h2 {
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     font-weight: normal;
     font-style: italic;
     font-size: 18px;
@@ -162,7 +98,7 @@ h2 {
 
 main {
     padding: 0;
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     font-size: 20px;
     flex-grow: 1;
 }
@@ -174,7 +110,7 @@ p {
     padding: 0 50px;
     font-size: 17px;
     text-align: left;
-  }
+}
 
 p a {
     color: #21427a;
@@ -232,7 +168,7 @@ footer {
     margin: 30px auto 0;
     padding: 10px 50px;
     text-align: left;
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     font-size: 17px;
     font-weight: 600;
     font-style: normal;
@@ -241,7 +177,7 @@ footer {
 
 .dictionary p {
     color: #333;
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     font-size: 17px;
     font-style: normal;
     line-height: 1.5;
@@ -257,6 +193,7 @@ tr {
 .container-grammar td {
     border-bottom: 1px solid #ccc;
     padding: 5px;
+    font-size: 17px;
 }
 
 .container-grammar td:not(:last-child) {
@@ -335,7 +272,7 @@ tr {
 }
 
 #searchInput {
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     font-size: 17px;
     width: 100%;
     padding: 10px;
@@ -382,8 +319,8 @@ tr {
 
 #dictionaryList {
     list-style-type: none;
-    padding: 0; 
-    margin: 0; 
+    padding: 0;
+    margin: 0;
 }
 
 #dictionaryList li {
@@ -402,9 +339,9 @@ tr {
     font-style: italic;
     font-size: 17px;
 }
-  
+
 #languageSelector {
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     padding: 5px;
     margin-bottom: 10px;
     font-size: 17px;
@@ -418,7 +355,7 @@ tr {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    align-items: center; 
+    align-items: center;
 }
 
 label {
@@ -447,11 +384,11 @@ textarea:focus {
 }
 
 .input-text {
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
 }
 
 .output-text {
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
 }
 
 .button-container {
@@ -470,16 +407,17 @@ button#copyButton {
     padding: 5px 10px;
     margin-top: 30px;
     border-radius: 5px;
-    font-family: 'Finlandica', sans-serif;
+    font-family: 'CMU Sans Serif', sans-serif;
     background-color: transparent;
-    cursor: pointer; 
-        }
-        button#copyButton:hover {
-            text-decoration: none;
-        }
+    cursor: pointer;
+}
 
-        @media (max-width: 768px) {
-            .content-container {
-                grid-template-columns: 1fr;
-            }
-        }
+button#copyButton:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr;
+    }
+}
