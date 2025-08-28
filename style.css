@@ -230,7 +230,7 @@ tr {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 40px;
 }
 
 .blog-post {
@@ -414,6 +414,66 @@ button#copyButton {
 
 button#copyButton:hover {
     text-decoration: none;
+}
+
+.category {
+    font-style: italic;
+    font-weight: normal;
+    color: green;
+}
+
+.examples,
+.quotes {
+    margin: 0 auto 30px;
+    padding: 10px 50px;
+    margin-top: -30px;
+}
+
+.example,
+.quote {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.quote {
+    display: grid;
+}
+
+.quote:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.example em,
+.quote em {
+    color: #B22222;
+}
+
+.source {
+    text-align: right;
+    font-style: italic;
+    color: grey
+}
+
+#wordDetails ul {
+    padding-left: 50px;
+    margin-bottom: 40px;
+    font-size: 17px;
+    list-style-type: none;
+    counter-reset: definition-counter;
+}
+
+#wordDetails li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.definition-number {
+    font-family: 'CMU Sans Serif', sans-serif;
+    font-size: 16px;
+    margin-right: 8px;
+    color: #2c3e50;
 }
 
 @media (max-width: 768px) {
