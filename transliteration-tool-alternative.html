@@ -6,7 +6,7 @@
     <meta name="keywords"
         content="Erzya language, ersän kieli, эрзянский язык, эрзянь кель, dictionary, sanakirja, словарь, валкс">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transliteration tool (alternative)</title>
+    <title>Transliteration tool (alternative A)</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -40,7 +40,7 @@
         <h1><a href="/learnerzya/index.html">Learn Erzya</a></h1>
 
         <div class="container">
-            <h2>Transliteration tool (alternative)</h2>
+            <h2>Transliteration tool (alternative A)</h2>
             <div class="translator">
                 <textarea id="inputText" class="input-text" placeholder="Enter Cyrillic text here..."></textarea>
                 <textarea id="outputText" class="output-text" readonly
@@ -167,7 +167,7 @@
     const palatals = {
         "Д": "Ď",
         "З": "Ź",
-        "Л": "Ĺ",
+        "Л": "Ľ",
         "Н": "Ń",
         "Р": "Ŕ",
         "С": "Ś",
@@ -175,7 +175,7 @@
         "Ц": "Ć",
         "д": "ď",
         "з": "ź",
-        "л": "ĺ",
+        "л": "ľ",
         "н": "ń",
         "р": "ŕ",
         "с": "ś",
@@ -194,13 +194,13 @@
             const regexVowel = new RegExp(key + 'ь([аеёиоуыэюяАЕЁИОУЫЭЮЯ])', 'g');
             text = text.replace(regexVowel, value + '$1');
 
-            text = text.replace(/([И])([иіИІ])/g, 'J$2');
+            text = text.replace(/([ИІ])([иіИІ])/g, 'J$2');
 
             text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(?=[бгджзклмнпрстфхцчшщъБГДЖЗКЛМНПРСТФХЦЧШЩЪ])/g, '$1v');
-            text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])/g, '$1v$2');
-            text = text.replace(/([дзлнрстцДЗЛНРСТЦ])([тТ])([ьЬ])(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])/g, '$1ь$2$4');
+            text = text.replace(/([АЕЁИОУЫЭЮЯІаеёиоуыэюяі])в(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])/g, '$1v$2');
+            text = text.replace(/([дзлнрстцДЗЛНРСТЦ])([тТ])([ьЬ])(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])/g, '$1ь$2$4');
             text = text.replace(/([дзлнрстцДЗЛНРСТЦ])([тТ])([ьЬ])([бгджзклмнпрстфхцчшщъБГДЖЗКЛМНПРСТФХЦЧШЩЪ])/g, '$1ь$2$4');
-            text = text.replace(/(?<![аоуяёюАОУЯЁЮ])([тТ])([ьЬ])(?=\s|[.,!?;:()\[\]{}"“”«»„“\-]|$)/g, '$1');
+            text = text.replace(/(?<![аоуяёюАОУЯЁЮ])([тТ])([ьЬ])(?=\s|[.,!?;:()\[\]{}"“”«»„“…\-]|$)/g, '$1');
 
             text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[еёияіьѣ])/g, '$1');
             text = text.replace(/([дзлнрстцДЗЛНРСТЦ])ь(?=[дзлнрстхц]+[эы])/g, '$1');
@@ -216,19 +216,19 @@
             text = text.replace(/([АОУЫЭЯЁЮИЕЪЬІӔѢ])([ЕЁЮЯ])/g, '$1J$2');
             text = text.replace(/([АОУЫЭЯЁЮИЕЪІӔѢ])([ИІ])/g, '$1J$2');
 
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"„“”«»\-])([иі])([аоуыэяёюиеъьіӕ])/g, '$1j$3');
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"„“”«»\-])([ИІ])([аоуыэяёюиеъьіӕ])/g, '$1J$3');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])([иі])([аоуыэяёюиеъьіӕ])/g, '$1j$3');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])([ИІ])([аоуыэяёюиеъьіӕ])/g, '$1J$3');
 
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])([ёюя])/g, '$1j$2');
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])([ЁЮЯ])/g, '$1J$2');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])([ёюя])/g, '$1j$2');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])([ЁЮЯ])/g, '$1J$2');
             text = text.replace(/-([ёюя])/g, '-j$1');
             text = text.replace(/-([ЁЮЯ])/g, '-J$1');
 
             text = text.replace(/([аеёиоуыэюяьАЕЁИОУЫЭЮЯЬ])э/g, '$1e')
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])э/g, '$1e');
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])Э/g, '$1E');
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])і/g, '$1i');
-            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“\-])І/g, '$1I');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])э/g, '$1e');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])Э/g, '$1E');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])і/g, '$1i');
+            text = text.replace(/(^|\s|[.,!?;:()\[\]{}"“”«»„“…\-])І/g, '$1I');
 
             text = text.replace(/([бвгжкмпфхчшБВГЖКМПФХЧШ])([яԙ])/g, '$1ä');
             text = text.replace(/([бвгжкмпфхчшБВГЖКМПФХЧШ])ё/g, '$1ö');
