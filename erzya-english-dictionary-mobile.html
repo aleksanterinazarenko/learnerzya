@@ -115,7 +115,7 @@
                 wordDetails.style.display = 'block';
 
                 const baseURL = window.location.origin + window.location.pathname;
-                const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
+                const newURL = `${baseURL}#${encodeURIComponent(entry.Word)}`;
                 window.history.pushState({
                     word: entry.Word
                 }, '', newURL);
@@ -137,7 +137,7 @@
                 }
             }
 
-            function loadDictionary(url) {
+            function loadDictionary(url, callback) {
                 fetch(url)
                     .then(response => {
                         if (!response.ok) {
@@ -148,6 +148,8 @@
                     .then(data => {
                         currentData = data;
                         suggestions.innerHTML = '';
+
+                        if (callback) callback();
                     })
                     .catch(error => console.error('Error loading the dictionary:', error));
             }
@@ -251,10 +253,10 @@
             languageSelector.addEventListener('change', (event) => {
                 const selectedLanguage = event.target.value;
                 const url = selectedLanguage === 'latin' ? latinJsonURL : cyrillicJsonURL;
-                loadDictionary(url);
+                loadDictionary(url, loadWordFromURL);
             });
 
-            loadDictionary(cyrillicJsonURL);
+            loadDictionary(cyrillicJsonURL, loadWordFromURL);
         });
 
         document.addEventListener('DOMContentLoaded', function () {

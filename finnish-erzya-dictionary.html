@@ -133,6 +133,28 @@
         ${examplesHtml ? "<div class='examples'>" + examplesHtml + "</div>" : ""}
         ${quotesHtml ? "<div class='quotes'>" + quotesHtml + "</div>" : ""}
     `;
+
+                const baseURL = window.location.origin + window.location.pathname;
+                const newURL = `${baseURL}#${encodeURIComponent(entry.Word)}`;
+                window.history.pushState({
+                    word: entry.Word
+                }, '', newURL);
+            }
+
+            function loadWordFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const wordFromURL = urlParams.get('word');
+
+                if (wordFromURL) {
+                    searchInput.value = wordFromURL;
+                    const foundEntry = currentData.find(entry =>
+                        entry.Word.toLowerCase() === wordFromURL.toLowerCase()
+                    );
+
+                    if (foundEntry) {
+                        showWordDetails(foundEntry);
+                    }
+                }
             }
 
             function loadDictionary(url) {
@@ -239,6 +261,14 @@
                             searchInput.value = selectedWord.Word;
                             showWordDetails(selectedWord);
                             suggestions.style.display = 'none';
+                        } else if (searchInput.value.trim() !== "") {
+                            const exactMatch = currentData.find(entry =>
+                                entry.Word.toLowerCase() === searchInput.value.trim().toLowerCase()
+                            );
+                            if (exactMatch) {
+                                showWordDetails(exactMatch);
+                                suggestions.style.display = 'none';
+                            }
                         }
                     }
                 }
@@ -260,6 +290,8 @@
 
 <script>
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-        window.location.href = 'english-erzya-dictionary-mobile.html';
+        const currentParams = window.location.search;
+        const mobilePage = 'finnish-erzya-dictionary-mobile.html';
+        window.location.href = mobilePage + currentParams;
     }
 </script>

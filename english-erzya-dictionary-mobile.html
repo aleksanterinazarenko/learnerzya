@@ -113,9 +113,31 @@
     `;
 
                 wordDetails.style.display = 'block';
+
+                const baseURL = window.location.origin + window.location.pathname;
+                const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
+                window.history.pushState({
+                    word: entry.Word
+                }, '', newURL);
             }
 
-            function loadDictionary(url) {
+            function loadWordFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const wordFromURL = urlParams.get('word');
+
+                if (wordFromURL) {
+                    searchInput.value = wordFromURL;
+                    const foundEntry = currentData.find(entry =>
+                        entry.Word.toLowerCase() === wordFromURL.toLowerCase()
+                    );
+
+                    if (foundEntry) {
+                        showWordDetails(foundEntry);
+                    }
+                }
+            }
+
+            function loadDictionary(url, callback) {
                 fetch(url)
                     .then(response => {
                         if (!response.ok) {
@@ -126,6 +148,8 @@
                     .then(data => {
                         currentData = data;
                         suggestions.innerHTML = '';
+
+                        if (callback) callback();
                     })
                     .catch(error => console.error('Error loading the dictionary:', error));
             }
@@ -229,10 +253,10 @@
             languageSelector.addEventListener('change', (event) => {
                 const selectedLanguage = event.target.value;
                 const url = selectedLanguage === 'latin' ? latinJsonURL : cyrillicJsonURL;
-                loadDictionary(url);
+                loadDictionary(url, loadWordFromURL);
             });
 
-            loadDictionary(cyrillicJsonURL);
+            loadDictionary(cyrillicJsonURL, loadWordFromURL);
         });
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -247,3 +271,11 @@
 </body>
 
 </html>
+
+<script>
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        const currentParams = window.location.search;
+        const desktopPage = 'english-erzya-dictionary.html';
+        window.location.href = desktopPage + currentParams;
+    }
+</script>

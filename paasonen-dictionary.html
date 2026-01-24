@@ -87,24 +87,24 @@
 </html>
 
 <style>
-#diacriticButtons {
-    margin-top: 10px;
-}
+    #diacriticButtons {
+        margin-top: 10px;
+    }
 
-.diacritic-btn {
-    padding: 5px 10px;
-    margin-right: 5px;
-    border: 1px solid #ccc;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    font-family: 'CMU Sans Serif', sans-serif;
-    font-size: 15px;
-}
+    .diacritic-btn {
+        padding: 5px 10px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        background-color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: 'CMU Sans Serif', sans-serif;
+        font-size: 15px;
+    }
 
-.diacritic-btn:hover {
-    background-color: #f9f9f9;
-}
+    .diacritic-btn:hover {
+        background-color: #f9f9f9;
+    }
 </style>
 
 <script>
@@ -229,6 +229,72 @@
             }
         });
 
+        searchInput.addEventListener('keydown', (event) => {
+            const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
+
+            if (event.key === 'Enter') {
+                event.preventDefault();
+
+                const query = searchInput.value.trim();
+                if (query === "") {
+                    wordDetails.innerHTML = '';
+                    suggestions.style.display = 'none';
+                    return;
+                }
+
+                if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < filteredWords.length) {
+                    const selectedWord = filteredWords[selectedSuggestionIndex];
+                    searchInput.value = selectedWord.Word;
+                    showWordDetails(selectedWord);
+                    suggestions.style.display = 'none';
+                    window.location.hash = encodeURIComponent(selectedWord.Word);
+                } else {
+                    const exactMatch = currentData.find(entry =>
+                        entry.Word.toLowerCase() === query.toLowerCase()
+                    );
+
+                    if (exactMatch) {
+                        showWordDetails(exactMatch);
+                        suggestions.style.display = 'none';
+                        window.location.hash = encodeURIComponent(exactMatch.Word);
+                    } else if (filteredWords.length > 0) {
+                        const firstMatch = filteredWords[0];
+                        searchInput.value = firstMatch.Word;
+                        showWordDetails(firstMatch);
+                        suggestions.style.display = 'none';
+                        window.location.hash = encodeURIComponent(firstMatch.Word);
+                    } else {
+                        wordDetails.innerHTML =
+                            '<p style="color: #666; font-style: italic;">No results found</p>';
+                        suggestions.style.display = 'none';
+                    }
+                }
+            } else if (event.key === 'ArrowDown' && !isMouseOverSuggestion) {
+                event.preventDefault();
+                if (selectedSuggestionIndex < suggestionItems.length - 1) {
+                    selectedSuggestionIndex++;
+                    highlightSuggestion(selectedSuggestionIndex);
+                    suggestionItems[selectedSuggestionIndex].scrollIntoView({
+                        block: 'nearest'
+                    });
+                }
+            } else if (event.key === 'ArrowUp' && !isMouseOverSuggestion) {
+                event.preventDefault();
+                if (selectedSuggestionIndex > 0) {
+                    selectedSuggestionIndex--;
+                    highlightSuggestion(selectedSuggestionIndex);
+                    suggestionItems[selectedSuggestionIndex].scrollIntoView({
+                        block: 'nearest'
+                    });
+                } else if (selectedSuggestionIndex === -1 && suggestionItems.length > 0) {
+                    selectedSuggestionIndex = suggestionItems.length - 1;
+                    highlightSuggestion(selectedSuggestionIndex);
+                    suggestionItems[selectedSuggestionIndex].scrollIntoView({
+                        block: 'nearest'
+                    });
+                }
+            }
+        });
 
         languageSelector.addEventListener('change', (event) => {
             const selectedLanguage = event.target.value;

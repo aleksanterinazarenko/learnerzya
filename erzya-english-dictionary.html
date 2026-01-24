@@ -135,7 +135,7 @@
     `;
 
                 const baseURL = window.location.origin + window.location.pathname;
-                const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
+                const newURL = `${baseURL}#${encodeURIComponent(entry.Word)}`;
                 window.history.pushState({
                     word: entry.Word
                 }, '', newURL);
@@ -261,6 +261,14 @@
                             searchInput.value = selectedWord.Word;
                             showWordDetails(selectedWord);
                             suggestions.style.display = 'none';
+                        } else if (searchInput.value.trim() !== "") {
+                            const exactMatch = currentData.find(entry =>
+                                entry.Word.toLowerCase() === searchInput.value.trim().toLowerCase()
+                            );
+                            if (exactMatch) {
+                                showWordDetails(exactMatch);
+                                suggestions.style.display = 'none';
+                            }
                         }
                     }
                 }
