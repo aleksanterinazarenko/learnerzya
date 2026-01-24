@@ -125,6 +125,25 @@
 
                 wordDetails.style.display = 'block';
                 suggestions.style.display = 'none';
+
+                const baseURL = window.location.origin + window.location.pathname;
+                const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
+                window.history.pushState({
+                    word: entry.Word
+                }, '', newURL);
+            }
+
+            function loadWordFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const wordFromURL = urlParams.get('word');
+
+                if (wordFromURL) {
+                    const entry = currentData.find(e => e.Word.toLowerCase() === wordFromURL.toLowerCase());
+                    if (entry) {
+                        showWordDetails(entry);
+                        searchInput.value = entry.Word;
+                    }
+                }
             }
 
             function loadDictionary(url) {
@@ -138,6 +157,8 @@
                     .then(data => {
                         currentData = [];
                         let lastEntry = null;
+
+                        setTimeout(loadWordFromURL, 0);
 
                         data.forEach(entry => {
                             if (entry.Word) {
@@ -167,6 +188,22 @@
                     })
                     .catch(error => console.error('Error loading the dictionary:', error));
             }
+
+            window.addEventListener('popstate', (event) => {
+                if (event.state && event.state.word) {
+                    searchInput.value = event.state.word;
+                    const foundEntry = currentData.find(entry =>
+                        entry.Word.toLowerCase() === event.state.word.toLowerCase()
+                    );
+                    if (foundEntry) {
+                        showWordDetails(foundEntry);
+                    }
+                } else {
+                    searchInput.value = '';
+                    wordDetails.innerHTML = '';
+                    wordDetails.style.display = 'none';
+                }
+            });
 
             function highlightSuggestion(index) {
                 const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
@@ -281,3 +318,11 @@
 </body>
 
 </html>
+
+<script>
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        const currentParams = window.location.search;
+        const desktopPage = 'explanatory-dictionary.html';
+        window.location.href = desktopPage + currentParams;
+    }
+</script>

@@ -117,6 +117,25 @@
             const categoryDisplay = entry.Category ?
                 `&ensp;<span style="font-weight: normal;">${entry.Category}</span>` : '';
             wordDetails.innerHTML = `<h2>${entry.Word}${categoryDisplay}</h2><p>${entry.Definition}</p>`;
+
+            const baseURL = window.location.origin + window.location.pathname;
+            const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
+            window.history.pushState({
+                word: entry.Word
+            }, '', newURL);
+        }
+
+        function loadWordFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const wordFromURL = urlParams.get('word');
+
+            if (wordFromURL) {
+                const entry = currentData.find(e => e.Word.toLowerCase() === wordFromURL.toLowerCase());
+                if (entry) {
+                    showWordDetails(entry);
+                    searchInput.value = entry.Word;
+                }
+            }
         }
 
         function loadDictionary(url) {
@@ -129,7 +148,8 @@
                 })
                 .then(data => {
                     currentData = [];
-                    setTimeout(loadWordFromHash, 0);
+                    setTimeout(loadWordFromURL, 0);
+
                     let lastEntry = null;
 
                     function loadWordFromHash() {
@@ -174,6 +194,21 @@
                 })
                 .catch(error => console.error('Error loading the dictionary:', error));
         }
+
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.word) {
+                searchInput.value = event.state.word;
+                const foundEntry = currentData.find(entry =>
+                    entry.Word.toLowerCase() === event.state.word.toLowerCase()
+                );
+                if (foundEntry) {
+                    showWordDetails(foundEntry);
+                }
+            } else {
+                searchInput.value = '';
+                wordDetails.innerHTML = '';
+            }
+        });
 
         function highlightSuggestion(index) {
             const suggestionItems = Array.from(suggestions.getElementsByClassName('suggestion-item'));
@@ -280,6 +315,8 @@
 
 <script>
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-        window.location.href = 'explanatory-dictionary-mobile.html';
+        const currentParams = window.location.search;
+        const mobilePage = 'explanatory-dictionary-mobile.html';
+        window.location.href = mobilePage + currentParams;
     }
 </script>
