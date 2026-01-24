@@ -30,8 +30,8 @@
 
         <div class="container">
             <select id="languageSelector">
-                <option value="latin">Latin</option>
                 <option value="cyrillic">Cyrillic</option>
+                <option value="latin">Latin</option>
             </select>
             <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
             <div id="suggestions" class="suggestions-list" style="display: none;"></div>
@@ -44,9 +44,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const latinJsonURL =
-                'https://raw.githubusercontent.com/aleksanterinazarenko/databases/refs/heads/main/fin-myv-lat.json';
+                'https://raw.githubusercontent.com/aleksanterinazarenko/learnerzya/refs/heads/main/databases/fin-myv-lat.json';
             const cyrillicJsonURL =
-                'https://raw.githubusercontent.com/aleksanterinazarenko/databases/refs/heads/main/fin-myv-cyr.json';
+                'https://raw.githubusercontent.com/aleksanterinazarenko/learnerzya/refs/heads/main/databases/fin-myv-cyr.json';
 
             const searchInput = document.getElementById('searchInput');
             const languageSelector = document.getElementById('languageSelector');
@@ -228,11 +228,11 @@
 
             languageSelector.addEventListener('change', (event) => {
                 const selectedLanguage = event.target.value;
-                const url = selectedLanguage === 'cyrillic' ? cyrillicJsonURL : latinJsonURL;
+                const url = selectedLanguage === 'latin' ? latinJsonURL : cyrillicJsonURL;
                 loadDictionary(url);
             });
 
-            loadDictionary(latinJsonURL);
+            loadDictionary(cyrillicJsonURL);
         });
 
         document.addEventListener('DOMContentLoaded', function () {
