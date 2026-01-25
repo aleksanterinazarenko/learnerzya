@@ -169,7 +169,7 @@ footer {
     padding: 10px 50px;
     text-align: left;
     font-family: 'CMU Sans Serif', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     font-style: normal;
     text-transform: none;
@@ -301,7 +301,7 @@ tr {
     border-radius: 5px;
     font-size: 17px;
     padding: 0;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .suggestion-item {
@@ -458,7 +458,7 @@ button#copyButton:hover {
 #wordDetails ul {
     padding-left: 50px;
     margin-bottom: 40px;
-    font-size: 16px;
+    font-size: 17px;
     list-style-type: none;
     counter-reset: definition-counter;
 }
@@ -471,7 +471,7 @@ button#copyButton:hover {
 
 .definition-number {
     font-family: 'CMU Sans Serif', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     margin-right: 5px;
     color: #2c3e50;
 }

@@ -36,13 +36,20 @@
             <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
             <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
+            <p style="font-size: 16px; font-style: normal; margin: 0 0 20px 20px; padding: 0;">
+                Source: <a href="https://www.mv.helsinki.fi/home/rueter/PaasonenMW.shtml"
+                    style="text-decoration: none;">Jack Rueter</a>
+            </p>
+
             <div id="wordDetails" class="word-details"></div>
         </div>
 
-        <p style="font-size: 16px; text-align: center; margin-top: 25px; margin-bottom: 25px;">Source: <a
-                href="https://www.mv.helsinki.fi/home/rueter/PaasonenMW.shtml" style="text-decoration: none;">Jack
-                Rueter</a></p>
     </main>
+
+    <footer>
+        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024
+            Aleksanteri Nazarenko</a>
+    </footer>
 
     <style>
         .nav-select {
@@ -60,23 +67,6 @@
             padding: 10px;
             background-color: #333;
             color: #fff;
-        }
-
-        .suggestions-list {
-            border-top: none;
-            padding: 0 20px;
-            margin-bottom: 10px;
-            overflow-y: auto;
-            background-color: #fff;
-        }
-
-        .suggestion-item {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .suggestion-item.highlight {
-            background-color: #f0f0f0;
         }
 
         .word-details {
@@ -193,7 +183,8 @@
                             if (aStartsWith && !bStartsWith) return -1;
                             if (!aStartsWith && bStartsWith) return 1;
                             return a.Word.length - b.Word.length;
-                        });
+                        })
+                        .slice(0, 10);
 
                     if (filteredWords.length > 0) {
                         filteredWords.forEach((entry, index) => {
@@ -206,6 +197,7 @@
                                 highlightSuggestion(selectedSuggestionIndex);
                                 searchInput.value = entry.Word;
                                 showWordDetails(entry);
+                                suggestions.style.display = 'none';
                             };
 
                             suggestionItem.onmouseover = () => {
@@ -220,11 +212,7 @@
 
                             suggestions.appendChild(suggestionItem);
                         });
-
                         suggestions.style.display = 'block';
-                        wordDetails.style.display = 'none';
-                    } else {
-                        suggestions.style.display = 'none';
                     }
                 }
             });
@@ -294,6 +282,38 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function setRealHeight() {
+                const realHeight = window.innerHeight;
+                document.body.style.height = realHeight + 'px';
+            }
+
+            setRealHeight();
+
+            document.body.style.display = 'flex';
+            document.body.style.flexDirection = 'column';
+            document.body.style.overflow = 'hidden';
+
+            const main = document.querySelector('main');
+            if (main) {
+                main.style.flex = '1';
+                main.style.overflowY = 'auto';
+            }
+
+            window.addEventListener('resize', setRealHeight);
+            window.addEventListener('orientationchange', setRealHeight);
+        });
+    </script>
+
 </body>
 
 </html>
+
+<script>
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        const currentParams = window.location.search;
+        const desktopPage = 'paasonen-dictionary.html';
+        window.location.href = desktopPage + currentParams;
+    }
+</script>

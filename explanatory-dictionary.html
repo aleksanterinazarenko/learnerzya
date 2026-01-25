@@ -73,20 +73,25 @@
             font-size: 17px;
             font-style: normal;
             line-height: 1.5;
-            padding: 10px 50px;
-            margin: 0;
+            padding: 5px 0;
+            margin: 0 50px;
             text-align: left;
+            border-bottom: none;
         }
 
-        .entry:last-of-type {
+        .entry:not(:last-child) {
             margin-bottom: 10px;
         }
 
-        .dictionary:has(.entry) p {
+        .dictionary-content {
+            margin-bottom: 30px;
+        }
+
+        .dictionary:has(.dictionary-content) p {
             margin: 0 auto 0;
         }
 
-        .dictionary:not(:has(.entry)) p {
+        .dictionary:not(:has(.dictionary-content)) p {
             margin: 0 auto 30px;
         }
     </style>
@@ -116,10 +121,29 @@
         function showWordDetails(entry) {
             const categoryDisplay = entry.Category ?
                 `&ensp;<span style="font-weight: normal;">${entry.Category}</span>` : '';
-            wordDetails.innerHTML = `<h2>${entry.Word}${categoryDisplay}</h2><p>${entry.Definition}</p>`;
+
+            let definitionHTML = '';
+
+            if (entry.Definition.includes('<div class="entry">')) {
+                definitionHTML = `
+            <h2>${entry.Word}${categoryDisplay}</h2>
+            <div class="dictionary-content">
+                ${entry.Definition}
+            </div>
+        `;
+            } else {
+                definitionHTML = `
+            <h2>${entry.Word}${categoryDisplay}</h2>
+            <div class="dictionary-content">
+                <div class="entry">${entry.Definition}</div>
+            </div>
+        `;
+            }
+
+            wordDetails.innerHTML = definitionHTML;
 
             const baseURL = window.location.origin + window.location.pathname;
-            const newURL = `${baseURL}#${encodeURIComponent(entry.Word)}`;
+            const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
             window.history.pushState({
                 word: entry.Word
             }, '', newURL);
@@ -152,28 +176,16 @@
 
                     let lastEntry = null;
 
-                    function loadWordFromHash() {
-                        const wordFromHash = decodeURIComponent(location.hash.substring(1));
-                        if (wordFromHash) {
-                            const entry = currentData.find(e => e.Word.toLowerCase() === wordFromHash
-                                .toLowerCase());
-                            if (entry) {
-                                showWordDetails(entry);
-                                searchInput.value = entry.Word;
-                            }
-                        }
-                    }
-
                     data.forEach(entry => {
                         if (entry.Word) {
-
                             if (lastEntry && lastEntry.Definition) {
                                 currentData.push(lastEntry);
                             }
 
                             lastEntry = {
                                 Word: entry.Word,
-                                Definition: entry.Definition,
+                                Definition: entry.Definition ?
+                                    `<div class="entry">${entry.Definition}</div>` : '',
                                 Category: entry.Category
                             };
                         } else if (lastEntry) {
@@ -218,7 +230,7 @@
         }
 
         searchInput.addEventListener('input', (event) => {
-            const query = event.target.value.toLowerCase().trim();
+            const query = event.target.value.toLowerCase();
             suggestions.innerHTML = '';
             selectedSuggestionIndex = -1;
 
@@ -236,7 +248,8 @@
                         if (!aStartsWith && bStartsWith) return 1;
 
                         return a.Word.length - b.Word.length;
-                    });
+                    })
+                    .slice(0, 10);
 
                 if (filteredWords.length > 0) {
                     filteredWords.forEach((entry, index) => {

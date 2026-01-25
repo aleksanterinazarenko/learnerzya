@@ -179,6 +179,7 @@ textarea:focus {
     padding: 10px;
     margin: 10px 10px 20px 20px;
     border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
@@ -252,11 +253,18 @@ button#copyButton {
 }
 
 .suggestions-list {
-    border-top: none;
-    padding: 0 20px;
-    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    max-height: 200px;
     overflow-y: auto;
-    background-color: #fff;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: calc(100% - 40px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0;
+    margin: -10px 0 0 20px;
 }
 
 .suggestion-item {
@@ -264,7 +272,11 @@ button#copyButton {
     cursor: pointer;
 }
 
-.suggestion-item.highlight {
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.highlight {
     background-color: #f0f0f0;
 }
 

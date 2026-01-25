@@ -37,11 +37,22 @@
             <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
             <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
+            <p style="font-size: 16px; font-style: normal; margin: 0 0 20px 20px; padding: 0;">
+                Source: Абрамов, К. Г. <a
+                    href="https://books.google.pl/books/about/%D0%92%D0%B0%D0%BB%D0%BE%D0%BD%D1%8C_%D1%91%D0%B2%D1%82%D0%BD%D0%B5%D0%BC%D0%B0_%D0%B2%D0%B0%D0%BB%D0%BA%D1%81.html?id=T18LAQAAMAAJ&redir_esc=y"
+                    style="text-decoration: none;">Валонь ёвтнема валкс</a>. — Саранск: Мордовской книжной
+                издательствась, 2002
+            </p>
+
             <div id="wordDetails" class="word-details"></div>
         </div>
 
     </main>
-    </main>
+
+    <footer>
+        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024
+            Aleksanteri Nazarenko</a>
+    </footer>
 
     <style>
         .nav-select {
@@ -61,40 +72,31 @@
             color: #fff;
         }
 
-        .suggestions-list {
-            border-top: none;
-            padding: 0 20px;
-            margin-bottom: 20px;
-            overflow-y: auto;
-            background-color: #fff;
-        }
-
-        .suggestion-item {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .suggestion-item.highlight {
-            background-color: #f0f0f0;
-        }
-
-        .word-details {
-            font-size: 16px;
-            padding: 20px 10px 0 10px;
-        }
-
-        #wordDetails p {
-            margin-bottom: 0;
-        }
-
         .entry {
             color: #333;
             font-size: 16px;
             font-style: normal;
             line-height: 1.5;
-            padding: 10px 20px;
-            margin: 0;
+            padding: 0;
+            margin: 0 20px;
             text-align: left;
+        }
+
+        .entry:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .dictionary-content {
+            margin-bottom: 20px;
+        }
+
+        .word-details {
+            font-size: 16px;
+            padding: 10px 0 0 0;
+        }
+
+        #wordDetails p {
+            margin-bottom: 20px;
         }
     </style>
 
@@ -118,14 +120,31 @@
             function showWordDetails(entry) {
                 const categoryDisplay = entry.Category ?
                     `<span style="font-weight: normal;">${entry.Category}</span>` : '';
-                wordDetails.innerHTML =
-                    `<p style="margin-bottom: 20px; color: #B22222;">${categoryDisplay}</p><p style="margin-bottom: 10px;">${entry.Definition}</p>`;
 
+                let definitionHTML = '';
+
+                if (entry.Definition.includes('<div class="entry">')) {
+                    definitionHTML = `
+            <p style="color: #B22222;">${entry.Word} ${categoryDisplay}</p>
+            <div class="dictionary-content">
+                ${entry.Definition}
+            </div>
+        `;
+                } else {
+                    definitionHTML = `
+            <p style="color: #B22222;">${entry.Word} ${categoryDisplay}</p>
+            <div class="dictionary-content">
+                <div class="entry">${entry.Definition}</div>
+            </div>
+        `;
+                }
+
+                wordDetails.innerHTML = definitionHTML;
                 wordDetails.style.display = 'block';
                 suggestions.style.display = 'none';
 
                 const baseURL = window.location.origin + window.location.pathname;
-                const newURL = `${baseURL}#${encodeURIComponent(entry.Word)}`;
+                const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
                 window.history.pushState({
                     word: entry.Word
                 }, '', newURL);
@@ -161,9 +180,11 @@
                                 if (lastEntry && lastEntry.Definition) {
                                     currentData.push(lastEntry);
                                 }
+
                                 lastEntry = {
                                     Word: entry.Word,
-                                    Definition: entry.Definition,
+                                    Definition: entry.Definition ?
+                                        `<div class="entry">${entry.Definition}</div>` : '',
                                     Category: entry.Category
                                 };
                             } else if (lastEntry) {
@@ -209,23 +230,28 @@
             }
 
             searchInput.addEventListener('input', (event) => {
-                const query = event.target.value.toLowerCase().trim();
+                const query = event.target.value.toLowerCase();
                 suggestions.innerHTML = '';
                 selectedSuggestionIndex = -1;
 
                 if (query === "") {
                     wordDetails.innerHTML = '';
+                    wordDetails.style.display = 'none';
                     suggestions.style.display = 'none';
                 } else {
+                    wordDetails.style.display = 'none';
                     filteredWords = currentData
                         .filter(entry => entry.Word.toLowerCase().includes(query))
                         .sort((a, b) => {
                             const aStartsWith = a.Word.toLowerCase().startsWith(query);
                             const bStartsWith = b.Word.toLowerCase().startsWith(query);
+
                             if (aStartsWith && !bStartsWith) return -1;
                             if (!aStartsWith && bStartsWith) return 1;
+
                             return a.Word.length - b.Word.length;
-                        });
+                        })
+                        .slice(0, 10);
 
                     if (filteredWords.length > 0) {
                         filteredWords.forEach((entry, index) => {
@@ -238,6 +264,7 @@
                                 highlightSuggestion(selectedSuggestionIndex);
                                 searchInput.value = entry.Word;
                                 showWordDetails(entry);
+                                suggestions.style.display = 'none';
                             };
 
                             suggestionItem.onmouseover = () => {
@@ -252,9 +279,7 @@
 
                             suggestions.appendChild(suggestionItem);
                         });
-
                         suggestions.style.display = 'block';
-                        wordDetails.style.display = 'none';
                     } else {
                         suggestions.style.display = 'none';
                     }
@@ -308,6 +333,30 @@
             navSelect.addEventListener('change', function () {
                 window.location.href = this.value;
             });
+        });
+    </script>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function setRealHeight() {
+                const realHeight = window.innerHeight;
+                document.body.style.height = realHeight + 'px';
+            }
+
+            setRealHeight();
+
+            document.body.style.display = 'flex';
+            document.body.style.flexDirection = 'column';
+            document.body.style.overflow = 'hidden';
+
+            const main = document.querySelector('main');
+            if (main) {
+                main.style.flex = '1';
+                main.style.overflowY = 'auto';
+            }
+
+            window.addEventListener('resize', setRealHeight);
+            window.addEventListener('orientationchange', setRealHeight);
         });
     </script>
 

@@ -135,7 +135,7 @@
     `;
 
                 const baseURL = window.location.origin + window.location.pathname;
-                const newURL = `${baseURL}#${encodeURIComponent(entry.Word)}`;
+                const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
                 window.history.pushState({
                     word: entry.Word
                 }, '', newURL);
@@ -198,7 +198,8 @@
                             if (!aStartsWith && bStartsWith) return 1;
 
                             return a.Word.length - b.Word.length;
-                        });
+                        })
+                        .slice(0, 10);
 
                     if (filteredWords.length > 0) {
                         filteredWords.forEach((entry, index) => {

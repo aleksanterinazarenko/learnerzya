@@ -36,10 +36,19 @@
             <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
             <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
+            <p style="font-size: 16px; font-style: normal; margin: 0 0 20px 20px; padding: 0;">
+                Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a>
+            </p>
+
             <div id="wordDetails" class="word-details"></div>
         </div>
 
     </main>
+
+    <footer>
+        <a href="mailto:aleksanterinazarenko@outlook.com" style="color: white; text-decoration: none;">&copy; 2024
+            Aleksanteri Nazarenko</a>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -115,7 +124,7 @@
                 wordDetails.style.display = 'block';
 
                 const baseURL = window.location.origin + window.location.pathname;
-                const newURL = `${baseURL}#${encodeURIComponent(entry.Word)}`;
+                const newURL = `${baseURL}?word=${encodeURIComponent(entry.Word)}`;
                 window.history.pushState({
                     word: entry.Word
                 }, '', newURL);
@@ -182,7 +191,8 @@
                             if (!aStartsWith && bStartsWith) return 1;
 
                             return a.Word.length - b.Word.length;
-                        });
+                        })
+                        .slice(0, 10);
 
                     if (filteredWords.length > 0) {
                         filteredWords.forEach((entry, index) => {
@@ -265,6 +275,30 @@
             navSelect.addEventListener('change', function () {
                 window.location.href = this.value;
             });
+        });
+    </script>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function setRealHeight() {
+                const realHeight = window.innerHeight;
+                document.body.style.height = realHeight + 'px';
+            }
+
+            setRealHeight();
+
+            document.body.style.display = 'flex';
+            document.body.style.flexDirection = 'column';
+            document.body.style.overflow = 'hidden';
+
+            const main = document.querySelector('main');
+            if (main) {
+                main.style.flex = '1';
+                main.style.overflowY = 'auto';
+            }
+
+            window.addEventListener('resize', setRealHeight);
+            window.addEventListener('orientationchange', setRealHeight);
         });
     </script>
 
