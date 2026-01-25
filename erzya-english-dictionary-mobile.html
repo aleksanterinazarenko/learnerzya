@@ -33,7 +33,7 @@
                 <option value="cyrillic">Cyrillic</option>
                 <option value="latin">Latin</option>
             </select>
-            <input id="searchInput" placeholder="Search for a word ..." type="text" autocomplete="off" />
+            <input id="searchInput" placeholder="Search for a word ..." type="search" autocomplete="off">
             <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
             <p style="font-size: 16px; font-style: normal; margin: 0 0 20px 20px; padding: 0;">
@@ -260,6 +260,19 @@
                 }
             });
 
+            searchInput.addEventListener('search', () => {
+                const query = searchInput.value.toLowerCase();
+
+                const foundEntry = currentData.find(entry =>
+                    entry.Word.toLowerCase() === query
+                );
+
+                if (foundEntry) {
+                    showWordDetails(foundEntry);
+                    suggestions.style.display = 'none';
+                }
+            });
+
             languageSelector.addEventListener('change', (event) => {
                 const selectedLanguage = event.target.value;
                 const url = selectedLanguage === 'latin' ? latinJsonURL : cyrillicJsonURL;
@@ -278,7 +291,7 @@
         });
     </script>
 
-        <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             function setRealHeight() {
                 const realHeight = window.innerHeight;
