@@ -36,7 +36,7 @@
             <input id="searchInput" placeholder="Search for a word ..." type="search" autocomplete="off">
             <div id="suggestions" class="suggestions-list" style="display: none;"></div>
 
-            <p style="font-size: 16px; font-style: normal; margin: 0 0 20px 20px; padding: 0;">
+            <p style="font-size: 15px; font-style: normal; margin: 0 0 20px 20px; padding: 0;">
                 Source: <a href="https://akusanat.com/verdd/" style="text-decoration: none;">Veʹrdd</a>
             </p>
 
@@ -295,20 +295,20 @@
         document.addEventListener('DOMContentLoaded', function () {
             function setRealHeight() {
                 const realHeight = window.innerHeight;
-                document.body.style.height = realHeight + 'px';
+                document.body.style.minHeight = realHeight + 'px';
             }
 
             setRealHeight();
 
             document.body.style.display = 'flex';
             document.body.style.flexDirection = 'column';
-            document.body.style.overflow = 'hidden';
+            document.body.style.minHeight = window.innerHeight + 'px';
+            document.body.style.margin = '0';
+            document.body.style.overflow = 'visible';
 
             const main = document.querySelector('main');
-            if (main) {
-                main.style.flex = '1';
-                main.style.overflowY = 'auto';
-            }
+            main.style.flex = '1';
+            main.style.overflowY = 'visible';
 
             window.addEventListener('resize', setRealHeight);
             window.addEventListener('orientationchange', setRealHeight);

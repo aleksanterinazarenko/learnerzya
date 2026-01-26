@@ -3,59 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="An educational site dedicated to the Erzya language.">
+    <meta name="keywords"
+        content="Erzya language, ersän kieli, erźanskij jazïk, erźaň kel, dictionary, sanakirja, slovař, valks">
+    <meta name="author" content="Aleksanteri Nazarenko">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Erzya</title>
-    <link rel="stylesheet" href="style-mobile.css">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Grammar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sonsie+One&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <select id="nav-select" class="nav-select">
-            <option value="" selected disabled hidden>Menu</option>
-            <option value="index-mobile.html">Main Page</option>
-            <option value="dictionaries-mobile.html">Dictionaries</option>
-            <option value="grammar-mobile.html">Grammar</option>
-            <option value="transliteration-tool-mobile.html">Transliteration tool</option>
-            <option value="about-the-spelling-mobile.html">About the spelling</option>
-            <option value="sources-mobile.html">Sources</option>
-            <option value="other-mobile.html">Other</option>
-            <option value="mailto:aleksanterinazarenko@outlook.com">Contact</option>
-        </select>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Main Page</a></li>
+                <li><a href="dictionaries.html">Dictionaries</a></li>
+                <li><a href="grammar.html">Grammar</a></li>
+                <li><a href="transliteration-tool.html">Transliteration tool</a></li>
+                <li><a href="about-the-spelling.html">About the spelling</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="other.html">Other</a></li>
+                <li><a href="mailto:aleksanterinazarenko@outlook.com">Contact</a></li>
+                <li>
+                    <a href="/fi/index.html">
+                        <img src="fi.svg" style="width: 20px; height: auto;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <h1><a href="/learnerzya/index.html">Learn Erzya</a></h1>
 
-        <style>
-            td {
-                font-size: 1rem;
-                border-bottom: 1px solid #ccc;
-                padding: 5px;
-            }
-
-            td:not(:last-child) {
-                border-right: 1px solid #ccc;
-            }
-
-            tr:last-child td {
-                border-bottom: none;
-            }
-        </style>
-
         <div class="container">
-            <h2>Grammar</h2>
+            <h2 style="margin: 0 0 30px 0;">Grammar</h2>
 
             <select id="languageSelector" onchange="window.location.href=this.value">
-                <option value="grammar-mobile.html">Cyrillic</option>
-                <option value="grammar-lat-mobile.html">Latin</option>
+                <option value="grammar-lat.html">Latin</option>
+                <option value="grammar.html">Cyrillic</option>
             </select>
 
             <div class="container-grammar">
-                <h2 style="text-align: left; margin: 5px;">Declencion</h2>
-                <h2 style="text-align: left; margin-left: 10px;">Indefinite declension</h2>
-                <h2 style="text-align: left; margin-left: 15px;">Back-vowel stem</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 10%;">Declencion</h2>
+                <h2 style="text-align: left; margin-left: 15%;">Indefinite declension</h2>
+                <h2 style="text-align: left; margin-left: 20%;">Back-vowel stem</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -65,87 +64,87 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>ума</td>
-                            <td>умат</td>
+                            <td>uma</td>
+                            <td>umat</td>
                             <td>a plot of ground</td>
                         </tr>
                         <tr>
                             <td>genitive</td>
-                            <td>умань</td>
+                            <td>umaň</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>уманень</td>
+                            <td>umanen</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>умадо</td>
+                            <td>umado</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>умасо</td>
+                            <td>umaso</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>умасто</td>
+                            <td>umasto</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>умас</td>
+                            <td>umas</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>умава</td>
+                            <td>umava</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>lative</td>
-                            <td>умав</td>
+                            <td>umav</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>умакс</td>
+                            <td>umaks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>умашка</td>
+                            <td>umaška</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>умавтомо</td>
+                            <td>umavtomo</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>comitative</td>
-                            <td>уманек</td>
+                            <td>umanek</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Hard consonant stem, San-type</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Hard consonant stem, San-type</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -155,87 +154,87 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>сан</td>
-                            <td>сант</td>
+                            <td>san</td>
+                            <td>sant</td>
                             <td>vein</td>
                         </tr>
                         <tr>
                             <td>genitive</td>
-                            <td>санонь</td>
+                            <td>sanoň</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>саннэнь</td>
+                            <td>sannën</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>сандо</td>
+                            <td>sando</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>сансо</td>
+                            <td>sanso</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>сансто</td>
+                            <td>sansto</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>санс</td>
+                            <td>sans</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>санга</td>
+                            <td>sanga</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>lative</td>
-                            <td>санов</td>
+                            <td>sanov</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>санкс</td>
+                            <td>sanks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>саншка</td>
+                            <td>sanška</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>сантомо</td>
+                            <td>santomo</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>comitative</td>
-                            <td>санонек</td>
+                            <td>sanonek</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Hard consonant stem, Ilïk-type</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Hard consonant stem, Ilïk-type</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -245,87 +244,87 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>илык</td>
-                            <td>илыкт</td>
+                            <td>ilïk</td>
+                            <td>ilïkt</td>
                             <td>power</td>
                         </tr>
                         <tr>
                             <td>genitive</td>
-                            <td>илыкень</td>
+                            <td>ilïken</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>илыкнэнь</td>
+                            <td>ilïknën</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>илыктэ</td>
+                            <td>ilïktë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>илыксэ</td>
+                            <td>ilïksë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>илыкстэ</td>
+                            <td>ilïkstë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>lative</td>
-                            <td>илыкев</td>
+                            <td>ilïkev</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>илыкс</td>
+                            <td>ilïks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>илыкка</td>
+                            <td>ilïkka</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>илыккс</td>
+                            <td>ilïkks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>илыкшка</td>
+                            <td>ilïkška</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>илыктэме</td>
+                            <td>ilïktëme</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>comitative</td>
-                            <td>илыкенек</td>
+                            <td>ilïkenek</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Front vowel stem</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Front vowel stem</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -335,87 +334,87 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>ки</td>
-                            <td>кить</td>
+                            <td>ki</td>
+                            <td>kit</td>
                             <td>way</td>
                         </tr>
                         <tr>
                             <td>genitive</td>
-                            <td>кинь</td>
+                            <td>kin</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>кинень</td>
+                            <td>kinen</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>киде</td>
+                            <td>kide</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>кисэ</td>
+                            <td>kisë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>кистэ</td>
+                            <td>kistë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>кис</td>
+                            <td>kis</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>киява</td>
+                            <td>kijava</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>lative</td>
-                            <td>кив</td>
+                            <td>kiv</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>кикс</td>
+                            <td>kiks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>кишка</td>
+                            <td>kiška</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>кивтеме</td>
+                            <td>kivteme</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>comitative</td>
-                            <td>кинек</td>
+                            <td>kinek</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Soft consonant stem, Viŕ-type</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Soft consonant stem, Viř-type</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -425,87 +424,87 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>вирь</td>
-                            <td>вирть</td>
+                            <td>vir</td>
+                            <td>virt</td>
                             <td>forest</td>
                         </tr>
                         <tr>
                             <td>genitive</td>
-                            <td>вирень</td>
+                            <td>viren</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>вирнень</td>
+                            <td>virnen</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>вирде</td>
+                            <td>virde</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>вирьсэ</td>
+                            <td>virsë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>вирьстэ</td>
+                            <td>virstë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>вирьс</td>
+                            <td>virs</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>вирьга</td>
+                            <td>virga</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>lative</td>
-                            <td>вирев</td>
+                            <td>virev</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>вирькс</td>
+                            <td>virks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>вирьшка</td>
+                            <td>virška</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>виртеме</td>
+                            <td>virteme</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>comitative</td>
-                            <td>виренек</td>
+                            <td>virenek</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Soft consonant stem, Pej-type</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Soft consonant stem, Pej-type</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -515,87 +514,87 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>пей</td>
-                            <td>пейть</td>
+                            <td>pei</td>
+                            <td>peit</td>
                             <td>tooth</td>
                         </tr>
                         <tr>
                             <td>genitive</td>
-                            <td>пеень</td>
+                            <td>pejen</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>пейнень</td>
+                            <td>peinen</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>пейде</td>
+                            <td>peide</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>пейсэ</td>
+                            <td>peisë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>пейстэ</td>
+                            <td>peistë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>пейс</td>
+                            <td>peis</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>пейга</td>
+                            <td>peiga</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>lative</td>
-                            <td>пеев</td>
+                            <td>pejev</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>пейкс</td>
+                            <td>peiks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>пейшка</td>
+                            <td>peiška</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>пейтеме</td>
+                            <td>peiteme</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>comitative</td>
-                            <td>пеенек</td>
+                            <td>pejenek</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Soft consonant stem, Riveź-type</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Soft consonant stem, Riveź-type</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -605,88 +604,88 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>ривезь</td>
-                            <td>ривезть</td>
+                            <td>riveź</td>
+                            <td>riveźt</td>
                             <td>fox</td>
                         </tr>
                         <tr>
                             <td>genitive</td>
-                            <td>ривезень</td>
+                            <td>rivezen</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>ривезнень</td>
+                            <td>riveznen</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>ривезде</td>
+                            <td>rivezde</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>ривезьсэ</td>
+                            <td>rivezsë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>ривезьстэ</td>
+                            <td>rivezstë</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>ривезес</td>
+                            <td>rivezes</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>ривезьга</td>
+                            <td>riveźga</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>lative</td>
-                            <td>ривезев</td>
+                            <td>rivezev</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>ривезекс</td>
+                            <td>rivezeks</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>ривезьшка</td>
+                            <td>riveźška</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>ривезьтеме</td>
+                            <td>rivezteme</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>comitative</td>
-                            <td>ривезенек</td>
+                            <td>rivezenek</td>
                             <td>-</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 10px;">Definite declension</h2>
-                <h2 style="text-align: left; margin-left: 15px;">Back-vowel stem</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 15%;">Definite declension</h2>
+                <h2 style="text-align: left; margin-left: 20%;">Back-vowel stem</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -696,69 +695,69 @@
                         </tr>
                         <tr>
                             <td>nominative</td>
-                            <td>умась</td>
-                            <td>уматне</td>
+                            <td>umaś</td>
+                            <td>umatne</td>
                             <td>the plot of ground</td>
                         </tr>
                         <tr>
                             <td>accusative / genitive</td>
-                            <td>уманть</td>
-                            <td>уматнень</td>
+                            <td>umaňt</td>
+                            <td>umatnen</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>умантень</td>
-                            <td>уматненень</td>
+                            <td>umanten</td>
+                            <td>umatnenen</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>умадонть</td>
-                            <td>уматнеде</td>
+                            <td>umadoňt</td>
+                            <td>umatnede</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>умасонть</td>
-                            <td>уматнесэ</td>
+                            <td>umasoňt</td>
+                            <td>umatnesë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>умастонть</td>
-                            <td>уматнестэ</td>
+                            <td>umastoňt</td>
+                            <td>umatnestë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>умантень</td>
-                            <td>уматненень</td>
+                            <td>umanten</td>
+                            <td>umatnenen</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>умаванть</td>
-                            <td>уматнева</td>
+                            <td>umavaňt</td>
+                            <td>umatneva</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>умашканть</td>
-                            <td>уматнешка</td>
+                            <td>umaškaňt</td>
+                            <td>umatneška</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>умавтомонть</td>
-                            <td>уматневтеме</td>
+                            <td>umavtomoňt</td>
+                            <td>umatnevteme</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Front vowel stem</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Front vowel stem</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -768,70 +767,70 @@
                         </tr>
                         <tr>
                             <td>nominative</td>
-                            <td>кись</td>
-                            <td>китне</td>
+                            <td>kiś</td>
+                            <td>kitne</td>
                             <td>the way</td>
                         </tr>
                         <tr>
                             <td>accusative / genitive</td>
-                            <td>кинть</td>
-                            <td>китнень</td>
+                            <td>kint</td>
+                            <td>kitnen</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>кинтень</td>
-                            <td>китненень</td>
+                            <td>kinten</td>
+                            <td>kitnenen</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>киденть</td>
-                            <td>китнеде</td>
+                            <td>kident</td>
+                            <td>kitnede</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>кисэнть</td>
-                            <td>китнесэ</td>
+                            <td>kisënt</td>
+                            <td>kitnesë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>кистэнть</td>
-                            <td>китнестэ</td>
+                            <td>kistënt</td>
+                            <td>kitnestë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>кинтень</td>
-                            <td>китненень</td>
+                            <td>kinten</td>
+                            <td>kitnenen</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>киванть</td>
-                            <td>китнева</td>
+                            <td>kivaňt</td>
+                            <td>kitneva</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>кишканть</td>
-                            <td>китнешка</td>
+                            <td>kiškaňt</td>
+                            <td>kitneška</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>кивтементь</td>
-                            <td>китневтеме</td>
+                            <td>kivtement</td>
+                            <td>kitnevteme</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 10px;">Possessive declension</h2>
-                <h2 style="text-align: left; margin-left: 15px;">Back-vowel stem</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 15%;">Possessive declension</h2>
+                <h2 style="text-align: left; margin-left: 20%;">Back-vowel stem</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -844,107 +843,107 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>умам/уман</td>
+                            <td>umam/uman</td>
                             <td>my plot/my plots</td>
-                            <td>умат</td>
+                            <td>umat</td>
                             <td>your plot/plots</td>
-                            <td>умазо/уманзо</td>
+                            <td>umazo/umanzo</td>
                             <td>his plot/his plots</td>
                         </tr>
                         <tr>
                             <td>genitive / accusative</td>
-                            <td>уман</td>
+                            <td>uman</td>
                             <td> </td>
-                            <td>умат</td>
+                            <td>umat</td>
                             <td> </td>
-                            <td>уманзо</td>
+                            <td>umanzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>[монь уманень]</td>
+                            <td>[moň umanen]</td>
                             <td> </td>
-                            <td>[тонь уманень]</td>
+                            <td>[toň umanen]</td>
                             <td> </td>
-                            <td>[сонзэ уманень]</td>
+                            <td>[sonzë umanen]</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>умадон</td>
+                            <td>umadon</td>
                             <td> </td>
-                            <td>умадот</td>
+                            <td>umadot</td>
                             <td> </td>
-                            <td>умадонзо</td>
+                            <td>umadonzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>умасон</td>
+                            <td>umason</td>
                             <td> </td>
-                            <td>умасот</td>
+                            <td>umasot</td>
                             <td> </td>
-                            <td>умасонзо</td>
+                            <td>umasonzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>умастон</td>
+                            <td>umaston</td>
                             <td> </td>
-                            <td>умастот</td>
+                            <td>umastot</td>
                             <td> </td>
-                            <td>умастонзо</td>
+                            <td>umastonzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>умазон</td>
+                            <td>umazon</td>
                             <td> </td>
-                            <td>умазот</td>
+                            <td>umazot</td>
                             <td> </td>
-                            <td>умазонзо</td>
+                            <td>umazonzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>умаван</td>
+                            <td>umavan</td>
                             <td> </td>
-                            <td>умават</td>
+                            <td>umavat</td>
                             <td> </td>
-                            <td>умаванзо</td>
+                            <td>umavanzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>умаксон</td>
+                            <td>umakson</td>
                             <td> </td>
-                            <td>умаксот</td>
+                            <td>umaksot</td>
                             <td> </td>
-                            <td>умаксонзо</td>
+                            <td>umaksonzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>умашкан</td>
+                            <td>umaškan</td>
                             <td> </td>
-                            <td>умашкат</td>
+                            <td>umaškat</td>
                             <td> </td>
-                            <td>умашканзо</td>
+                            <td>umaškanzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>умавтомон</td>
+                            <td>umavtomon</td>
                             <td> </td>
-                            <td>умавтомот</td>
+                            <td>umavtomot</td>
                             <td> </td>
-                            <td>умавтомонзо</td>
+                            <td>umavtomonzo</td>
                             <td> </td>
                         </tr>
                     </tbody>
-                </table>
+                </table><br>
 
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -957,99 +956,99 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative / genitive</td>
-                            <td>уманoк</td>
+                            <td>umanok</td>
                             <td>our plot/plots</td>
-                            <td>уманк</td>
+                            <td>umank</td>
                             <td>your plot/plots</td>
-                            <td>умаст</td>
+                            <td>umast</td>
                             <td>their plot/plots</td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>[минек уманень]</td>
+                            <td>[minek umanen]</td>
                             <td> </td>
-                            <td>[тынк уманень]</td>
+                            <td>[tïnk umanen]</td>
                             <td> </td>
-                            <td>[сынст уманень]</td>
+                            <td>[sïnst umanen]</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>умадонoк</td>
+                            <td>umadonok</td>
                             <td> </td>
-                            <td>умадонк</td>
+                            <td>umadonk</td>
                             <td> </td>
-                            <td>умадост</td>
+                            <td>umadost</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>умасонoк</td>
+                            <td>umasonok</td>
                             <td> </td>
-                            <td>умасонк</td>
+                            <td>umasonk</td>
                             <td> </td>
-                            <td>умасост</td>
+                            <td>umasost</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>умастонoк</td>
+                            <td>umastonok</td>
                             <td> </td>
-                            <td>умастонк</td>
+                            <td>umastonk</td>
                             <td> </td>
-                            <td>умастост</td>
+                            <td>umastost</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>умазонoк</td>
+                            <td>umazonok</td>
                             <td> </td>
-                            <td>умазонк</td>
+                            <td>umazonk</td>
                             <td> </td>
-                            <td>умазост</td>
+                            <td>umazost</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>умаванoк</td>
+                            <td>umavanok</td>
                             <td> </td>
-                            <td>умаванк</td>
+                            <td>umavank</td>
                             <td> </td>
-                            <td>умаваст</td>
+                            <td>umavast</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>умаксонoк</td>
+                            <td>umaksonok</td>
                             <td> </td>
-                            <td>умаксонк</td>
+                            <td>umaksonk</td>
                             <td> </td>
-                            <td>умаксост</td>
+                            <td>umaksost</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>умашканoк</td>
+                            <td>umaškanok</td>
                             <td> </td>
-                            <td>умашканк</td>
+                            <td>umaškank</td>
                             <td> </td>
-                            <td>умашкаст</td>
+                            <td>umaškast</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>умавтомонoк</td>
+                            <td>umavtomonok</td>
                             <td> </td>
-                            <td>умавтомонк</td>
+                            <td>umavtomonk</td>
                             <td> </td>
-                            <td>умавтомост</td>
+                            <td>umavtomost</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Front-vowel stem</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Front-vowel stem</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -1062,107 +1061,107 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative</td>
-                            <td>ким/кинь</td>
+                            <td>kim/kin</td>
                             <td>my way/ways</td>
-                            <td>кить</td>
+                            <td>kit</td>
                             <td>your way/ways</td>
-                            <td>кизэ/кинзэ</td>
+                            <td>kizë/kinzë</td>
                             <td>his way/ways</td>
                         </tr>
                         <tr>
                             <td>genitive / accusative</td>
-                            <td>кинь</td>
+                            <td>kin</td>
                             <td> </td>
-                            <td>кить</td>
+                            <td>kit</td>
                             <td> </td>
-                            <td>кинзэ</td>
+                            <td>kinzë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>[монь кинень]</td>
+                            <td>[moň kinen]</td>
                             <td> </td>
-                            <td>[тонь кинень]</td>
+                            <td>[toň kinen]</td>
                             <td> </td>
-                            <td>[сонзэ кинень]</td>
+                            <td>[sonzë kinen]</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>кидень</td>
+                            <td>kiden</td>
                             <td> </td>
-                            <td>кидеть</td>
+                            <td>kidet</td>
                             <td> </td>
-                            <td>кидензэ</td>
+                            <td>kidenzë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>кисэнь</td>
+                            <td>kisën</td>
                             <td> </td>
-                            <td>кисэть</td>
+                            <td>kisët</td>
                             <td> </td>
-                            <td>кисэнзэ</td>
+                            <td>kisënzë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>кистэнь</td>
+                            <td>kistën</td>
                             <td> </td>
-                            <td>кистэть</td>
+                            <td>kistët</td>
                             <td> </td>
-                            <td>кистэнзэ</td>
+                            <td>kistënzë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>кизэнь</td>
+                            <td>kizën</td>
                             <td> </td>
-                            <td>кизэть</td>
+                            <td>kizët</td>
                             <td> </td>
-                            <td>кизэнзэ</td>
+                            <td>kizënzë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>кияван</td>
+                            <td>kijavan</td>
                             <td> </td>
-                            <td>кияват</td>
+                            <td>kijavat</td>
                             <td> </td>
-                            <td>кияванзо</td>
+                            <td>kijavanzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>киксэнь</td>
+                            <td>kiksën</td>
                             <td> </td>
-                            <td>киксэть</td>
+                            <td>kiksët</td>
                             <td> </td>
-                            <td>киксэнзэ</td>
+                            <td>kiksënzë</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>кишкан</td>
+                            <td>kiškan</td>
                             <td> </td>
-                            <td>кишкат</td>
+                            <td>kiškat</td>
                             <td> </td>
-                            <td>кишканзо</td>
+                            <td>kiškanzo</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>кивтемень</td>
+                            <td>kivtemen</td>
                             <td> </td>
-                            <td>кивтеметь</td>
+                            <td>kivtemet</td>
                             <td> </td>
-                            <td>кивтемензэ</td>
+                            <td>kivtemenzë</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Case</td>
@@ -1175,111 +1174,109 @@
                         </tr>
                         <tr>
                             <td>nominative / accusative / genitive</td>
-                            <td>кинек</td>
+                            <td>kinek</td>
                             <td>our way/ways</td>
-                            <td>кинк</td>
+                            <td>kink</td>
                             <td>your way/ways</td>
-                            <td>кист</td>
+                            <td>kist</td>
                             <td>their way/ways</td>
                         </tr>
                         <tr>
                             <td>dative / allative</td>
-                            <td>[минек кинень]</td>
+                            <td>[minek kinen]</td>
                             <td> </td>
-                            <td>[тынк кинень]</td>
+                            <td>[tïnk kinen]</td>
                             <td> </td>
-                            <td>[сынст кинень]</td>
+                            <td>[sïnst kinen]</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>ablative</td>
-                            <td>киденек</td>
+                            <td>kidenek</td>
                             <td> </td>
-                            <td>киденк</td>
+                            <td>kidenk</td>
                             <td> </td>
-                            <td>кидест</td>
+                            <td>kidest</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>inessive</td>
-                            <td>кисэнек</td>
+                            <td>kisënek</td>
                             <td> </td>
-                            <td>кисэнк</td>
+                            <td>kisënk</td>
                             <td> </td>
-                            <td>кисэст</td>
+                            <td>kisëst</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>elative</td>
-                            <td>кистэнек</td>
+                            <td>kistënek</td>
                             <td> </td>
-                            <td>кистэнк</td>
+                            <td>kistënk</td>
                             <td> </td>
-                            <td>кистэст</td>
+                            <td>kistëst</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>illative</td>
-                            <td>кизэнек</td>
+                            <td>kizënek</td>
                             <td> </td>
-                            <td>кизэнк</td>
+                            <td>kizënk</td>
                             <td> </td>
-                            <td>кизэст</td>
+                            <td>kizëst</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>prolative</td>
-                            <td>кияванек</td>
+                            <td>kijavanek</td>
                             <td> </td>
-                            <td>кияванк</td>
+                            <td>kijavank</td>
                             <td> </td>
-                            <td>кияваст</td>
+                            <td>kijavast</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>translative</td>
-                            <td>киксэнек</td>
+                            <td>kiksënek</td>
                             <td> </td>
-                            <td>киксэнк</td>
+                            <td>kiksënk</td>
                             <td> </td>
-                            <td>киксэст</td>
+                            <td>kiksëst</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>equative</td>
-                            <td>кишканек</td>
+                            <td>kiškanek</td>
                             <td> </td>
-                            <td>кишканк</td>
+                            <td>kiškank</td>
                             <td> </td>
-                            <td>кишкаст</td>
+                            <td>kiškast</td>
                             <td> </td>
                         </tr>
                         <tr>
                             <td>abessive</td>
-                            <td>кивтеменек</td>
+                            <td>kivtemenek</td>
                             <td> </td>
-                            <td>кивтеменк</td>
+                            <td>kivtemenk</td>
                             <td> </td>
-                            <td>кивтемест</td>
+                            <td>kivtemest</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 5px;">Conjugation</h2>
-                <h2 style="text-align: left; margin-left: 10px;">Infinitives</h2>
-                <h2 style="text-align: left; margin-left: 15px;">First infinitive</h2>
-                <p style="margin-left: auto;">The dictionary form of a verb. Always ends with -мс: ловномс “to read”.
-                </p>
-                <h2 style="text-align: left; margin-left: 15px;">Second infinitive</h2>
-                <p style="margin-left: auto;">Used with verbs like кармамс “to start”, молемс “to go”, тонавтнемс “to
-                    learn”
-                    etc.<br> It ends with -мо or -ме added to the verb base: ловномо “reading”, молеме “going”,
-                    тонавтнеме “learning”.</p><br>
+                <h2 style="text-align: left; margin-left: 10%;">Conjugation</h2>
+                <h2 style="text-align: left; margin-left: 15%;">Infinitives</h2>
+                <h2 style="text-align: left; margin-left: 20%;">First infinitive</h2>
+                <p style="margin: auto;">The dictionary form of a verb. Always ends with -ms: lovnoms “to read”.</p><br>
+                <h2 style="text-align: left; margin-left: 20%;">Second infinitive</h2>
+                <p style="margin: auto;">Used with verbs like karmams “to start”, molems “to go”, tonavtnems “to learn”
+                    etc.<br> It ends with -mo or -me added to the verb base: lovnomo “reading”, moleme “going”,
+                    tonavtneme “learning”.</p><br>
 
-                <h2 style="text-align: left; margin-left: 10px;">Indefinite conjugation</h2>
-                <h2 style="text-align: left; margin-left: 15px;">Present</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 15%;">Indefinite conjugation</h2>
+                <h2 style="text-align: left; margin-left: 20%;">Present</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1289,45 +1286,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловнан</td>
-                            <td>а ловнан</td>
+                            <td>lovnan</td>
+                            <td>a lovnan</td>
                             <td>I read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловнат</td>
-                            <td>а ловнат</td>
+                            <td>lovnat</td>
+                            <td>a lovnat</td>
                             <td>You read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловны</td>
-                            <td>а ловны</td>
+                            <td>lovnï</td>
+                            <td>a lovnï</td>
                             <td>He (she, it) reads</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловнотано</td>
-                            <td>а ловнотано</td>
+                            <td>lovnotano</td>
+                            <td>a lovnotano</td>
                             <td>We read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловнотадо</td>
-                            <td>а ловнотадо</td>
+                            <td>lovnotado</td>
+                            <td>a lovnotado</td>
                             <td>You read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловныть</td>
-                            <td>а ловныть</td>
+                            <td>lovnït</td>
+                            <td>a lovnït</td>
                             <td>They read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Past simple</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Past simple</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1337,45 +1334,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловнынь</td>
-                            <td>эзинь ловно</td>
+                            <td>lovnïn</td>
+                            <td>ezin lovno</td>
                             <td>I read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловныть</td>
-                            <td>эзить ловно</td>
+                            <td>lovnït</td>
+                            <td>ezit lovno</td>
                             <td>You read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловнось</td>
-                            <td>эзь ловно</td>
+                            <td>lovnoś</td>
+                            <td>eź lovno</td>
                             <td>He (she, it) read</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловнынек</td>
-                            <td>эзинек ловно</td>
+                            <td>lovnïnek</td>
+                            <td>ezinek lovno</td>
                             <td>We read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловныде</td>
-                            <td>эзиде ловно</td>
+                            <td>lovnïde</td>
+                            <td>ezide lovno</td>
                             <td>You read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловность</td>
-                            <td>эзть ловно</td>
+                            <td>lovnośt</td>
+                            <td>eźt lovno</td>
                             <td>They read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Past progressive</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Past progressive</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1385,45 +1382,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловнылинь</td>
-                            <td>а ловнылинь</td>
+                            <td>lovnïlin</td>
+                            <td>a lovnïlin</td>
                             <td>I was reading</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловнылить</td>
-                            <td>а ловнылить</td>
+                            <td>lovnïlit</td>
+                            <td>a lovnïlit</td>
                             <td>You was reading</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловныль</td>
-                            <td>а ловныль</td>
+                            <td>lovnïl</td>
+                            <td>a lovnïl</td>
                             <td>He (she, it) was reading</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловнылинек</td>
-                            <td>а ловнылинек</td>
+                            <td>lovnïlinek</td>
+                            <td>a lovnïlinek</td>
                             <td>We were reading</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловнылиде</td>
-                            <td>а ловнылиде</td>
+                            <td>lovnïlide</td>
+                            <td>a lovnïlide</td>
                             <td>You were reading</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловныльть</td>
-                            <td>а ловныльть</td>
+                            <td>lovnïlt</td>
+                            <td>a lovnïlt</td>
                             <td>They were reading</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 style="text-align: left; margin-left: 15px;">Future</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Future</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1433,45 +1430,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>карман ловномо</td>
-                            <td>а карман ловномо</td>
+                            <td>karman lovnomo</td>
+                            <td>a karman lovnomo</td>
                             <td>I will read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кармат ловномо</td>
-                            <td>а кармат ловномо</td>
+                            <td>karmat lovnomo</td>
+                            <td>a karmat lovnomo</td>
                             <td>You will read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>карми ловномо</td>
-                            <td>а карми ловномо</td>
+                            <td>karmi lovnomo</td>
+                            <td>a karmi lovnomo</td>
                             <td>He (she, it) will read</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>карматано ловномо</td>
-                            <td>а карматано ловномо</td>
+                            <td>karmatano lovnomo</td>
+                            <td>a karmatano lovnomo</td>
                             <td>We will read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>карматадо ловномо</td>
-                            <td>а карматадо ловномо</td>
+                            <td>karmatado lovnomo</td>
+                            <td>a karmatado lovnomo</td>
                             <td>You will read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кармить ловномо</td>
-                            <td>а кармить ловномо</td>
+                            <td>karmit lovnomo</td>
+                            <td>a karmit lovnomo</td>
                             <td>They will read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Subjunctive mood</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Subjunctive mood</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1482,51 +1479,51 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловновлинь</td>
-                            <td>а ловновлинь</td>
-                            <td>аволинь ловно</td>
+                            <td>lovnovlin</td>
+                            <td>a lovnovlin</td>
+                            <td>avolin lovno</td>
                             <td>I would read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловновлить</td>
-                            <td>а ловновлить</td>
-                            <td>аволить ловно</td>
+                            <td>lovnovlit</td>
+                            <td>a lovnovlit</td>
+                            <td>avolit lovno</td>
                             <td>You would read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловноволь</td>
-                            <td>а ловноволь</td>
-                            <td>аволь ловно</td>
+                            <td>lovnovoľ</td>
+                            <td>a lovnovoľ</td>
+                            <td>avoľ lovno</td>
                             <td>He (she, it) would read</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловновлинек</td>
-                            <td>а ловновлинек</td>
-                            <td>аволинек ловно</td>
+                            <td>lovnovlinek</td>
+                            <td>a lovnovlinek</td>
+                            <td>avolinek lovno</td>
                             <td>We would read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловновлиде</td>
-                            <td>а ловновлиде</td>
-                            <td>аволиде ловно</td>
+                            <td>lovnovlide</td>
+                            <td>a lovnovlide</td>
+                            <td>avolide lovno</td>
                             <td>You would read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловновольть</td>
-                            <td>а ловновольть</td>
-                            <td>авольть ловно</td>
+                            <td>lovnovolt</td>
+                            <td>a lovnovolt</td>
+                            <td>avolt lovno</td>
                             <td>They would read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Desiderative mood</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Desiderative mood</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1536,45 +1533,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловныксэлинь</td>
-                            <td>а ловныксэлинь</td>
+                            <td>lovnïksëlin</td>
+                            <td>a lovnïksëlin</td>
                             <td>I wanted to read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловныкслэить</td>
-                            <td>а ловныксэлить</td>
+                            <td>lovnïkslëjit</td>
+                            <td>a lovnïksëlit</td>
                             <td>You want to read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловныксэль</td>
-                            <td>а ловныксэль</td>
+                            <td>lovnïksël</td>
+                            <td>a lovnïksël</td>
                             <td>He (she, it) wanted to read</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловныксэлинек</td>
-                            <td>а ловныксэлинек</td>
+                            <td>lovnïksëlinek</td>
+                            <td>a lovnïksëlinek</td>
                             <td>We wanted to read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловныксэлиде</td>
-                            <td>а ловныксэлиде</td>
+                            <td>lovnïksëlide</td>
+                            <td>a lovnïksëlide</td>
                             <td>You wanted to read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловныксэльть</td>
-                            <td>а ловныксэльть</td>
+                            <td>lovnïksëlt</td>
+                            <td>a lovnïksëlt</td>
                             <td>They wanted to read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Conditional mood</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Conditional mood</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1584,45 +1581,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловнындерян</td>
-                            <td>а ловнындерян</td>
+                            <td>lovnïndeřan</td>
+                            <td>a lovnïndeřan</td>
                             <td>If I read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловнындерят</td>
-                            <td>а ловнындерят</td>
+                            <td>lovnïndeřat</td>
+                            <td>a lovnïndeřat</td>
                             <td>If you read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловнындери</td>
-                            <td>а ловнындери</td>
+                            <td>lovnïnderi</td>
+                            <td>a lovnïnderi</td>
                             <td>If he (she, it) reads</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловнындерятано</td>
-                            <td>а ловнындерятано</td>
+                            <td>lovnïndeřatano</td>
+                            <td>a lovnïndeřatano</td>
                             <td>If we read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловнындерятадо</td>
-                            <td>а ловнындерятадо</td>
+                            <td>lovnïndeřatado</td>
+                            <td>a lovnïndeřatado</td>
                             <td>If you read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловнындерить</td>
-                            <td>а ловнындерить</td>
+                            <td>lovnïnderit</td>
+                            <td>a lovnïnderit</td>
                             <td>If they read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Subjunctive conditional mood</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Subjunctive conditional mood</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1632,45 +1629,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловнындерявлинь</td>
-                            <td>аволинь ловнындеря</td>
+                            <td>lovnïndeřavlin</td>
+                            <td>avolin lovnïndeřa</td>
                             <td>If I have read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловнындерявлить</td>
-                            <td>аволить ловнындеря</td>
+                            <td>lovnïndeřavlit</td>
+                            <td>avolit lovnïndeřa</td>
                             <td>If you have read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловнындеряволь</td>
-                            <td>аволь ловнындеря</td>
+                            <td>lovnïndeřavoľ</td>
+                            <td>avoľ lovnïndeřa</td>
                             <td>If he (she, it) has read</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловнындерявлинек</td>
-                            <td>аволинек ловнындеря</td>
+                            <td>lovnïndeřavlinek</td>
+                            <td>avolinek lovnïndeřa</td>
                             <td>If we have read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловнындерявлиде</td>
-                            <td>аволиде ловнындеря</td>
+                            <td>lovnïndeřavlide</td>
+                            <td>avolide lovnïndeřa</td>
                             <td>If you have read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловнындерявольть</td>
-                            <td>авольть ловнындеря</td>
+                            <td>lovnïndeřavolt</td>
+                            <td>avolt lovnïndeřa</td>
                             <td>If they have read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Optative mood</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Optative mood</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1680,45 +1677,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>ловназан</td>
-                            <td>илязан ловно</td>
+                            <td>lovnazan</td>
+                            <td>iľazan lovno</td>
                             <td>Let me read</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловназат</td>
-                            <td>илязат ловно</td>
+                            <td>lovnazat</td>
+                            <td>iľazat lovno</td>
                             <td>Let you read</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>ловназо</td>
-                            <td>илязо ловно</td>
+                            <td>lovnazo</td>
+                            <td>iľazo lovno</td>
                             <td>Let him (her, it) read</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>ловназдано</td>
-                            <td>иляздано ловно</td>
+                            <td>lovnazdano</td>
+                            <td>iľazdano lovno</td>
                             <td>Let us read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловназдадо</td>
-                            <td>иляздадо ловно</td>
+                            <td>lovnazdado</td>
+                            <td>iľazdado lovno</td>
                             <td>Let you read</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>ловнаст</td>
-                            <td>иляст ловно</td>
+                            <td>lovnast</td>
+                            <td>iľast lovno</td>
                             <td>Let them read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Imperative mood</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Imperative mood</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1728,27 +1725,26 @@
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>ловнок</td>
-                            <td>иля ловно</td>
+                            <td>lovnok</td>
+                            <td>iľa lovno</td>
                             <td>Read</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>ловнодо</td>
-                            <td>илядо ловно</td>
+                            <td>lovnodo</td>
+                            <td>iľado lovno</td>
                             <td>Read</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 10px;">Definite conjugation</h2>
-                <p style="margin-left: auto;">Definite conjugation of verb кундамс “to catch”. For example, кундатан
-                    means “I
-                    catch you (singular)”, кундаса means “I catch him”, кундатадызь means “I catch you (plural)”,
-                    кундасынь means “I catch them” and so on.</p><br>
-                <h2 style="text-align: left; margin-left: 15px;">Present</h2>
-                <h2 style="text-align: left; margin-left: 20px;">Me</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 15%;">Definite conjugation</h2>
+                <p style="margin: auto;">Definite conjugation of verb kundams “to catch”. For example, kundatan means “I
+                    catch you (singular)”, kundasa means “I catch him”, kundatadïź means “I catch you (plural)”,
+                    kundasïn means “I catch them” and so on.</p><br>
+                <h2 style="text-align: left; margin-left: 20%;">Present</h2>
+                <h2 style="text-align: left; margin-left: 25%;">Me</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1764,14 +1760,14 @@
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундасамак</td>
-                            <td>а кундасамак</td>
+                            <td>kundasamak</td>
+                            <td>a kundasamak</td>
                             <td>You catch me</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундасамам</td>
-                            <td>а кундасамам</td>
+                            <td>kundasamam</td>
+                            <td>a kundasamam</td>
                             <td>He (she, it) catches me</td>
                         </tr>
                         <tr>
@@ -1782,21 +1778,21 @@
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундасамизь</td>
-                            <td>а кундасамизь</td>
+                            <td>kundasamiź</td>
+                            <td>a kundasamiź</td>
                             <td>You catch me</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундасамизь</td>
-                            <td>а кундасамизь</td>
+                            <td>kundasamiź</td>
+                            <td>a kundasamiź</td>
                             <td>They catch me</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">Thee</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">You (singular)</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1806,8 +1802,8 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундатан</td>
-                            <td>а кундатан</td>
+                            <td>kundatan</td>
+                            <td>a kundatan</td>
                             <td>I catch you</td>
                         </tr>
                         <tr>
@@ -1818,14 +1814,14 @@
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундатанзат</td>
-                            <td>а кундатанзат</td>
+                            <td>kundatanzat</td>
+                            <td>a kundatanzat</td>
                             <td>He (she, it) catches you</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундатадызь</td>
-                            <td>а кундатадызь</td>
+                            <td>kundatadïź</td>
+                            <td>a kundatadïź</td>
                             <td>We catch you</td>
                         </tr>
                         <tr>
@@ -1836,15 +1832,15 @@
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундатадызь</td>
-                            <td>а кундатадызь</td>
+                            <td>kundatadïź</td>
+                            <td>a kundatadïź</td>
                             <td>They catch you</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">Him (her, it)</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">Him (her, it)</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1854,45 +1850,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундаса</td>
-                            <td>а кундаса</td>
+                            <td>kundasa</td>
+                            <td>a kundasa</td>
                             <td>I catch him (her, it)</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундасак</td>
-                            <td>а кундасак</td>
+                            <td>kundasak</td>
+                            <td>a kundasak</td>
                             <td>You catch him (her, it)</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундасы</td>
-                            <td>а кундасы</td>
+                            <td>kundasï</td>
+                            <td>a kundasï</td>
                             <td>He (she, it) catches him (her, it)</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундасынек</td>
-                            <td>а кундасынек</td>
+                            <td>kundasïnek</td>
+                            <td>a kundasïnek</td>
                             <td>We catch him (her, it)</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундасынк</td>
-                            <td>а кундасынк</td>
+                            <td>kundasïnk</td>
+                            <td>a kundasïnk</td>
                             <td>You catch him (her, it)</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундасызь</td>
-                            <td>а кундасызь</td>
+                            <td>kundasïź</td>
+                            <td>a kundasïź</td>
                             <td>They catch him (her, it)</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">Us</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">Us</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1908,14 +1904,14 @@
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундасамизь</td>
-                            <td>а кундасамизь</td>
+                            <td>kundasamiź</td>
+                            <td>a kundasamiź</td>
                             <td>You catch us</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундасамизь</td>
-                            <td>а кундасамизь</td>
+                            <td>kundasamiź</td>
+                            <td>a kundasamiź</td>
                             <td>He (she, it) catches us</td>
                         </tr>
                         <tr>
@@ -1926,21 +1922,21 @@
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундасамизь</td>
-                            <td>а кундасамизь</td>
+                            <td>kundasamiź</td>
+                            <td>a kundasamiź</td>
                             <td>You catch us</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундасамизь</td>
-                            <td>а кундасамизь</td>
+                            <td>kundasamiź</td>
+                            <td>a kundasamiź</td>
                             <td>They catch us</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">You (plural)</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">You (plural)</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1950,8 +1946,8 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундатадызь</td>
-                            <td>а кундатадызь</td>
+                            <td>kundatadïź</td>
+                            <td>a kundatadïź</td>
                             <td>I catch you</td>
                         </tr>
                         <tr>
@@ -1962,14 +1958,14 @@
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундатадызь</td>
-                            <td>а кундатадызь</td>
+                            <td>kundatadïź</td>
+                            <td>a kundatadïź</td>
                             <td>He (she, it) catches you</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундатадызь</td>
-                            <td>а кундатадызь</td>
+                            <td>kundatadïź</td>
+                            <td>a kundatadïź</td>
                             <td>We catch you</td>
                         </tr>
                         <tr>
@@ -1980,15 +1976,15 @@
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундатадызь</td>
-                            <td>а кундатадызь</td>
+                            <td>kundatadïź</td>
+                            <td>a kundatadïź</td>
                             <td>They catch you</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">Them</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">Them</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -1998,46 +1994,46 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундасынь</td>
-                            <td>а кундасынь</td>
+                            <td>kundasïn</td>
+                            <td>a kundasïn</td>
                             <td>I catch them</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундасыть</td>
-                            <td>а кундасыть</td>
+                            <td>kundasït</td>
+                            <td>a kundasït</td>
                             <td>You catch them</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундасынзе</td>
-                            <td>а кундасынзе</td>
+                            <td>kundasïnze</td>
+                            <td>a kundasïnze</td>
                             <td>He (she, it) catches them</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундасынек</td>
-                            <td>а кундасынек</td>
+                            <td>kundasïnek</td>
+                            <td>a kundasïnek</td>
                             <td>We catch them</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундасынк</td>
-                            <td>а кундасынк</td>
+                            <td>kundasïnk</td>
+                            <td>a kundasïnk</td>
                             <td>You catch them</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундасызь</td>
-                            <td>а кундасызь</td>
+                            <td>kundasïź</td>
+                            <td>a kundasïź</td>
                             <td>They catch them</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 15px;">Past</h2>
-                <h2 style="text-align: left; margin-left: 20px;">Me</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 20%;">Past</h2>
+                <h2 style="text-align: left; margin-left: 25%;">Me</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -2053,14 +2049,14 @@
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундымик</td>
-                            <td>эзимик кунда</td>
+                            <td>kundïmik</td>
+                            <td>ezimik kunda</td>
                             <td>You caught me</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундымим</td>
-                            <td>эзимим кунда</td>
+                            <td>kundïmim</td>
+                            <td>ezimim kunda</td>
                             <td>He (she, it) caught me</td>
                         </tr>
                         <tr>
@@ -2071,21 +2067,21 @@
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундымизь</td>
-                            <td>эзимизь кунда</td>
+                            <td>kundïmiź</td>
+                            <td>ezimiź kunda</td>
                             <td>You caught me</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундымизь</td>
-                            <td>эзимизь кунда</td>
+                            <td>kundïmiź</td>
+                            <td>ezimiź kunda</td>
                             <td>They caught me</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">You (singular)</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">You (singular)</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -2095,8 +2091,8 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундытинь</td>
-                            <td>эзитинь кунда</td>
+                            <td>kundïtin</td>
+                            <td>ezitin kunda</td>
                             <td>I caught you</td>
                         </tr>
                         <tr>
@@ -2107,14 +2103,14 @@
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундынзить</td>
-                            <td>эзинзить кунда</td>
+                            <td>kundïnzit</td>
+                            <td>ezinzit kunda</td>
                             <td>He (she, it) caught you</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундыдизь</td>
-                            <td>эзидизь кунда</td>
+                            <td>kundïdiź</td>
+                            <td>ezidiź kunda</td>
                             <td>We caught you</td>
                         </tr>
                         <tr>
@@ -2125,15 +2121,15 @@
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундыдизь</td>
-                            <td>эзидизь кунда</td>
+                            <td>kundïdiź</td>
+                            <td>ezidiź kunda</td>
                             <td>They caught you</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">Him (her, it)</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">Him (her, it)</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -2143,45 +2139,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундыя</td>
-                            <td>эзия кунда</td>
+                            <td>kundïja</td>
+                            <td>ezija kunda</td>
                             <td>I caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундык</td>
-                            <td>эзик кунда</td>
+                            <td>kundïk</td>
+                            <td>ezik kunda</td>
                             <td>You caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундызе</td>
-                            <td>эзизе кунда</td>
+                            <td>kundïze</td>
+                            <td>ezize kunda</td>
                             <td>He (she, it) caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундынек</td>
-                            <td>эзинек кунда</td>
+                            <td>kundïnek</td>
+                            <td>ezinek kunda</td>
                             <td>We caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундынк</td>
-                            <td>эзинк кунда</td>
+                            <td>kundïnk</td>
+                            <td>ezink kunda</td>
                             <td>You caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундызь</td>
-                            <td>эзизь кунда</td>
+                            <td>kundïź</td>
+                            <td>eziź kunda</td>
                             <td>They caught him (her, it)</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">Us</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">Us</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -2197,14 +2193,14 @@
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундымизь</td>
-                            <td>эзимизь кунда</td>
+                            <td>kundïmiź</td>
+                            <td>ezimiź kunda</td>
                             <td>You caught us</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундымизь</td>
-                            <td>эзимизь кунда</td>
+                            <td>kundïmiź</td>
+                            <td>ezimiź kunda</td>
                             <td>He (she, it) caught us</td>
                         </tr>
                         <tr>
@@ -2215,21 +2211,21 @@
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундымизь</td>
-                            <td>эзимизь кунда</td>
+                            <td>kundïmiź</td>
+                            <td>ezimiź kunda</td>
                             <td>You caught us</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундымизь</td>
-                            <td>эзимизь кунда</td>
+                            <td>kundïmiź</td>
+                            <td>ezimiź kunda</td>
                             <td>They caught us</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">You (plural)</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">You (plural)</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -2239,8 +2235,8 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундыдизь</td>
-                            <td>эзидизь кунда</td>
+                            <td>kundïdiź</td>
+                            <td>ezidiź kunda</td>
                             <td>I caught you</td>
                         </tr>
                         <tr>
@@ -2251,14 +2247,14 @@
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундыдизь</td>
-                            <td>эзидизь кунда</td>
+                            <td>kundïdiź</td>
+                            <td>ezidiź kunda</td>
                             <td>He (she, it) caught you</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундыдизь</td>
-                            <td>эзидизь кунда</td>
+                            <td>kundïdiź</td>
+                            <td>ezidiź kunda</td>
                             <td>We caught you</td>
                         </tr>
                         <tr>
@@ -2269,15 +2265,15 @@
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундыдизь</td>
-                            <td>эзидизь кунда</td>
+                            <td>kundïdiź</td>
+                            <td>ezidiź kunda</td>
                             <td>They caught you</td>
                         </tr>
                     </tbody>
                 </table><br>
 
-                <h2 style="text-align: left; margin-left: 20px;">Them</h2>
-                <table style="margin: 20px; margin-right: 20px; line-height: 1.5;">
+                <h2 style="text-align: left; margin-left: 25%;">Them</h2>
+                <table style="margin: auto; font-size: 17px; line-height: 1.5;">
                     <tbody>
                         <tr>
                             <td>Person</td>
@@ -2287,45 +2283,45 @@
                         </tr>
                         <tr>
                             <td>1st sing.</td>
-                            <td>кундынь</td>
-                            <td>эзинь кунда</td>
+                            <td>kundïn</td>
+                            <td>ezin kunda</td>
                             <td>I caught them</td>
                         </tr>
                         <tr>
                             <td>2nd sing.</td>
-                            <td>кундыть</td>
-                            <td>эзить кунда</td>
+                            <td>kundït</td>
+                            <td>ezit kunda</td>
                             <td>You caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>3rd sing.</td>
-                            <td>кундынзе</td>
-                            <td>эзизе кунда</td>
+                            <td>kundïnze</td>
+                            <td>ezize kunda</td>
                             <td>He (she, it) caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>1st plur.</td>
-                            <td>кундынек</td>
-                            <td>эзинек кунда</td>
+                            <td>kundïnek</td>
+                            <td>ezinek kunda</td>
                             <td>We caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>2nd plur.</td>
-                            <td>кундынк</td>
-                            <td>эзинк кунда</td>
+                            <td>kundïnk</td>
+                            <td>ezink kunda</td>
                             <td>You caught him (her, it)</td>
                         </tr>
                         <tr>
                             <td>3rd plur.</td>
-                            <td>кундызь</td>
-                            <td>эзизь кунда</td>
+                            <td>kundïź</td>
+                            <td>eziź kunda</td>
                             <td>They caught him (her, it)</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <p style="text-align: center; margin-top: 10px;">Source: <a href="https://www.wiktionary.org/"
+            <p style="text-align: center; margin-top: 50px;">Source: <a href="https://www.wiktionary.org/"
                     style="text-decoration: none;">Wiktionary</a></p>
         </div>
     </main>
@@ -2337,16 +2333,12 @@
 
     <script src="script.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navSelect = document.getElementById('nav-select');
-
-            navSelect.addEventListener('change', function () {
-                window.location.href = this.value;
-            });
-        });
-    </script>
-
 </body>
 
 </html>
+
+<script>
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        window.location.href = "grammar-lat-mobile.html";
+    }
+</script>

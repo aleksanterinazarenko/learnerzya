@@ -349,7 +349,7 @@ tr {
 }
 
 .translator {
-    width: calc(100% - 200px);
+    width: min(1200px, 90%);
     margin: 0 auto;
     margin-top: 50px;
     display: grid;
