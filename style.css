@@ -424,9 +424,8 @@ button#copyButton:hover {
 
 .examples,
 .quotes {
-    margin: 0 auto 30px;
-    padding: 10px 50px;
-    margin-top: -30px;
+    margin: 20px 0;
+    padding: 0 30px;
 }
 
 .example,
@@ -434,6 +433,7 @@ button#copyButton:hover {
     font-size: 16px;
     font-style: italic;
     line-height: 1.5;
+    margin-bottom: 5px;
 }
 
 .quote {
@@ -447,17 +447,19 @@ button#copyButton:hover {
 .example em,
 .quote em {
     color: #B22222;
+    margin-bottom: 5px;
 }
 
 .source {
     text-align: right;
     font-style: italic;
-    color: grey
+    color: grey;
+    margin-top: 5px;
 }
 
 #wordDetails ul {
     padding-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 17px;
     list-style-type: none;
     counter-reset: definition-counter;

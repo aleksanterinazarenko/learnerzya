@@ -312,8 +312,8 @@ button#copyButton {
 .examples,
 .quotes {
     margin: auto;
-    margin-bottom: 10px;
-    padding: 10px 20px;
+    margin-bottom: 20px;
+    padding: 0 20px;
 }
 
 .example,
@@ -321,6 +321,7 @@ button#copyButton {
     font-size: 16px;
     font-style: italic;
     line-height: 1.5;
+    margin-bottom: 5px;
 }
 
 .quote {
@@ -334,16 +335,19 @@ button#copyButton {
 .example em,
 .quote em {
     color: #B22222;
+    margin-bottom: 5px;
 }
 
 .source {
     text-align: right;
     font-style: italic;
-    color: grey
+    color: grey;
+    margin-top: 5px;
 }
 
 #wordDetails ul {
     padding-left: 20px;
+    margin-top: none;
     margin-bottom: 20px;
     font-size: 16px;
     list-style-type: none;

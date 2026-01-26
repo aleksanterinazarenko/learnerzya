@@ -94,20 +94,37 @@
                 }
 
                 let quotesHtml = "";
-                if (entry.QuoteW && entry.QuoteD && entry.QuoteS &&
-                    entry.QuoteW.length > 0 && entry.QuoteD.length > 0) {
-                    for (let i = 0; i < entry.QuoteW.length; i++) {
-                        const QuoteW = entry.QuoteW[i];
-                        const QuoteD = entry.QuoteD[i];
-                        const QuoteS = entry.QuoteS[i];
-                        if (QuoteW && QuoteD) {
-                            quotesHtml += `
+
+                if (entry.QuoteW && entry.QuoteD) {
+                    if (Array.isArray(entry.QuoteW)) {
+                        for (let i = 0; i < entry.QuoteW.length; i++) {
+                            const QuoteW = entry.QuoteW[i];
+                            const QuoteD = entry.QuoteD[i];
+                            const QuoteS = entry.QuoteS ? entry.QuoteS[i] : '';
+
+                            if (QuoteW && QuoteD) {
+                                quotesHtml += `
                     <div class='quote'>
                         <em>${QuoteW}</em>${QuoteD}
                         <div class='source'>
                             ${QuoteS ? `<span style="font-style: normal">(</span>${QuoteS}<span style="font-style: normal">)</span>` : ''}
                         </div>
                     </div>`;
+                            }
+                        }
+                    } else {
+                        const QuoteW = entry.QuoteW;
+                        const QuoteD = entry.QuoteD;
+                        const QuoteS = entry.QuoteS || '';
+
+                        if (QuoteW.trim() !== "" && QuoteD.trim() !== "") {
+                            quotesHtml += `
+                <div class='quote'>
+                    <em>${QuoteW}</em>${QuoteD}
+                    <div class='source'>
+                        ${QuoteS ? `<span style="font-style: normal">(</span>${QuoteS}<span style="font-style: normal">)</span>` : ''}
+                    </div>
+                </div>`;
                         }
                     }
                 }
