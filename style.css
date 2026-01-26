@@ -451,6 +451,7 @@ button#copyButton:hover {
 
 .quote em {
     color: #B22222;
+    margin-bottom: 5px;
 }
 
 .source {
