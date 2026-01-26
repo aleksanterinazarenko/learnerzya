@@ -291,7 +291,7 @@ tr {
 
 .suggestions-list {
     border: 1px solid #ccc;
-    max-height: 200px;
+    max-height: 150px;
     overflow-y: auto;
     position: absolute;
     background-color: white;
