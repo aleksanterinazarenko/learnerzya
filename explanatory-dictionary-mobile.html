@@ -96,7 +96,7 @@
         }
 
         #wordDetails p {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     </style>
 
@@ -125,7 +125,7 @@
 
                 if (entry.Definition.includes('<div class="entry">')) {
                     definitionHTML = `
-            <p style="color: #B22222;">${entry.Word} ${categoryDisplay}</p>
+            <h2 style="color: #B22222;">${entry.Word} ${categoryDisplay}</h2>
             <div class="dictionary-content">
                 ${entry.Definition}
             </div>
@@ -377,10 +377,3 @@
 
 </html>
 
-<script>
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        const currentParams = window.location.search;
-        const desktopPage = 'explanatory-dictionary.html';
-        window.location.href = desktopPage + currentParams;
-    }
-</script>
