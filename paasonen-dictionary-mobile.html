@@ -69,11 +69,6 @@
             color: #fff;
         }
 
-        .word-details {
-            font-size: 17px;
-            word-wrap: break-word;
-        }
-
         .entry {
             color: #333;
             font-size: 17px;
@@ -82,8 +77,13 @@
             text-align: left;
         }
 
+        .word-details {
+            font-size: 17px;
+            word-wrap: break-word;
+        }
+
         #wordDetails p {
-            margin-bottom: 20px;
+            margin: -10px 0 20px 0;
         }
     </style>
 
@@ -114,7 +114,7 @@
                 const categoryDisplay = entry.Category ?
                     `<span style="font-weight: normal;">${entry.Category}</span>` : '';
                 wordDetails.innerHTML =
-                    `<p style="color: #B22222;">${categoryDisplay}</p><p>${entry.Definition}</p>`;
+                    `<h2>${entry.Word}</h2><p style="color: #B22222;">${categoryDisplay}</p><p>${entry.Definition}</p>`;
 
                 wordDetails.style.display = 'block';
                 suggestions.style.display = 'none';
@@ -335,11 +335,3 @@
 </body>
 
 </html>
-
-<script>
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        const currentParams = window.location.search;
-        const desktopPage = 'paasonen-dictionary.html';
-        window.location.href = desktopPage + currentParams;
-    }
-</script>
