@@ -455,6 +455,7 @@ button#copyButton:hover {
     font-style: italic;
     color: grey;
     margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 #wordDetails ul {
