@@ -349,27 +349,27 @@
     </script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function setRealHeight() {
-            const realHeight = window.innerHeight;
-            document.body.style.minHeight = realHeight + 'px';
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            function setRealHeight() {
+                const realHeight = window.innerHeight;
+                document.body.style.minHeight = realHeight + 'px';
+            }
 
-        setRealHeight();
+            setRealHeight();
 
-        document.body.style.display = 'flex';
-        document.body.style.flexDirection = 'column';
-        document.body.style.margin = '0';
+            document.body.style.display = 'flex';
+            document.body.style.flexDirection = 'column';
+            document.body.style.minHeight = window.innerHeight + 'px';
+            document.body.style.margin = '0';
+            document.body.style.overflow = 'visible';
 
-        const main = document.querySelector('main');
-        if (main) {
+            const main = document.querySelector('main');
             main.style.flex = '1';
-            main.style.overflowY = 'auto';
-        }
+            main.style.overflowY = 'visible';
 
-        window.addEventListener('resize', setRealHeight);
-        window.addEventListener('orientationchange', setRealHeight);
-    });
+            window.addEventListener('resize', setRealHeight);
+            window.addEventListener('orientationchange', setRealHeight);
+        });
     </script>
 
 </body>
