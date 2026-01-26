@@ -71,9 +71,6 @@
 
         .word-details {
             font-size: 17px;
-            padding: 0 10px;
-            margin-top: -15px;
-            margin-bottom: 25px;
             word-wrap: break-word;
         }
 
@@ -83,6 +80,10 @@
             font-style: normal;
             line-height: 1.5;
             text-align: left;
+        }
+
+        #wordDetails p {
+            margin-bottom: 20px;
         }
     </style>
 
@@ -102,14 +103,25 @@
             let filteredWords = [];
             let isMouseOverSuggestion = false;
 
+            const urlParams = new URLSearchParams(window.location.search);
+            const wordFromURL = urlParams.get('word');
+
+            if (wordFromURL) {
+                searchInput.value = wordFromURL;
+            }
+
             function showWordDetails(entry) {
                 const categoryDisplay = entry.Category ?
                     `<span style="font-weight: normal;">${entry.Category}</span>` : '';
                 wordDetails.innerHTML =
-                    `<p style="margin-bottom: 20px; color: #B22222;">${categoryDisplay}</p><p>${entry.Definition}</p>`;
+                    `<p style="color: #B22222;">${categoryDisplay}</p><p>${entry.Definition}</p>`;
 
                 wordDetails.style.display = 'block';
                 suggestions.style.display = 'none';
+
+                const url = new URL(window.location);
+                url.searchParams.set('word', entry.Word);
+                window.history.replaceState({}, '', url.toString());
             }
 
             function loadDictionary(url) {
@@ -126,7 +138,6 @@
 
                         data.forEach(entry => {
                             if (entry.Word) {
-
                                 if (lastEntry && lastEntry.Definition) {
                                     currentData.push(lastEntry);
                                 }
@@ -149,6 +160,16 @@
                         }
 
                         suggestions.innerHTML = '';
+
+                        if (wordFromURL) {
+                            const foundEntry = currentData.find(entry =>
+                                entry.Word.toLowerCase() === wordFromURL.toLowerCase()
+                            );
+
+                            if (foundEntry) {
+                                showWordDetails(foundEntry);
+                            }
+                        }
                     })
                     .catch(error => console.error('Error loading the dictionary:', error));
             }
@@ -168,6 +189,9 @@
                 if (query === "") {
                     wordDetails.innerHTML = '';
                     suggestions.style.display = 'none';
+                    const url = new URL(window.location);
+                    url.searchParams.delete('word');
+                    window.history.replaceState({}, '', url.toString());
                 } else {
                     filteredWords = currentData
                         .filter(entry => {
@@ -282,15 +306,6 @@
         const searchInput = document.getElementById('searchInput');
         const suggestions = document.getElementById('suggestions');
         const wordDetails = document.getElementById('wordDetails');
-        const sourceParagraph = document.querySelector('p');
-
-        searchInput.addEventListener('input', () => {
-            if (suggestions.children.length > 0 || wordDetails.innerHTML !== '') {
-                sourceParagraph.style.display = 'none';
-            } else {
-                sourceParagraph.style.display = 'block';
-            }
-        });
     </script>
 
     <script>
