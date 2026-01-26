@@ -79,8 +79,12 @@
             border-bottom: none;
         }
 
+        .entry:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
         .dictionary-content {
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .dictionary:has(.dictionary-content) p {
@@ -88,7 +92,7 @@
         }
 
         .dictionary:not(:has(.dictionary-content)) p {
-            margin: 0 auto 30px;
+            margin: 0 auto 10px;
         }
     </style>
 
@@ -340,4 +344,5 @@
     }
 
 </script>
+
 
