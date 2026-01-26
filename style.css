@@ -444,10 +444,13 @@ button#copyButton:hover {
     margin-bottom: 10px;
 }
 
-.example em,
-.quote em {
+.example em {
     color: #B22222;
     margin-bottom: 5px;
+}
+
+.quote em {
+    color: #B22222;
 }
 
 .source {
