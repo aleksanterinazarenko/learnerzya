@@ -377,3 +377,10 @@
 
 </html>
 
+<script>
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        const currentParams = window.location.search;
+        const desktopPage = 'explanatory-dictionary.html';
+        window.location.href = desktopPage + currentParams;
+    }
+</script>
