@@ -464,7 +464,7 @@ button#copyButton:hover {
 
 #wordDetails ul {
     padding-left: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 17px;
     list-style-type: none;
     counter-reset: definition-counter;
