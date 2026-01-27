@@ -428,6 +428,10 @@ button#copyButton:hover {
     padding: 0 30px;
 }
 
+.examples {
+    margin-top: -10px;
+}
+
 .example,
 .quote {
     font-size: 16px;
