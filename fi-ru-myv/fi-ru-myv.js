@@ -1,6 +1,12 @@
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-            window.location.href = "fi-ru-myv-mobile.html";
-        }
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                const path = window.location.pathname;
+                const file = path.split("/").pop();
+            
+                if (file.endsWith(".html") && !file.includes("-mobile")) {
+                    window.location.href =
+                        path.replace(file, file.replace(".html", "-mobile.html"));
+                }
+            }
 
         document.querySelectorAll("td").forEach(td => {
         td.innerHTML = td.innerText;
@@ -40,4 +46,5 @@ document.addEventListener("DOMContentLoaded", () => {
         link.classList.add('active');
       }
     });
+
   });
