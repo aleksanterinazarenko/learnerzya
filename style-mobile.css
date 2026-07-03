@@ -21,9 +21,15 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'CMU Sans Serif', sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'CMU Sans Serif', sans-serif;
     padding: 0;
     box-sizing: border-box;
 }
@@ -33,6 +39,10 @@ header {
     background: #333;
     color: white;
     padding: 0.16px;
+}
+
+main {
+    padding: 0;
 }
 
 nav ul {
